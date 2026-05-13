@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair vs Replace Guide | ShieldMate Auto Glass</title>
+    <!-- Custom Favicon - Windshield Shield -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'shield-blue': '#1E4A76',
+                        'shield-sky': '#2C7DA0',
+                        'shield-gold': '#F4C542',
+                        'shield-ice': '#E6F7FF',
+                        'shield-graphite': '#2F3E46',
+                        'shield-stone': '#CAD2C5',
+                        'shield-coral': '#E86F6F',
+                        'dark-bg': '#0F1720',
+                        'dark-card': '#1A2634',
+                    },
+                    fontFamily: {
+                        'display': ['"Inter"', 'system-ui', 'sans-serif'],
+                        'body': ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-gentle': 'pulseGentle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        pulseGentle: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        }
+                    },
+                    backgroundImage: {
+                        'glass-pattern': "radial-gradient(circle at 20% 30%, rgba(44,125,160,0.04) 0%, transparent 60%)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #F9FBFD;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .dark body {
+            background-color: #0F1720 !important;
+        }
+
+        body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #1E4A76;
+            border-radius: 10px;
+        }
+
+        .dark body::-webkit-scrollbar-track {
+            background: #1E293B;
+        }
+
+        .dark body::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+        }
+
+        .trust-card {
+            background: white;
+            border-radius: 28px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 125, 160, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .dark .trust-card {
+            background: #1A2634 !important;
+            border-color: #334155 !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(30, 74, 118, 0.2);
+            border-color: #2C7DA0;
+        }
+
+        .dark .trust-card:hover {
+            border-color: #3B82F6;
+        }
+
+        .btn-primary-glass {
+            background-color: #1E4A76;
+            color: white;
+            font-weight: 600;
+            border-radius: 60px;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 14px rgba(30, 74, 118, 0.25);
+        }
+
+        .btn-primary-glass:hover {
+            background-color: #0F3A5C;
+            transform: translateY(-2px);
+        }
+
+        .dark .btn-primary-glass {
+            background-color: #2563EB;
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .dark .btn-primary-glass:hover {
+            background-color: #1D4ED8;
+        }
+
+        .nav-link-shield {
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-link-shield::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background-color: #F4C542;
+            transition: width 0.2s ease;
+            border-radius: 3px;
+        }
+
+        .nav-link-shield:hover::after {
+            width: 100%;
+        }
+
+        .nav-link-shield.active {
+            color: #1E4A76;
+        }
+
+        .dark .nav-link-shield.active {
+            color: #60A5FA;
+        }
+
+        .nav-link-shield.active::after {
+            width: 100%;
+        }
+
+        .dropdown-shield {
+            position: relative;
+        }
+
+        .dropdown-shield-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 210px;
+            background: white;
+            border-radius: 20px;
+            padding: 0.6rem 0;
+            box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid rgba(30, 74, 118, 0.1);
+        }
+
+        .dark .dropdown-shield-menu {
+            background: #1E2A3A;
+            border-color: #334155;
+        }
+
+        .dropdown-shield:hover .dropdown-shield-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item-shield {
+            display: flex;
+            align-items: center;
+            padding: 0.65rem 1.4rem;
+            transition: all 0.2s;
+            color: #1E2F3A;
+        }
+
+        .dark .dropdown-item-shield {
+            color: #E2E8F0;
+        }
+
+        .dropdown-item-shield:hover {
+            background-color: #E6F7FF;
+            color: #1E4A76;
+        }
+
+        .dark .dropdown-item-shield:hover {
+            background-color: #2563EB20;
+            color: #90CDF4;
+        }
+
+        .mobile-menu-shield {
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 28px 28px;
+        }
+
+        .dark .mobile-menu-shield {
+            background: #0F1720;
+        }
+
+        .mobile-menu-shield.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .dark .text-shield-graphite {
+            color: #F1F5F9 !important;
+        }
+
+        .dark .text-gray-600,
+        .dark .text-gray-500 {
+            color: #94A3B8 !important;
+        }
+
+        .dark .bg-shield-ice {
+            background-color: #1E293B !important;
+        }
+
+        .dark .border-shield-stone {
+            border-color: #334155 !important;
+        }
+
+        /* custom wizard option label styling */
+        .wizard-option {
+            border: 2px solid #E2E8F0;
+            border-radius: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .dark .wizard-option {
+            border-color: #334155;
+            background-color: #1A2634;
+        }
+        .wizard-option:hover {
+            border-color: #2C7DA0;
+            background-color: rgba(44, 125, 160, 0.03);
+        }
+        .dark .wizard-option:hover {
+            border-color: #3B82F6;
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        input[type="radio"]:checked + .wizard-option {
+            border-color: #1E4A76;
+            background-color: #E6F7FF;
+            font-weight: 600;
+        }
+        .dark input[type="radio"]:checked + .wizard-option {
+            border-color: #60A5FA;
+            background-color: rgba(96, 165, 250, 0.15);
+        }
+    </style>
+</head>
+
+<body class="glass-pattern">
+
+    <!-- Standardized Navigation Header -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0F1720]/95 backdrop-blur-md border-b border-shield-stone/40 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20 md:h-24 relative">
+                <!-- Logo -->
+                <a class='flex items-center gap-2 md:gap-3 group shrink-0' href='index.html'>
+                    <div
+                        class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                        <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                    </div>
+                    <div>
+                        <span
+                            class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-shield-blue dark:text-white">SHIELD<span
+                                class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                    </div>
+                </a>
+
+                <!-- Centered Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-3 xl:gap-6 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="dropdown-shield">
+                        <button
+                            class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
+                            Home <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div class="dropdown-shield-menu">
+                            <a class="dropdown-item-shield" href="index.html">Home 1</a>
+                            <a class="dropdown-item-shield" href="home2.html">Home 2</a>
+                        </div>
+                    </div>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="about.html">About</a>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="service.html">Services</a>
+                    <a class="nav-link-shield active text-shield-blue dark:text-blue-400 font-medium transition text-sm xl:text-base"
+                        href="repair.html">Repair vs Replace</a>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="warranty.html">Warranty</a>
+                    <div class="dropdown-shield">
+                        <button
+                            class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
+                            Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div class="dropdown-shield-menu">
+                            <a class="dropdown-item-shield gap-3" href="client.html">
+                                <span
+                                    class="w-7 h-7 rounded-lg bg-shield-blue/10 dark:bg-blue-500/20 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-user text-shield-blue dark:text-blue-400 text-xs"></i>
+                                </span>
+                                <div>
+                                    <p class="font-semibold text-sm">Client</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item-shield gap-3" href="admin.html">
+                                <span
+                                    class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
+                                    <i
+                                        class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                </span>
+                                <div>
+                                    <p class="font-semibold text-sm">Admin</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="contact.html">Contact</a>
+                </div>
+
+                <!-- Right Side Actions & Hamburger -->
+                <div class="flex items-center gap-3 ml-auto">
+                    <!-- Desktop Actions -->
+                    <div class="hidden lg:flex items-center gap-4 ml-2">
+                        <div class="dropdown-shield">
+                            <button
+                                class="w-10 h-10 rounded-full bg-shield-blue/10 dark:bg-sky-500/10 text-shield-blue dark:text-sky-300 hover:bg-shield-blue dark:hover:bg-sky-500 hover:text-white dark:hover:text-slate-900 transition flex items-center justify-center border border-transparent dark:border-sky-500/20">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <div class="dropdown-shield-menu" style="left: auto; right: 0;">
+                                <a class="dropdown-item-shield gap-3" href="login.html">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-shield-blue/10 dark:bg-blue-500/20 flex items-center justify-center shrink-0">
+                                        <i
+                                            class="fas fa-right-to-bracket text-shield-blue dark:text-blue-400 text-sm"></i>
+                                    </span>
+                                    <div>
+                                        <p class="font-semibold text-sm">Log In</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item-shield gap-3" href="signup.html">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-500/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-user-plus text-emerald-600 dark:text-emerald-400 text-sm"></i>
+                                    </span>
+                                    <div>
+                                        <p class="font-semibold text-sm">Sign Up</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button id="theme-toggle"
+                            class="w-10 h-10 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-amber-400 hover:scale-110 transition flex items-center justify-center border border-transparent dark:border-slate-700">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle"
+                            class="w-10 h-10 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-sky-300 hover:scale-110 transition font-bold text-base border border-transparent dark:border-slate-700">⇄</button>
+                    </div>
+
+                    <button id="mobile-toggle"
+                        class="lg:hidden w-10 h-10 rounded-full bg-shield-blue text-white flex items-center justify-center shadow-md">
+                        <i class="fas fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu-shield lg:hidden">
+                <div class="py-4 px-3 space-y-1">
+                    <!-- Mobile Home Accordion -->
+                    <div>
+                        <button onclick="toggleMobileAccordion('mobile-home-sub')"
+                            class="w-full flex items-center justify-between py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl">
+                            Home
+                            <i id="mobile-home-sub-icon" class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-home-sub" class="hidden pl-4 pt-1 space-y-1">
+                            <a class="block py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="index.html">Home 1</a>
+                            <a class="block py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="home2.html">Home 2</a>
+                        </div>
+                    </div>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="about.html">About</a>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="service.html">Services</a>
+                    <a class="block py-3 px-4 font-medium text-shield-blue border-l-4 border-shield-gold bg-shield-ice/40 dark:bg-blue-500/10 rounded-xl"
+                        href="repair.html">Repair vs Replace</a>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="warranty.html">Warranty</a>
+                    <!-- Mobile Dashboard Accordion -->
+                    <div>
+                        <button onclick="toggleMobileAccordion('mobile-dash-sub')"
+                            class="w-full flex items-center justify-between py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl">
+                            Dashboard
+                            <i id="mobile-dash-sub-icon" class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-dash-sub" class="hidden pl-4 pt-1 space-y-1">
+                            <a class="flex items-center gap-2 py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="client.html">
+                                <i class="fas fa-user text-shield-blue dark:text-blue-400 text-xs w-4"></i> Client
+                            </a>
+                            <a class="flex items-center gap-2 py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="admin.html">
+                                <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs w-4"></i>
+                                Admin
+                            </a>
+                        </div>
+                    </div>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="contact.html">Contact</a>
+                    <div class="flex flex-col gap-3 pt-4 mt-3 border-t border-shield-stone/40">
+                        <a class="flex items-center justify-center gap-2 py-2.5 rounded-full font-semibold text-shield-blue border border-shield-blue dark:border-blue-400 dark:text-blue-400"
+                            href="login.html">
+                            <i class="fas fa-right-to-bracket"></i>
+                            Log In to Account
+                        </a>
+                        <a class="flex items-center justify-center gap-2 btn-primary-glass py-2.5 rounded-full font-semibold"
+                            href="signup.html">
+                            <i class="fas fa-user-plus"></i>
+                            Sign Up
+                        </a>
+                        <div class="flex gap-3">
+                            <button id="mobile-theme-toggle"
+                                class="flex-1 py-2 rounded-full bg-shield-ice dark:bg-slate-700 text-shield-blue text-sm font-medium">🌓
+                                Theme</button>
+                            <button id="mobile-rtl-toggle"
+                                class="flex-1 py-2 rounded-full bg-shield-ice dark:bg-slate-700 text-shield-blue text-sm font-medium">⇄
+                                RTL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Full Viewport Height Landing -->
+    <section class="min-h-screen flex flex-col justify-center pt-20 pb-12 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center animate-slide-up">
+                <span class="px-5 py-2 rounded-full bg-shield-gold/10 dark:bg-amber-500/20 text-shield-gold dark:text-amber-400 font-bold text-xs uppercase tracking-widest inline-block mb-6 shadow-sm">
+                    <i class="fas fa-magic mr-2"></i> Interactive Assessment Guide
+                </span>
+                <h1 class="text-5xl md:text-7xl font-display font-extrabold text-shield-graphite dark:text-white leading-tight mb-8">
+                    Repair vs <span class="text-shield-blue dark:text-blue-400">Replace</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
+                    Not sure if your windshield crack requires a quick 20-minute resin cure or a complete structural replacement? Scroll down to take our instant 3-step safety assessment.
+                </p>
+                <a href="#wizard-section" class="inline-flex items-center gap-3 bg-shield-blue text-white font-bold px-8 py-4 rounded-full shadow-xl hover:bg-shield-sky transition">
+                    Start Assessment <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Decorative subtle background gradient blobs -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-shield-sky/5 blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-shield-blue/5 blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Dynamic Assessment Wizard Container -->
+    <section id="wizard-section" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-shield-blue dark:text-blue-400 uppercase tracking-widest bg-shield-blue/10 px-3 py-1 rounded-full">Interactive Evaluation</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Damage <span class="text-shield-sky dark:text-sky-400">Diagnostic Tool</span></h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Adjust the parameters below to simulate your glass safety assessment instantly</p>
+            </div>
+            <div class="max-w-4xl mx-auto trust-card p-8 md:p-12">
+                <form id="wizard-form" onsubmit="return false;" class="space-y-8">
+                    <!-- Step 1 -->
+                    <div>
+                        <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">1</span>
+                            What is the size of the glass damage?
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-4 pl-9">
+                            <label class="block">
+                                <input type="radio" name="size" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-coins text-shield-gold text-lg"></i>
+                                    <span class="text-sm">Smaller than a quarter</span>
+                                </div>
+                            </label>
+                            <label class="block">
+                                <input type="radio" name="size" value="repair" class="hidden" onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-money-bill text-shield-sky text-lg"></i>
+                                    <span class="text-sm">Under 6 inches (dollar bill)</span>
+                                </div>
+                            </label>
+                            <label class="block">
+                                <input type="radio" name="size" value="replace" class="hidden" onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-ruler-combined text-shield-coral text-lg"></i>
+                                    <span class="text-sm">Longer than 6 inches</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="pt-6 border-t border-shield-stone/30">
+                        <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">2</span>
+                            Where is the damage located?
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-4 pl-9">
+                            <label class="block">
+                                <input type="radio" name="location" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-car-side text-shield-sky text-lg"></i>
+                                    <span class="text-sm">Passenger side / Out of main view</span>
+                                </div>
+                            </label>
+                            <label class="block">
+                                <input type="radio" name="location" value="replace" class="hidden" onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-eye text-shield-coral text-lg"></i>
+                                    <span class="text-sm">Directly in driver's line of sight</span>
+                                </div>
+                            </label>
+                            <label class="block">
+                                <input type="radio" name="location" value="replace" class="hidden" onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-border-all text-shield-coral text-lg"></i>
+                                    <span class="text-sm">At the outer edge / perimeter frame</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="pt-6 border-t border-shield-stone/30">
+                        <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">3</span>
+                            How deep does the damage penetrate?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4 pl-9">
+                            <label class="block">
+                                <input type="radio" name="depth" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-layer-group text-shield-sky text-lg"></i>
+                                    <span class="text-sm">Outer glass layer only (standard chip)</span>
+                                </div>
+                            </label>
+                            <label class="block">
+                                <input type="radio" name="depth" value="replace" class="hidden" onchange="runAssessment()">
+                                <div class="wizard-option text-shield-graphite dark:text-gray-200">
+                                    <i class="fas fa-exclamation-triangle text-shield-coral text-lg"></i>
+                                    <span class="text-sm">Deep holes / both layers pierced</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Dynamic Live Output Panel -->
+                <div class="mt-10 pt-8 border-t-2 border-dashed border-shield-stone/50 bg-shield-ice/20 dark:bg-slate-800/40 p-6 rounded-2xl animate-slide-up">
+                    <div class="text-center mb-4">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Real-Time Assessment Recommendation</span>
+                    </div>
+                    <div id="assessment-result" class="transition-all duration-300">
+                        <!-- Instantly dynamically filled by JS onload & onchange -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hard Rules Cheat Sheet Table -->
+    <section class="py-12 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Quick Reference Cheat Sheet</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Industry standard auto glass safety replacement standards</p>
+            </div>
+            <div class="overflow-x-auto trust-card p-0">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-shield-ice dark:bg-slate-800 border-b border-shield-stone/30">
+                            <th class="p-4 font-bold text-shield-blue dark:text-blue-400">Damage Condition</th>
+                            <th class="p-4 font-bold text-emerald-600 dark:text-emerald-400">Qualifies for Repair</th>
+                            <th class="p-4 font-bold text-shield-coral dark:text-red-400">Requires Replacement</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-shield-stone/20 text-sm dark:text-gray-300">
+                        <tr>
+                            <td class="p-4 font-semibold">Size Diameter</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>Under 6 inches</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Over 6 inches</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Driver's Line of Sight</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>No / Outside box</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Yes / Direct center view</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Proximity to Edge</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>At least 2 inches away</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Touches exterior frame</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Count of Chips</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>3 or fewer separate impacts</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>4 or more existing impacts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Structural Anatomy Breakdown -->
+    <section class="py-20 bg-shield-ice/30 dark:bg-slate-900/40 border-t border-shield-stone/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold text-shield-sky dark:text-sky-400 uppercase tracking-widest bg-shield-sky/10 px-3 py-1 rounded-full">Science of Safety</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Anatomy of an <span class="text-shield-blue dark:text-blue-400">Auto Glass Repair</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">How high-pressure vacuum injection saves your factory windshield seal</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-sky">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fas fa-microscope text-shield-sky text-2xl"></i>
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Vacuum Injection Process</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            First, we extract microscopic air bubbles and moisture trapped within the fractured layer using automated pneumatic vacuum seals. This ensures clear optic bonding paths.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                            <i class="fas fa-shield-alt"></i> Retains your factory structural seal intact
+                        </div>
+                    </div>
+                    <div class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-gold">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fas fa-sun text-shield-gold text-2xl"></i>
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">UV Light Polymer Cure</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            We inject customized acrylic structural resins matching your exact glass refraction index. High-frequency UV radiation cures the fill instantly, restoring original pane strength.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-shield-blue dark:text-blue-400">
+                            <i class="fas fa-eye"></i> Prevents optical distortion and light scattering
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Advanced ADAS Calibration Info -->
+    <section class="py-20 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto trust-card p-8 md:p-12 relative overflow-hidden border-2 border-shield-blue/20">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-shield-coral/5 rounded-bl-full -z-10"></div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-20 h-20 rounded-3xl bg-shield-coral/10 dark:bg-rose-500/20 flex items-center justify-center shrink-0">
+                        <i class="fas fa-satellite-dish text-shield-coral dark:text-rose-400 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-shield-coral dark:text-rose-400 uppercase tracking-widest">Crucial Technology Notice</span>
+                        <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mt-1 mb-3">Does your car have Forward-Facing Cameras?</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Modern driver assistance systems (ADAS)—such as automatic emergency braking, lane departure sensors, and adaptive cruise control—rely heavily on precise optic positioning calibrated directly through the upper front windshield pane.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-blue-400 text-xs font-semibold rounded-md">
+                                <i class="fas fa-check mr-1"></i> Chip Repair: No Re-calibration Needed
+                            </span>
+                            <span class="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-shield-coral dark:text-red-400 text-xs font-semibold rounded-md">
+                                <i class="fas fa-exclamation-circle mr-1"></i> Replacement: Mandatory Dynamic Recalibration
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standardized Footer -->
+    <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
+                <div class="flex flex-col items-center md:items-start"><a class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start" href="index.html">
+                        <div
+                            class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition shrink-0">
+                            <i class="fas fa-car-side text-white text-base md:text-lg"></i></div><span
+                            class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-white">SHIELD<span
+                                class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                    </a>
+                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair &amp; windshield replacement
+                        with lifetime warranty.</p>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer dashboard</a></li>
+                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm inline-block text-start">
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr" class="text-start">(888) 450-SHLD</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i> <span>help@shieldmate.com</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am – 9pm</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Certified</h4>
+                    <div class="flex justify-center md:justify-start gap-3 text-2xl"><i class="fab fa-cc-visa"></i><i
+                            class="fab fa-cc-mastercard"></i><i class="fas fa-shield-alt"></i></div>
+                    <p class="text-xs mt-3 text-center md:text-start">NWRA certified • A+ BBB rating</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-5 border-t border-gray-700 text-center text-xs text-gray-500">© 2026 ShieldMate —
+                Mobile Windshield Repair & Chip Replacement. Drive safe. <i
+                    class="fas fa-heart text-shield-coral mx-1"></i></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => btn?.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); }));
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            function setRTL(isRTL) { const html = document.documentElement; isRTL ? html.setAttribute('dir', 'rtl') : html.setAttribute('dir', 'ltr'); localStorage.setItem('dir', isRTL ? 'rtl' : 'ltr'); }
+            const savedDir = localStorage.getItem('dir'); if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl'); else document.documentElement.setAttribute('dir', 'ltr');
+            document.getElementById('rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); });
+            document.getElementById('mobile-rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); const mobileMenu = document.getElementById('mobile-menu'); if (mobileMenu?.classList.contains('open')) mobileMenu.classList.remove('open'); });
+            const mobileToggle = document.getElementById('mobile-toggle'); const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) { mobileToggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = mobileToggle.querySelector('i'); if (mobileMenu.classList.contains('open')) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); } }); }
+            
+            // initialize wizard output
+            runAssessment();
+        });
+
+        function toggleMobileAccordion(id) {
+            const sub = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            if (!sub) return;
+            const isHidden = sub.classList.contains('hidden');
+            sub.classList.toggle('hidden', !isHidden);
+            if (icon) icon.style.transform = isHidden ? 'rotate(180deg)' : '';
+        }
+
+        function runAssessment() {
+            const form = document.getElementById('wizard-form');
+            const sizeVal = form.querySelector('input[name="size"]:checked')?.value;
+            const locVal = form.querySelector('input[name="location"]:checked')?.value;
+            const depthVal = form.querySelector('input[name="depth"]:checked')?.value;
+
+            const resultDiv = document.getElementById('assessment-result');
+            if (!resultDiv) return;
+
+            if (sizeVal === 'replace' || locVal === 'replace' || depthVal === 'replace') {
+                resultDiv.innerHTML = `
+                    <div class="flex flex-col md:flex-row items-center gap-6 justify-between p-4 bg-red-50 dark:bg-red-500/10 rounded-2xl border border-red-200 dark:border-red-500/30">
+                        <div class="flex items-center gap-4 text-left">
+                            <div class="w-12 h-12 rounded-xl bg-shield-coral text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fas fa-exclamation-triangle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-red-700 dark:text-red-400">Full Replacement Recommended</h4>
+                                <p class="text-sm text-red-600/90 dark:text-red-300 mt-1">Due to the location, size, or depth, standard resin repair cannot ensure proper passenger safety structural integrity.</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn-primary-glass px-6 py-2.5 text-sm shrink-0 whitespace-nowrap">
+                            Schedule Replacement
+                        </a>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="flex flex-col md:flex-row items-center gap-6 justify-between p-4 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl border border-emerald-200 dark:border-emerald-500/30">
+                        <div class="flex items-center gap-4 text-left">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-emerald-800 dark:text-emerald-400">Fast Chip Repair Eligible</h4>
+                                <p class="text-sm text-emerald-700/90 dark:text-emerald-300 mt-1">Excellent news! Your windshield qualifies for our rapid 20-minute repair. Most insurances waive the deductible entirely.</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full px-6 py-2.5 text-sm transition shadow-md shrink-0 whitespace-nowrap">
+                            Book Free Repair
+                        </a>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

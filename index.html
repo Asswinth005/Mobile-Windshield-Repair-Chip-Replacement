@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldMate | Mobile Windshield Repair & Chip Replacement</title>
+    <!-- Custom Favicon - Windshield Shield -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'shield-blue': '#1E4A76',
+                        'shield-sky': '#2C7DA0',
+                        'shield-gold': '#F4C542',
+                        'shield-ice': '#E6F7FF',
+                        'shield-graphite': '#2F3E46',
+                        'shield-stone': '#CAD2C5',
+                        'shield-coral': '#E86F6F',
+                        // enhanced dark mode specific (fallback)
+                        'dark-bg': '#0F1720',
+                        'dark-card': '#1A2634',
+                    },
+                    fontFamily: {
+                        'display': ['"Inter"', 'system-ui', 'sans-serif'],
+                        'body': ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-gentle': 'pulseGentle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        pulseGentle: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        }
+                    },
+                    backgroundImage: {
+                        'glass-pattern': "radial-gradient(circle at 20% 30%, rgba(44,125,160,0.04) 0%, transparent 60%)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* base & custom overrides for high dark mode visibility */
+        body {
+            background-color: #F9FBFD;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .dark body {
+            background-color: #0F1720 !important;
+        }
+
+        /* custom scrollbar */
+        body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #1E4A76;
+            border-radius: 10px;
+        }
+
+        .dark body::-webkit-scrollbar-track {
+            background: #1E293B;
+        }
+
+        .dark body::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+        }
+
+        /* card / trust styles */
+        .trust-card {
+            background: white;
+            border-radius: 28px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 125, 160, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .dark .trust-card {
+            background: #1A2634 !important;
+            border-color: #334155 !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(30, 74, 118, 0.2);
+            border-color: #2C7DA0;
+        }
+
+        .dark .trust-card:hover {
+            border-color: #3B82F6;
+        }
+
+        .btn-primary-glass {
+            background-color: #1E4A76;
+            color: white;
+            font-weight: 600;
+            border-radius: 60px;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 14px rgba(30, 74, 118, 0.25);
+        }
+
+        .btn-primary-glass:hover {
+            background-color: #0F3A5C;
+            transform: translateY(-2px);
+        }
+
+        .dark .btn-primary-glass {
+            background-color: #2563EB;
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .dark .btn-primary-glass:hover {
+            background-color: #1D4ED8;
+        }
+
+        .btn-outline-shield {
+            border: 1.5px solid #1E4A76;
+            color: #1E4A76;
+            background: transparent;
+            border-radius: 60px;
+            font-weight: 500;
+            transition: all 0.25s;
+        }
+
+        .btn-outline-shield:hover {
+            background-color: #1E4A76;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .dark .btn-outline-shield {
+            border-color: #60A5FA;
+            color: #60A5FA;
+        }
+
+        .dark .btn-outline-shield:hover {
+            background-color: #2563EB;
+            color: white;
+            border-color: #2563EB;
+        }
+
+        /* navigation */
+        .nav-link-shield {
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-link-shield::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background-color: #F4C542;
+            transition: width 0.2s ease;
+            border-radius: 3px;
+        }
+
+        .nav-link-shield:hover::after {
+            width: 100%;
+        }
+
+        .nav-link-shield.active {
+            color: #1E4A76;
+        }
+
+        .dark .nav-link-shield.active {
+            color: #60A5FA;
+        }
+
+        .nav-link-shield.active::after {
+            width: 100%;
+        }
+
+        .dropdown-shield {
+            position: relative;
+        }
+
+        .dropdown-shield-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 210px;
+            background: white;
+            border-radius: 20px;
+            padding: 0.6rem 0;
+            box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid rgba(30, 74, 118, 0.1);
+        }
+
+        .dark .dropdown-shield-menu {
+            background: #1E2A3A;
+            border-color: #334155;
+        }
+
+        .dropdown-shield:hover .dropdown-shield-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item-shield {
+            display: flex;
+            align-items: center;
+            padding: 0.65rem 1.4rem;
+            transition: all 0.2s;
+            color: #1E2F3A;
+        }
+
+        .dark .dropdown-item-shield {
+            color: #E2E8F0;
+        }
+
+        .dropdown-item-shield:hover {
+            background-color: #E6F7FF;
+            color: #1E4A76;
+        }
+
+        .dark .dropdown-item-shield:hover {
+            background-color: #2563EB20;
+            color: #90CDF4;
+        }
+
+        /* mobile menu */
+        .mobile-menu-shield {
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 28px 28px;
+        }
+
+        .dark .mobile-menu-shield {
+            background: #0F1720;
+        }
+
+        .mobile-menu-shield.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .repair-badge {
+            background: #E6F7FF;
+            color: #2C7DA0;
+            border-radius: 30px;
+            padding: 0.2rem 0.8rem;
+            font-weight: 700;
+            font-size: 0.7rem;
+        }
+
+        .dark .repair-badge {
+            background: #2563EB20;
+            color: #7DD3FC;
+        }
+
+        .replace-badge {
+            background: #fee2e2;
+            color: #c2410c;
+            border-radius: 30px;
+            padding: 0.2rem 0.8rem;
+            font-weight: 700;
+        }
+
+        .dark .replace-badge {
+            background: #b91c1c30;
+            color: #FCA5A5;
+        }
+
+        .dash-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 2rem;
+        }
+
+        .dark .dash-card {
+            background: #1A2634 !important;
+            border: 1px solid #334155;
+        }
+
+        .claim-step {
+            border-left: 3px solid #F4C542;
+        }
+
+        .dark .claim-step {
+            border-left-color: #FBBF24;
+        }
+
+        /* text contrast overrides */
+        .dark .text-shield-graphite {
+            color: #F1F5F9 !important;
+        }
+
+        .dark .text-gray-600,
+        .dark .text-gray-500,
+        .dark .text-dusk {
+            color: #94A3B8 !important;
+        }
+
+        .dark .bg-shield-ice,
+        .dark .bg-shield-ice\/40,
+        .dark .bg-shield-ice\/30 {
+            background-color: #1E293B !important;
+        }
+
+        .dark .border-shield-stone {
+            border-color: #334155 !important;
+        }
+
+        .dark footer.bg-shield-graphite {
+            background-color: #0A0F16 !important;
+        }
+
+        .dark .text-shield-blue {
+            color: #60A5FA !important;
+        }
+
+        .dark .text-shield-gold {
+            color: #FBBF24 !important;
+        }
+
+        .dark .bg-shield-ice\/20 {
+            background-color: #2563EB20 !important;
+        }
+
+        .social-icon-shield {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #E6F7FF;
+            color: #1E4A76;
+            transition: all 0.2s;
+        }
+
+        .dark .social-icon-shield {
+            background-color: #334155;
+            color: #94A3B8;
+        }
+
+        .social-icon-shield:hover {
+            background-color: #F4C542;
+            color: #1E2F3A;
+            transform: translateY(-3px);
+        }
+
+        .dark .social-icon-shield:hover {
+            background-color: #FBBF24;
+            color: #0F1720;
+        }
+    </style>
+</head>
+
+<body class="glass-pattern">
+
+    <!-- Navigation (same structure as requested, diff design / color) -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0F1720]/95 backdrop-blur-md border-b border-shield-stone/40 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20 md:h-24 relative">
+                <!-- Logo -->
+                <a class='flex items-center gap-2 md:gap-3 group shrink-0' href='index.html'>
+                    <div
+                        class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                        <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                    </div>
+                    <div>
+                        <span
+                            class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-shield-blue dark:text-white">SHIELD<span
+                                class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                    </div>
+                </a>
+
+                <!-- Centered Desktop Nav -->
+                <div
+                    class="hidden lg:flex items-center gap-3 xl:gap-6 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="dropdown-shield">
+                        <button
+                            class="nav-link-shield text-shield-blue dark:text-gray-200 font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
+                            Home <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div class="dropdown-shield-menu">
+                            <a class="dropdown-item-shield font-bold text-shield-blue dark:text-blue-400"
+                                href="index.html">Home 1</a>
+                            <a class="dropdown-item-shield" href="home2.html">Home 2</a>
+                        </div>
+                    </div>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="about.html">About</a>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="service.html">Services</a>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="repair.html">Repair vs Replace</a>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="warranty.html">Warranty</a>
+                    <div class="dropdown-shield">
+                        <button
+                            class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
+                            Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div class="dropdown-shield-menu">
+                            <a class="dropdown-item-shield gap-3" href="client.html">
+                                <span
+                                    class="w-7 h-7 rounded-lg bg-shield-blue/10 dark:bg-blue-500/20 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-user text-shield-blue dark:text-blue-400 text-xs"></i>
+                                </span>
+                                <div>
+                                    <p class="font-semibold text-sm">Client</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item-shield gap-3" href="admin.html">
+                                <span
+                                    class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                </span>
+                                <div>
+                                    <p class="font-semibold text-sm">Admin</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue transition text-sm xl:text-base"
+                        href="contact.html">Contact</a>
+                </div>
+
+                <!-- Right Side Actions & Hamburger -->
+                <div class="flex items-center gap-3 ml-auto">
+                    <!-- Desktop Actions -->
+                    <div class="hidden lg:flex items-center gap-4 ml-2">
+                        <div class="dropdown-shield">
+                            <button
+                                class="group w-10 h-10 rounded-full bg-shield-blue/10 dark:bg-sky-500/10 text-shield-blue dark:text-sky-300 hover:bg-shield-blue dark:hover:bg-sky-500 hover:text-white dark:hover:text-white transition flex items-center justify-center border border-transparent dark:border-sky-500/20">
+                                <i class="fas fa-user group-hover:text-white dark:group-hover:text-white"></i>
+                            </button>
+                            <div class="dropdown-shield-menu" style="left: auto; right: 0;">
+                                <a class="dropdown-item-shield gap-3" href="login.html">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-shield-blue/10 dark:bg-blue-500/20 flex items-center justify-center shrink-0">
+                                        <i
+                                            class="fas fa-right-to-bracket text-shield-blue dark:text-blue-400 text-sm"></i>
+                                    </span>
+                                    <div>
+                                        <p class="font-semibold text-sm">Log In</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item-shield gap-3" href="signup.html">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-500/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-user-plus text-emerald-600 dark:text-emerald-400 text-sm"></i>
+                                    </span>
+                                    <div>
+                                        <p class="font-semibold text-sm">Sign Up</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button id="theme-toggle"
+                            class="w-10 h-10 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-amber-400 hover:scale-110 transition flex items-center justify-center border border-transparent dark:border-slate-700">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline dark:text-amber-400"></i>
+                        </button>
+                        <button id="rtl-toggle"
+                            class="w-10 h-10 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-sky-300 hover:scale-110 transition font-bold text-base border border-transparent dark:border-slate-700">⇄</button>
+                    </div>
+
+                    <button id="mobile-toggle"
+                        class="lg:hidden w-10 h-10 rounded-full bg-shield-blue text-white flex items-center justify-center shadow-md">
+                        <i class="fas fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu-shield lg:hidden">
+                <div class="py-4 px-3 space-y-1">
+                    <!-- Mobile Home Accordion -->
+                    <div>
+                        <button onclick="toggleMobileAccordion('mobile-home-sub')"
+                            class="w-full flex items-center justify-between py-3 px-4 font-medium text-shield-blue dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl">
+                            Home
+                            <i id="mobile-home-sub-icon" class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-home-sub" class="hidden pl-4 pt-1 space-y-1">
+                            <a class="block py-2 px-4 text-sm font-bold text-shield-blue dark:text-blue-400"
+                                href="index.html">Home 1</a>
+                            <a class="block py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="home2.html">Home 2</a>
+                        </div>
+                    </div>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="about.html">About</a>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="service.html">Services</a>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="repair.html">Repair vs Replace</a>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="warranty.html">Warranty</a>
+                    <!-- Mobile Dashboard Accordion -->
+                    <div>
+                        <button onclick="toggleMobileAccordion('mobile-dash-sub')"
+                            class="w-full flex items-center justify-between py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl">
+                            Dashboard
+                            <i id="mobile-dash-sub-icon" class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-dash-sub" class="hidden pl-4 pt-1 space-y-1">
+                            <a class="flex items-center gap-2 py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="client.html">
+                                <i class="fas fa-user text-shield-blue dark:text-blue-400 text-xs w-4"></i> Client
+                            </a>
+                            <a class="flex items-center gap-2 py-2 px-4 text-sm text-shield-graphite dark:text-gray-300 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                                href="admin.html">
+                                <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs w-4"></i>
+                                Admin
+                            </a>
+                        </div>
+                    </div>
+                    <a class="block py-3 px-4 font-medium text-shield-graphite dark:text-gray-200 hover:bg-shield-ice dark:hover:bg-slate-800 rounded-xl"
+                        href="contact.html">Contact</a>
+                    <div class="flex flex-col gap-3 pt-4 mt-3 border-t border-shield-stone/40">
+                        <a class="flex items-center justify-center gap-2 py-2.5 rounded-full font-semibold text-shield-blue border border-shield-blue dark:border-blue-400 dark:text-blue-400"
+                            href="login.html">
+                            <i class="fas fa-right-to-bracket"></i>
+                            Log In to Account
+                        </a>
+                        <a class="flex items-center justify-center gap-2 btn-primary-glass py-2.5 rounded-full font-semibold"
+                            href="signup.html">
+                            <i class="fas fa-user-plus"></i>
+                            Sign Up
+                        </a>
+                        <div class="flex gap-3">
+                            <button id="mobile-theme-toggle"
+                                class="flex-1 py-2 rounded-full bg-shield-ice dark:bg-slate-700 text-shield-blue text-sm font-medium">🌓
+                                Theme</button>
+                            <button id="mobile-rtl-toggle"
+                                class="flex-1 py-2 rounded-full bg-shield-ice dark:bg-slate-700 text-shield-blue text-sm font-medium">⇄
+                                RTL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 md:pt-36 md:pb-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center animate-slide-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-5 border border-shield-sky/30">
+                    <i class="fas fa-truck-fast text-shield-blue dark:text-sky-300"></i>
+                    <span class="text-sm font-semibold text-shield-blue dark:text-sky-200">WE COME TO YOU • FREE MOBILE
+                        SERVICE</span>
+                </div>
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight text-shield-graphite dark:text-white">
+                    Mobile Windshield <span class="text-shield-blue dark:text-blue-400">Repair</span> & <span
+                        class="text-shield-gold dark:text-amber-400">Chip Replacement</span>
+                </h1>
+                <p class="text-lg md:text-xl text-shield-graphite/70 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Same-day service, certified technicians, lifetime warranty. We fix rock chips, cracks, and full
+                    windshield replacements – right at your home or office.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#"
+                        class="btn-primary-glass px-8 py-3 rounded-full inline-flex items-center gap-2 text-base shadow-lg"><i
+                            class="fas fa-calendar-check"></i> Schedule Free Inspection</a>
+                    <a href="#"
+                        class="btn-outline-shield px-8 py-3 rounded-full inline-flex items-center gap-2 text-base"><i
+                            class="fas fa-phone-alt"></i> (888) 450-SHIELD</a>
+                </div>
+                <p
+                    class="text-sm text-shield-graphite/50 dark:text-gray-400 mt-5 flex items-center justify-center gap-2">
+                    <i class="fas fa-shield-alt text-shield-gold dark:text-amber-400"></i> 100% insurance claim
+                    assistance • No out-of-pocket with most policies
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repair vs Replace Guide Section -->
+    <section class="py-16 md:py-20 bg-white dark:bg-[#0F1720] border-y border-shield-stone/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span
+                    class="text-shield-sky dark:text-sky-300 font-bold text-sm uppercase tracking-wider bg-shield-ice dark:bg-sky-950/40 px-4 py-1.5 rounded-full inline-block"><i
+                        class="fas fa-clipboard-list mr-1"></i> PROFESSIONAL GUIDE</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4 text-shield-graphite dark:text-white">Repair
+                    <span class="text-shield-gold dark:text-amber-400">vs Replace</span> – Know What's Best
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-3">Chips smaller than a quarter can usually be repaired,
+                    but cracks longer than 6 inches may need full replacement.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div class="trust-card p-6 md:p-8 h-full">
+                    <div class="flex items-center gap-3 mb-5"><i
+                            class="fas fa-wrench text-shield-sky dark:text-sky-400 text-2xl"></i><span
+                            class="repair-badge text-base">✅ REPAIR</span></div>
+                    <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mb-3">Chip Repair – Quick &
+                        Economical</h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300 mb-5">
+                        <li class="flex gap-2"><i
+                                class="fas fa-check-circle text-shield-sky dark:text-sky-400 mt-1"></i> Best for
+                            bullseyes, star breaks & combo chips &lt; 1 inch</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-check-circle text-shield-sky dark:text-sky-400 mt-1"></i> Prevents crack
+                            propagation, restores structural integrity</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-check-circle text-shield-sky dark:text-sky-400 mt-1"></i> Takes 30 minutes
+                            – no disassembly</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-check-circle text-shield-sky dark:text-sky-400 mt-1"></i> Usually covered
+                            fully by comprehensive insurance</li>
+                    </ul>
+                    <div class="bg-shield-ice/40 dark:bg-slate-800/60 rounded-xl p-3 text-sm dark:text-gray-300">💰
+                        Typical Cost: $80 – $150 | Time: 30-45min</div>
+                </div>
+                <div class="trust-card p-6 md:p-8 h-full border-l-4 border-shield-coral dark:border-rose-500">
+                    <div class="flex items-center gap-3 mb-5"><i
+                            class="fas fa-tachometer-alt text-shield-coral dark:text-rose-400 text-2xl"></i><span
+                            class="replace-badge">⚠️ REPLACE</span></div>
+                    <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mb-3">Full Windshield Replacement
+                    </h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300 mb-5">
+                        <li class="flex gap-2"><i
+                                class="fas fa-exclamation-triangle text-shield-coral dark:text-rose-400 mt-1"></i> Long
+                            cracks &gt; 6 inches, edge cracks, deep damage</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-exclamation-triangle text-shield-coral dark:text-rose-400 mt-1"></i>
+                            Compromised driver's vision area (size of a dollar bill)</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-exclamation-triangle text-shield-coral dark:text-rose-400 mt-1"></i>
+                            Advanced driver assistance recalibration (ADAS)</li>
+                        <li class="flex gap-2"><i
+                                class="fas fa-exclamation-triangle text-shield-coral dark:text-rose-400 mt-1"></i>
+                            OEM-quality glass + 5-year warranty</li>
+                    </ul>
+                    <div class="bg-amber-50 dark:bg-amber-950/40 rounded-xl p-3 text-sm dark:text-gray-300">💰 Typical
+                        Cost: $350 – $950 (insurance deductible applies)</div>
+                </div>
+            </div>
+            <div class="text-center mt-10"><a href="#"
+                    class="text-shield-blue dark:text-blue-400 font-semibold border-b-2 border-shield-gold dark:border-amber-400 inline-flex items-center gap-1">Read
+                    full decision guide <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Warranty & Trust Badges -->
+    <section class="py-16 bg-shield-ice/30 dark:bg-slate-900/40">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-7">
+                <div class="trust-card p-6 text-center"><i
+                        class="fas fa-award text-shield-gold dark:text-amber-400 text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold text-shield-blue dark:text-blue-300">Lifetime Warranty</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">All chip repairs & replacements covered
+                        nationwide. Transferable.</p>
+                </div>
+                <div class="trust-card p-6 text-center"><i
+                        class="fas fa-mobile-alt text-shield-sky dark:text-sky-400 text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold text-shield-blue dark:text-blue-300">Mobile Fleet</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">We arrive at your doorstep. Work, home, or
+                        roadside.</p>
+                </div>
+                <div class="trust-card p-6 text-center"><i
+                        class="fas fa-handshake text-shield-coral dark:text-rose-400 text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold text-shield-blue dark:text-blue-300">Insurance Concierge</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">We handle all paperwork for glass claims.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Dashboard for Claim Tracking -->
+    <section class="py-20 bg-white dark:bg-[#0F1720]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-chalkboard-user text-shield-blue dark:text-blue-400 text-3xl mb-2"></i>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Customer
+                    <span class="text-shield-gold dark:text-amber-400">Dashboard</span> – Track Your Claim
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mt-2">Real-time updates on your repair or
+                    replacement request. 100% transparency.</p>
+            </div>
+            <div class="max-w-4xl mx-auto dash-card p-6 md:p-8 shadow-xl">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <div class="bg-shield-ice/40 dark:bg-slate-800/60 rounded-xl p-4">
+                            <p class="text-xs uppercase tracking-wider text-shield-sky dark:text-sky-300 font-bold">
+                                Claim ID: #SH-2401-892</p>
+                            <p class="text-2xl font-black text-shield-blue dark:text-blue-300">Front Windshield Chip
+                                Repair</p>
+                            <div class="flex items-center gap-2 mt-2"><span
+                                    class="bg-shield-gold/20 dark:bg-amber-500/20 text-shield-gold dark:text-amber-300 px-2 py-0.5 rounded-full text-xs font-semibold">In
+                                    Progress</span><span class="text-sm dark:text-gray-300">Scheduled: Today, 2:30
+                                    PM</span></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="claim-step pl-4">
+                                <p class="font-semibold text-shield-graphite dark:text-white">✅ Estimate approved</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Feb 10, 2025 — Insurance verified
+                                </p>
+                            </div>
+                            <div class="claim-step pl-4">
+                                <p class="font-semibold text-shield-blue dark:text-blue-300">🔄 Technician assigned</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Mike R. • 5-star master tech</p>
+                            </div>
+                            <div class="claim-step pl-4">
+                                <p class="font-semibold text-gray-400 dark:text-gray-400">⏳ Mobile service arrival</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Live GPS tracking link sent via SMS
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center gap-1 text-shield-blue dark:text-blue-400 font-medium mt-2">Live
+                            tracking →</a>
+                    </div>
+                    <div class="md:w-56 bg-shield-graphite/5 dark:bg-slate-800/50 rounded-2xl p-5 text-center">
+                        <i class="fas fa-headset text-shield-gold dark:text-amber-400 text-3xl mb-2"></i>
+                        <p class="font-bold dark:text-white">Need help?</p>
+                        <p class="text-sm dark:text-gray-300">Call us 24/7: <span
+                                class="text-shield-blue dark:text-blue-400 font-bold">(888) 450-7435</span></p>
+                        <button class="btn-outline-shield text-sm px-4 py-1 mt-3 rounded-full">Message Support</button>
+                    </div>
+                </div>
+                <div
+                    class="mt-6 pt-5 border-t border-shield-stone dark:border-gray-700 text-center text-sm text-gray-400 dark:text-gray-400">
+                    📋 Track your claim at any time: <span
+                        class="font-mono font-bold">shieldmate.com/claim/status</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-shield-ice/40 dark:bg-slate-900/30">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="trust-card p-5"><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i>
+                    <p class="mt-3 dark:text-gray-200">“They repaired a huge chip in 30 minutes and my insurance covered
+                        everything. Lifetime warranty gave me peace of mind.”</p>
+                    <p class="font-bold mt-2 dark:text-white">— Linda R.</p>
+                </div>
+                <div class="trust-card p-5"><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i>
+                    <p class="mt-3 dark:text-gray-200">“Came to my office parking lot, replaced windshield in 90 minutes
+                        and recalibrated my sensors. Reliable!”</p>
+                    <p class="font-bold mt-2 dark:text-white">— Marcus D.</p>
+                </div>
+                <div class="trust-card p-5"><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i><i
+                        class="fas fa-star text-shield-gold"></i><i class="fas fa-star text-shield-gold"></i>
+                    <p class="mt-3 dark:text-gray-200">“Dashboard tracker showed me exactly when the tech would arrive.
+                        Super transparent and professional.”</p>
+                    <p class="font-bold mt-2 dark:text-white">— Jenna K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-gradient-to-r from-shield-blue to-shield-sky dark:from-[#1E3A5F] dark:to-[#2563EB]">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fas fa-shield-alt text-white text-4xl mb-3 animate-pulse"></i>
+            <h2 class="text-3xl font-display font-bold text-white mb-3">Don't let a small crack become a big problem
+            </h2>
+            <p class="text-white/80 mb-5">Free mobile estimate • Same-day service • 12-month no-leak guarantee</p>
+            <div class="flex justify-center gap-4 flex-wrap"><a href="#"
+                    class="bg-white text-shield-blue px-7 py-2.5 rounded-full font-bold shadow-lg hover:scale-105 transition"><i
+                        class="fas fa-map-marker-alt"></i> Request Service Now</a><a href="#"
+                    class="border-2 border-white text-white px-7 py-2.5 rounded-full font-semibold hover:bg-white hover:text-shield-blue transition"><i
+                        class="fas fa-file-invoice"></i> File Insurance Claim</a></div>
+        </div>
+    </section>
+
+    <!-- Footer similar structure, clean trust -->
+    <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
+                <div class="flex flex-col items-center md:items-start"><a
+                        class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start"
+                        href="index.html">
+                        <div
+                            class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition shrink-0">
+                            <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                        </div><span
+                            class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-white">SHIELD<span
+                                class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                    </a>
+                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair
+                        &amp; windshield replacement
+                        with lifetime warranty.</p>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs
+                                Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty
+                                info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer
+                                dashboard</a></li>
+                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance
+                                support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm inline-block text-start">
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr"
+                                class="text-start">(888) 450-SHLD</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i>
+                            <span>help@shieldmate.com</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am –
+                                9pm</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Certified</h4>
+                    <div class="flex justify-center md:justify-start gap-3 text-2xl"><i class="fab fa-cc-visa"></i><i
+                            class="fab fa-cc-mastercard"></i><i class="fas fa-shield-alt"></i></div>
+                    <p class="text-xs mt-3 text-center md:text-start">NWRA certified • A+ BBB rating</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-5 border-t border-gray-700 text-center text-xs text-gray-500">© 2026 ShieldMate —
+                Mobile Windshield Repair & Chip Replacement. Drive safe. <i
+                    class="fas fa-heart text-shield-coral mx-1"></i></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => btn?.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); }));
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            function setRTL(isRTL) { const html = document.documentElement; isRTL ? html.setAttribute('dir', 'rtl') : html.setAttribute('dir', 'ltr'); localStorage.setItem('dir', isRTL ? 'rtl' : 'ltr'); }
+            const savedDir = localStorage.getItem('dir'); if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl'); else document.documentElement.setAttribute('dir', 'ltr');
+            document.getElementById('rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); });
+            document.getElementById('mobile-rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); const mobileMenu = document.getElementById('mobile-menu'); if (mobileMenu?.classList.contains('open')) mobileMenu.classList.remove('open'); });
+            const mobileToggle = document.getElementById('mobile-toggle'); const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) { mobileToggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = mobileToggle.querySelector('i'); if (mobileMenu.classList.contains('open')) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); } }); }
+        });
+
+        function toggleMobileAccordion(id) {
+            const sub = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            if (!sub) return;
+            const isHidden = sub.classList.contains('hidden');
+            sub.classList.toggle('hidden', !isHidden);
+            if (icon) icon.style.transform = isHidden ? 'rotate(180deg)' : '';
+        }
+    </script>
+</body>
+
+</html>
