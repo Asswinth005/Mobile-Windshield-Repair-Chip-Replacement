@@ -10,7 +10,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -565,7 +565,8 @@
                         <div class="w-full border-t border-shield-stone dark:border-gray-700"></div>
                     </div>
                     <div class="relative justify-center flex text-xs">
-                        <span class="bg-white dark:bg-[#1A2634] px-4 py-0.5 text-shield-graphite dark:text-gray-400 rounded-full">
+                        <span
+                            class="bg-white dark:bg-[#1A2634] px-4 py-0.5 text-shield-graphite dark:text-gray-400 rounded-full">
                             or continue with
                         </span>
                     </div>
@@ -604,134 +605,134 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        (function () {
-            // ---------- THEME TOGGLE ----------
-            const themeToggle = document.getElementById('theme-toggle');
+            (function () {
+                // ---------- THEME TOGGLE ----------
+                const themeToggle = document.getElementById('theme-toggle');
 
-            function setTheme(isDark) {
-                if (isDark) {
-                    document.documentElement.classList.add('dark');
+                function setTheme(isDark) {
+                    if (isDark) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+
+                    const icon = themeToggle?.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-sun', 'fa-moon');
+                        icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+                    }
+
+                    if (isDark) {
+                        themeToggle?.classList.add('active');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        themeToggle?.classList.remove('active');
+                        localStorage.setItem('theme', 'light');
+                    }
+                }
+
+                // Check for saved theme or system preference
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    setTheme(true);
+                } else if (savedTheme === 'light') {
+                    setTheme(false);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme(true);
                 } else {
-                    document.documentElement.classList.remove('dark');
+                    setTheme(false);
                 }
 
-                const icon = themeToggle?.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-sun', 'fa-moon');
-                    icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setTheme(!document.documentElement.classList.contains('dark'));
+                    });
                 }
 
-                if (isDark) {
-                    themeToggle?.classList.add('active');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    themeToggle?.classList.remove('active');
-                    localStorage.setItem('theme', 'light');
+                // ---------- RTL TOGGLE ----------
+                const rtlBtn = document.getElementById('rtl-toggle');
+
+                function setRTL(isRTL) {
+                    if (isRTL) {
+                        document.documentElement.dir = 'rtl';
+                        document.documentElement.lang = 'ar';
+                        rtlBtn?.classList.add('active');
+                        localStorage.setItem('dir', 'rtl');
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                        document.documentElement.lang = 'en';
+                        rtlBtn?.classList.remove('active');
+                        localStorage.setItem('dir', 'ltr');
+                    }
                 }
-            }
+                const savedDir = localStorage.getItem('dir');
+                savedDir === 'rtl' ? setRTL(true) : setRTL(false);
 
-            // Check for saved theme or system preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                setTheme(true);
-            } else if (savedTheme === 'light') {
-                setTheme(false);
-            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setTheme(true);
-            } else {
-                setTheme(false);
-            }
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setTheme(!document.documentElement.classList.contains('dark'));
-                });
-            }
-
-            // ---------- RTL TOGGLE ----------
-            const rtlBtn = document.getElementById('rtl-toggle');
-
-            function setRTL(isRTL) {
-                if (isRTL) {
-                    document.documentElement.dir = 'rtl';
-                    document.documentElement.lang = 'ar';
-                    rtlBtn?.classList.add('active');
-                    localStorage.setItem('dir', 'rtl');
-                } else {
-                    document.documentElement.dir = 'ltr';
-                    document.documentElement.lang = 'en';
-                    rtlBtn?.classList.remove('active');
-                    localStorage.setItem('dir', 'ltr');
+                if (rtlBtn) {
+                    rtlBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setRTL(document.documentElement.dir !== 'rtl');
+                    });
                 }
-            }
-            const savedDir = localStorage.getItem('dir');
-            savedDir === 'rtl' ? setRTL(true) : setRTL(false);
 
-            if (rtlBtn) {
-                rtlBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setRTL(document.documentElement.dir !== 'rtl');
-                });
-            }
-
-            // ---------- EYE ICON TOGGLE PASSWORD VISIBILITY ----------
-            const toggleButtons = document.querySelectorAll('.toggle-password');
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('data-target');
-                    const passwordInput = document.getElementById(targetId);
-                    if (passwordInput) {
-                        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                        passwordInput.setAttribute('type', type);
-                        const icon = this.querySelector('i');
-                        if (icon) {
-                            if (type === 'text') {
-                                icon.classList.remove('fa-eye-slash');
-                                icon.classList.add('fa-eye');
-                            } else {
-                                icon.classList.remove('fa-eye');
-                                icon.classList.add('fa-eye-slash');
+                // ---------- EYE ICON TOGGLE PASSWORD VISIBILITY ----------
+                const toggleButtons = document.querySelectorAll('.toggle-password');
+                toggleButtons.forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('data-target');
+                        const passwordInput = document.getElementById(targetId);
+                        if (passwordInput) {
+                            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                            passwordInput.setAttribute('type', type);
+                            const icon = this.querySelector('i');
+                            if (icon) {
+                                if (type === 'text') {
+                                    icon.classList.remove('fa-eye-slash');
+                                    icon.classList.add('fa-eye');
+                                } else {
+                                    icon.classList.remove('fa-eye');
+                                    icon.classList.add('fa-eye-slash');
+                                }
                             }
                         }
-                    }
+                    });
                 });
-            });
 
-            // ---------- FORGOT PASSWORD HANDLER ----------
-            const forgotLink = document.getElementById('forgotPasswordLink');
-            if (forgotLink) {
-                forgotLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('🔐 Password reset link will be sent to your email. Check your inbox!');
-                });
-            }
+                // ---------- FORGOT PASSWORD HANDLER ----------
+                const forgotLink = document.getElementById('forgotPasswordLink');
+                if (forgotLink) {
+                    forgotLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('🔐 Password reset link will be sent to your email. Check your inbox!');
+                    });
+                }
 
-            // ---------- LOGIN FORM SUBMIT ----------
-            const loginForm = document.getElementById('loginForm');
-            if (loginForm) {
-                loginForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
+                // ---------- LOGIN FORM SUBMIT ----------
+                const loginForm = document.getElementById('loginForm');
+                if (loginForm) {
+                    loginForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
 
-                    const email = document.getElementById('login-email')?.value;
-                    const password = document.getElementById('login-password')?.value;
+                        const email = document.getElementById('login-email')?.value;
+                        const password = document.getElementById('login-password')?.value;
 
-                    if (!email || !password) {
-                        alert('Please enter both email and password');
-                        return;
-                    }
+                        if (!email || !password) {
+                            alert('Please enter both email and password');
+                            return;
+                        }
 
-                    // Redirect to dashboard after successful login
-                    window.location.href = 'index.html';
-                });
-            }
+                        // Redirect to dashboard after successful login
+                        window.location.href = 'index.html';
+                    });
+                }
 
-            // ---------- SOCIAL LOGIN HANDLER ----------
-            window.socialLogin = function (provider) {
-                alert(`🔐 ${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be implemented here.\n\n✨ Welcome to ShieldMate!`);
-            };
-        })();
+                // ---------- SOCIAL LOGIN HANDLER ----------
+                window.socialLogin = function (provider) {
+                    alert(`🔐 ${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be implemented here.\n\n✨ Welcome to ShieldMate!`);
+                };
+            })();
     </script>
 </body>
 

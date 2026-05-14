@@ -10,7 +10,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -85,17 +85,21 @@
         body::-webkit-scrollbar {
             width: 6px;
         }
+
         body::-webkit-scrollbar-track {
             background: #E2E8F0;
             border-radius: 10px;
         }
+
         body::-webkit-scrollbar-thumb {
             background: #1E4A76;
             border-radius: 10px;
         }
+
         .dark body::-webkit-scrollbar-track {
             background: #1E293B;
         }
+
         .dark body::-webkit-scrollbar-thumb {
             background: #3B82F6;
         }
@@ -107,14 +111,17 @@
             border: 1px solid rgba(44, 125, 160, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
         }
+
         .dark .trust-card {
             background: #1A2634 !important;
             border-color: #334155 !important;
         }
+
         .trust-card:hover {
             transform: translateY(-4px);
             border-color: #2C7DA0;
         }
+
         .dark .trust-card:hover {
             border-color: #3B82F6;
         }
@@ -127,13 +134,16 @@
             transition: all 0.25s ease;
             box-shadow: 0 6px 14px rgba(30, 74, 118, 0.25);
         }
+
         .btn-primary-glass:hover {
             background-color: #0F3A5C;
             transform: translateY(-2px);
         }
+
         .dark .btn-primary-glass {
             background-color: #2563EB;
         }
+
         .dark .btn-primary-glass:hover {
             background-color: #1D4ED8;
         }
@@ -146,14 +156,17 @@
             font-weight: 500;
             transition: all 0.25s;
         }
+
         .btn-outline-shield:hover {
             background-color: #1E4A76;
             color: white;
         }
+
         .dark .btn-outline-shield {
             border-color: #60A5FA;
             color: #60A5FA;
         }
+
         .dark .btn-outline-shield:hover {
             background-color: #2563EB;
             color: white;
@@ -163,6 +176,7 @@
             position: relative;
             font-weight: 500;
         }
+
         .nav-link-shield::after {
             content: '';
             position: absolute;
@@ -174,20 +188,27 @@
             transition: width 0.2s ease;
             border-radius: 3px;
         }
+
         .nav-link-shield:hover::after {
             width: 100%;
         }
+
         .nav-link-shield.active {
             color: #1E4A76;
         }
+
         .dark .nav-link-shield.active {
             color: #60A5FA;
         }
+
         .nav-link-shield.active::after {
             width: 100%;
         }
 
-        .dropdown-shield { position: relative; }
+        .dropdown-shield {
+            position: relative;
+        }
+
         .dropdown-shield-menu {
             position: absolute;
             top: 100%;
@@ -196,23 +217,26 @@
             background: white;
             border-radius: 20px;
             padding: 0.6rem 0;
-            box-shadow: 0 20px 32px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(12px);
             transition: all 0.25s ease;
             z-index: 1000;
-            border: 1px solid rgba(30,74,118,0.1);
+            border: 1px solid rgba(30, 74, 118, 0.1);
         }
+
         .dark .dropdown-shield-menu {
             background: #1E2A3A;
             border-color: #334155;
         }
+
         .dropdown-shield:hover .dropdown-shield-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-item-shield {
             display: flex;
             align-items: center;
@@ -220,11 +244,16 @@
             transition: all 0.2s;
             color: #1E2F3A;
         }
-        .dark .dropdown-item-shield { color: #E2E8F0; }
+
+        .dark .dropdown-item-shield {
+            color: #E2E8F0;
+        }
+
         .dropdown-item-shield:hover {
             background-color: #E6F7FF;
             color: #1E4A76;
         }
+
         .dark .dropdown-item-shield:hover {
             background-color: #2563EB20;
             color: #90CDF4;
@@ -237,12 +266,20 @@
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 0 0 28px 28px;
         }
-        .dark .mobile-menu-shield { background: #0F1720; }
-        .mobile-menu-shield.open { max-height: 80vh; overflow-y: auto; }
+
+        .dark .mobile-menu-shield {
+            background: #0F1720;
+        }
+
+        .mobile-menu-shield.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
 
         .warranty-card {
             transition: all 0.3s ease;
         }
+
         .warranty-card:hover {
             transform: translateY(-6px);
         }
@@ -255,15 +292,18 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+
         .faq-item.active .faq-answer {
             max-height: 200px;
             transition: max-height 0.3s ease-in;
         }
+
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
@@ -291,8 +331,7 @@
                 </a>
 
                 <!-- Centered Desktop Nav -->
-                <div
-                    class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
+                <div class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
                     <div class="dropdown-shield">
                         <button
                             class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
@@ -329,8 +368,7 @@
                             <a class="dropdown-item-shield gap-3" href="admin.html">
                                 <span
                                     class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
-                                    <i
-                                        class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                    <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
                                 </span>
                                 <div>
                                     <p class="font-semibold text-sm">Admin</p>
@@ -461,19 +499,24 @@
     </nav>
 
     <!-- Hero Section - Warranty Focus -->
-    <section class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-gold/5">
+    <section
+        class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-gold/5">
         <div class="absolute inset-0 bg-warranty-pattern bg-no-repeat bg-cover opacity-40"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl mx-auto text-center animate-slide-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-shield-gold/20 dark:bg-amber-500/20 rounded-full mb-6">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-shield-gold/20 dark:bg-amber-500/20 rounded-full mb-6">
                     <i class="fas fa-shield-alt text-shield-gold dark:text-amber-400"></i>
-                    <span class="text-sm font-semibold text-shield-gold dark:text-amber-400">Peace of Mind Guaranteed</span>
+                    <span class="text-sm font-semibold text-shield-gold dark:text-amber-400">Peace of Mind
+                        Guaranteed</span>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-5 leading-tight text-shield-graphite dark:text-white">
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-5 leading-tight text-shield-graphite dark:text-white">
                     Our <span class="text-shield-gold dark:text-amber-400">Lifetime Warranty</span>
                 </h1>
                 <p class="text-lg text-shield-graphite/70 dark:text-gray-300 max-w-xl mx-auto">
-                    Every repair and replacement comes with our comprehensive warranty. We stand behind our work — for life.
+                    Every repair and replacement comes with our comprehensive warranty. We stand behind our work — for
+                    life.
                 </p>
             </div>
         </div>
@@ -491,9 +534,12 @@
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i class="fas fa-check-circle mr-1"></i> Transferable</span>
-                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i class="fas fa-globe mr-1"></i> Nationwide</span>
-                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i class="fas fa-infinity mr-1"></i> No Expiry</span>
+                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i
+                            class="fas fa-check-circle mr-1"></i> Transferable</span>
+                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i
+                            class="fas fa-globe mr-1"></i> Nationwide</span>
+                    <span class="px-4 py-2 bg-white/10 rounded-full text-white text-sm"><i
+                            class="fas fa-infinity mr-1"></i> No Expiry</span>
                 </div>
             </div>
         </div>
@@ -503,49 +549,70 @@
     <section class="py-20 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">What's <span class="text-shield-blue dark:text-blue-400">Covered</span></h2>
-                <p class="text-gray-600 dark:text-gray-300 mt-2 max-w-xl mx-auto">Comprehensive protection for your windshield repair and replacement</p>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">What's
+                    <span class="text-shield-blue dark:text-blue-400">Covered</span></h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2 max-w-xl mx-auto">Comprehensive protection for your
+                    windshield repair and replacement</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
                 <!-- Chip Repair Warranty -->
-                <div class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-sky flex flex-col h-full">
-                    <div class="w-20 h-20 rounded-2xl bg-shield-sky/10 dark:bg-sky-500/20 flex items-center justify-center mx-auto mb-4">
+                <div
+                    class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-sky flex flex-col h-full">
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-shield-sky/10 dark:bg-sky-500/20 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-wrench text-shield-sky dark:text-sky-400 text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Chip Repair Warranty</h3>
                     <p class="text-3xl font-black text-shield-blue dark:text-blue-400 my-3">Lifetime</p>
                     <ul class="text-sm text-left text-gray-600 dark:text-gray-300 space-y-2 mt-auto pt-4">
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> Repair will not crack or spread</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> No clouding or discoloration</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> Full structural integrity guaranteed</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> Repair will
+                            not crack or spread</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> No clouding or
+                            discoloration</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-sky mt-0.5"></i> Full
+                            structural integrity guaranteed</li>
                     </ul>
                 </div>
                 <!-- Replacement Warranty -->
-                <div class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-gold relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute top-3 right-3 bg-shield-gold text-shield-graphite text-xs font-bold px-2 py-1 rounded-full">Most Popular</div>
-                    <div class="w-20 h-20 rounded-2xl bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
+                <div
+                    class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-gold relative overflow-hidden flex flex-col h-full">
+                    <div
+                        class="absolute top-3 right-3 bg-shield-gold text-shield-graphite text-xs font-bold px-2 py-1 rounded-full">
+                        Most Popular</div>
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-car-side text-shield-gold dark:text-amber-400 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Full Replacement Warranty</h3>
+                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Full Replacement Warranty
+                    </h3>
                     <p class="text-3xl font-black text-shield-gold dark:text-amber-400 my-3">5 Years</p>
                     <ul class="text-sm text-left text-gray-600 dark:text-gray-300 space-y-2 mt-auto pt-4">
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> No leaks or wind noise</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> OEM-quality glass fitment</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> ADAS recalibration covered</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> Workmanship guarantee</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> No leaks or
+                            wind noise</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> OEM-quality
+                            glass fitment</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> ADAS
+                            recalibration covered</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-gold mt-0.5"></i> Workmanship
+                            guarantee</li>
                     </ul>
                 </div>
                 <!-- ADAS Calibration Warranty -->
-                <div class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-coral flex flex-col h-full">
-                    <div class="w-20 h-20 rounded-2xl bg-shield-coral/10 dark:bg-rose-500/20 flex items-center justify-center mx-auto mb-4">
+                <div
+                    class="warranty-card trust-card p-6 text-center border-t-4 border-t-shield-coral flex flex-col h-full">
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-shield-coral/10 dark:bg-rose-500/20 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-microchip text-shield-coral dark:text-rose-400 text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">ADAS Calibration</h3>
                     <p class="text-3xl font-black text-shield-coral dark:text-rose-400 my-3">2 Years</p>
                     <ul class="text-sm text-left text-gray-600 dark:text-gray-300 space-y-2 mt-auto pt-4">
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> Camera & sensor alignment</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> OEM calibration standards</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> Free re-calibration if needed</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> Camera &
+                            sensor alignment</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> OEM
+                            calibration standards</li>
+                        <li class="flex gap-2"><i class="fas fa-check-circle text-shield-coral mt-0.5"></i> Free
+                            re-calibration if needed</li>
                     </ul>
                 </div>
             </div>
@@ -557,27 +624,36 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <i class="fas fa-clipboard-list text-shield-blue dark:text-blue-400 text-3xl mb-2"></i>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">How to <span class="text-shield-blue dark:text-blue-400">Claim Your Warranty</span></h2>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">How to
+                    <span class="text-shield-blue dark:text-blue-400">Claim Your Warranty</span></h2>
                 <p class="text-gray-600 dark:text-gray-300 mt-2">Simple, fast, and hassle-free process</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 <div class="timeline-step text-center relative">
-                    <div class="w-16 h-16 bg-shield-blue dark:bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">1</div>
+                    <div
+                        class="w-16 h-16 bg-shield-blue dark:bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">
+                        1</div>
                     <h3 class="font-bold text-shield-graphite dark:text-white">Contact Us</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Call or email with your claim ID</p>
                 </div>
                 <div class="timeline-step text-center relative">
-                    <div class="w-16 h-16 bg-shield-sky dark:bg-sky-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">2</div>
+                    <div
+                        class="w-16 h-16 bg-shield-sky dark:bg-sky-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">
+                        2</div>
                     <h3 class="font-bold text-shield-graphite dark:text-white">Schedule Inspection</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Free assessment by technician</p>
                 </div>
                 <div class="timeline-step text-center relative">
-                    <div class="w-16 h-16 bg-shield-gold dark:text-amber-400 dark:bg-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">3</div>
+                    <div
+                        class="w-16 h-16 bg-shield-gold dark:text-amber-400 dark:bg-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">
+                        3</div>
                     <h3 class="font-bold text-shield-graphite dark:text-white">Warranty Validation</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">We verify coverage & approve</p>
                 </div>
                 <div class="timeline-step text-center">
-                    <div class="w-16 h-16 bg-shield-coral dark:bg-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">4</div>
+                    <div
+                        class="w-16 h-16 bg-shield-coral dark:bg-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold">
+                        4</div>
                     <h3 class="font-bold text-shield-graphite dark:text-white">Repair / Replace</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Service completed at no cost</p>
                 </div>
@@ -590,7 +666,8 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Warranty <span class="text-shield-gold dark:text-amber-400">Terms & Conditions</span></h2>
+                    <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Warranty <span
+                            class="text-shield-gold dark:text-amber-400">Terms & Conditions</span></h2>
                     <p class="text-gray-600 dark:text-gray-300 mt-2">Understanding your coverage</p>
                 </div>
                 <div class="trust-card overflow-hidden">
@@ -598,37 +675,55 @@
                         <table class="w-full text-sm">
                             <thead class="bg-shield-ice dark:bg-slate-800">
                                 <tr>
-                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">Coverage Type</th>
-                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">Duration</th>
-                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">What's Included</th>
+                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">
+                                        Coverage Type</th>
+                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">
+                                        Duration</th>
+                                    <th class="px-6 py-4 text-left text-shield-graphite dark:text-white font-semibold">
+                                        What's Included</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-shield-stone dark:divide-gray-700">
                                 <tr class="hover:bg-shield-ice/20 transition">
-                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">Chip Repair</td>
-                                    <td class="px-6 py-3 text-shield-blue dark:text-blue-400 font-semibold">Lifetime</td>
-                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Repair failure, cracking, discoloration</td>
+                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">Chip
+                                        Repair</td>
+                                    <td class="px-6 py-3 text-shield-blue dark:text-blue-400 font-semibold">Lifetime
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Repair failure, cracking,
+                                        discoloration</td>
                                 </tr>
                                 <tr class="hover:bg-shield-ice/20 transition">
-                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">Windshield Replacement</td>
-                                    <td class="px-6 py-3 text-shield-gold dark:text-amber-400 font-semibold">5 Years</td>
-                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Leaks, wind noise, glass defects, fitment</td>
+                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">Windshield
+                                        Replacement</td>
+                                    <td class="px-6 py-3 text-shield-gold dark:text-amber-400 font-semibold">5 Years
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Leaks, wind noise, glass
+                                        defects, fitment</td>
                                 </tr>
                                 <tr class="hover:bg-shield-ice/20 transition">
-                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">ADAS Calibration</td>
-                                    <td class="px-6 py-3 text-shield-coral dark:text-rose-400 font-semibold">2 Years</td>
-                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Re-calibration, sensor alignment</td>
+                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">ADAS
+                                        Calibration</td>
+                                    <td class="px-6 py-3 text-shield-coral dark:text-rose-400 font-semibold">2 Years
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Re-calibration, sensor
+                                        alignment</td>
                                 </tr>
                                 <tr class="hover:bg-shield-ice/20 transition">
-                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">Workmanship</td>
+                                    <td class="px-6 py-3 font-medium text-shield-graphite dark:text-gray-200">
+                                        Workmanship</td>
                                     <td class="px-6 py-3 text-shield-sky dark:text-sky-400 font-semibold">Lifetime</td>
-                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Installation quality, trim, molding</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-300">Installation quality, trim,
+                                        molding</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="p-5 bg-shield-ice/20 dark:bg-slate-800/30 border-t border-shield-stone dark:border-gray-700">
-                        <p class="text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-info-circle text-shield-blue mr-1"></i> Warranty is transferable to new vehicle owners. Proof of service required. Does not cover damage from accidents, vandalism, or misuse.</p>
+                    <div
+                        class="p-5 bg-shield-ice/20 dark:bg-slate-800/30 border-t border-shield-stone dark:border-gray-700">
+                        <p class="text-xs text-gray-500 dark:text-gray-400"><i
+                                class="fas fa-info-circle text-shield-blue mr-1"></i> Warranty is transferable to new
+                            vehicle owners. Proof of service required. Does not cover damage from accidents, vandalism,
+                            or misuse.</p>
                     </div>
                 </div>
             </div>
@@ -640,12 +735,23 @@
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto text-center">
                 <i class="fas fa-exclamation-triangle text-shield-coral dark:text-rose-400 text-3xl mb-3"></i>
-                <h2 class="text-2xl md:text-3xl font-display font-bold text-shield-graphite dark:text-white mb-4">What's <span class="text-shield-coral">Not Covered</span></h2>
+                <h2 class="text-2xl md:text-3xl font-display font-bold text-shield-graphite dark:text-white mb-4">What's
+                    <span class="text-shield-coral">Not Covered</span></h2>
                 <div class="grid md:grid-cols-2 gap-4 mt-6">
-                    <div class="trust-card p-4 text-left flex items-start gap-3"><i class="fas fa-car-crash text-shield-coral mt-1"></i><span class="text-sm text-gray-600 dark:text-gray-300">Collision or accident damage</span></div>
-                    <div class="trust-card p-4 text-left flex items-start gap-3"><i class="fas fa-gavel text-shield-coral mt-1"></i><span class="text-sm text-gray-600 dark:text-gray-300">Vandalism or theft</span></div>
-                    <div class="trust-card p-4 text-left flex items-start gap-3"><i class="fas fa-bolt text-shield-coral mt-1"></i><span class="text-sm text-gray-600 dark:text-gray-300">Acts of nature (hail, falling objects)</span></div>
-                    <div class="trust-card p-4 text-left flex items-start gap-3"><i class="fas fa-user-slash text-shield-coral mt-1"></i><span class="text-sm text-gray-600 dark:text-gray-300">Aftermarket modifications affecting glass</span></div>
+                    <div class="trust-card p-4 text-left flex items-start gap-3"><i
+                            class="fas fa-car-crash text-shield-coral mt-1"></i><span
+                            class="text-sm text-gray-600 dark:text-gray-300">Collision or accident damage</span></div>
+                    <div class="trust-card p-4 text-left flex items-start gap-3"><i
+                            class="fas fa-gavel text-shield-coral mt-1"></i><span
+                            class="text-sm text-gray-600 dark:text-gray-300">Vandalism or theft</span></div>
+                    <div class="trust-card p-4 text-left flex items-start gap-3"><i
+                            class="fas fa-bolt text-shield-coral mt-1"></i><span
+                            class="text-sm text-gray-600 dark:text-gray-300">Acts of nature (hail, falling
+                            objects)</span></div>
+                    <div class="trust-card p-4 text-left flex items-start gap-3"><i
+                            class="fas fa-user-slash text-shield-coral mt-1"></i><span
+                            class="text-sm text-gray-600 dark:text-gray-300">Aftermarket modifications affecting
+                            glass</span></div>
                 </div>
             </div>
         </div>
@@ -655,22 +761,33 @@
     <section class="py-20 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-xs font-bold text-shield-sky dark:text-sky-400 uppercase tracking-widest bg-shield-sky/10 px-3 py-1 rounded-full">Coverage Documents</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Warranty <span class="text-shield-blue dark:text-blue-400">Management</span></h2>
-                <p class="text-gray-600 dark:text-gray-300 mt-2">Access your digital certificates or activate newly issued vehicle protection</p>
+                <span
+                    class="text-xs font-bold text-shield-sky dark:text-sky-400 uppercase tracking-widest bg-shield-sky/10 px-3 py-1 rounded-full">Coverage
+                    Documents</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">
+                    Warranty <span class="text-shield-blue dark:text-blue-400">Management</span></h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Access your digital certificates or activate newly
+                    issued vehicle protection</p>
             </div>
             <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-stretch">
                 <div class="trust-card p-8 text-center flex flex-col h-full">
                     <i class="fas fa-file-pdf text-shield-coral text-4xl mb-3"></i>
-                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Download Warranty Document</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Get a copy of our complete warranty terms</p>
-                    <div class="mt-auto pt-2"><a href="#" class="btn-outline-shield px-6 py-2 inline-flex items-center gap-2"><i class="fas fa-download"></i> Download PDF</a></div>
+                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Download Warranty Document
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Get a copy of our complete warranty terms
+                    </p>
+                    <div class="mt-auto pt-2"><a href="#"
+                            class="btn-outline-shield px-6 py-2 inline-flex items-center gap-2"><i
+                                class="fas fa-download"></i> Download PDF</a></div>
                 </div>
                 <div class="trust-card p-8 text-center flex flex-col h-full">
                     <i class="fas fa-registered text-shield-sky text-4xl mb-3"></i>
                     <h3 class="text-xl font-bold text-shield-graphite dark:text-white mb-2">Register Your Warranty</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">New customers: activate your coverage online</p>
-                    <div class="mt-auto pt-2"><a href="#" class="btn-primary-glass px-6 py-2 inline-flex items-center gap-2"><i class="fas fa-clipboard-list"></i> Register Now</a></div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">New customers: activate your coverage
+                        online</p>
+                    <div class="mt-auto pt-2"><a href="#"
+                            class="btn-primary-glass px-6 py-2 inline-flex items-center gap-2"><i
+                                class="fas fa-clipboard-list"></i> Register Now</a></div>
                 </div>
             </div>
         </div>
@@ -681,28 +798,56 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-10">
                 <i class="fas fa-question-circle text-shield-blue dark:text-blue-400 text-3xl mb-2"></i>
-                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Frequently Asked <span class="text-shield-gold dark:text-amber-400">Questions</span></h2>
+                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Frequently Asked <span
+                        class="text-shield-gold dark:text-amber-400">Questions</span></h2>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <div class="flex justify-between items-center"><h3 class="font-semibold text-shield-graphite dark:text-white">Is the warranty transferable if I sell my car?</h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i></div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes! Our warranty is fully transferable to the next owner. Simply provide them with the original service receipt and warranty card.</div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">Is the warranty transferable if I
+                            sell my car?</h3><i
+                            class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
+                    </div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes! Our warranty is fully
+                        transferable to the next owner. Simply provide them with the original service receipt and
+                        warranty card.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <div class="flex justify-between items-center"><h3 class="font-semibold text-shield-graphite dark:text-white">How do I file a warranty claim?</h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i></div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Call our warranty department at (888) 450-SHLD or email claims@shieldmate.com with your claim ID and photos of the issue. We'll schedule a free inspection within 48 hours.</div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">How do I file a warranty claim?
+                        </h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
+                    </div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Call our warranty department
+                        at (888) 450-SHLD or email claims@shieldmate.com with your claim ID and photos of the issue.
+                        We'll schedule a free inspection within 48 hours.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <div class="flex justify-between items-center"><h3 class="font-semibold text-shield-graphite dark:text-white">Does the warranty cover cracks that develop after repair?</h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i></div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes. If your chip repair fails and a crack develops from the original damage site, we'll reimburse the repair cost or apply it toward a full replacement.</div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">Does the warranty cover cracks
+                            that develop after repair?</h3><i
+                            class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
+                    </div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes. If your chip repair fails
+                        and a crack develops from the original damage site, we'll reimburse the repair cost or apply it
+                        toward a full replacement.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <div class="flex justify-between items-center"><h3 class="font-semibold text-shield-graphite dark:text-white">Where is the warranty valid?</h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i></div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Our warranty is valid nationwide across all states where ShieldMate operates. If you move, your coverage moves with you.</div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">Where is the warranty valid?</h3>
+                        <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
+                    </div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Our warranty is valid
+                        nationwide across all states where ShieldMate operates. If you move, your coverage moves with
+                        you.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <div class="flex justify-between items-center"><h3 class="font-semibold text-shield-graphite dark:text-white">Do I need to pay anything for warranty service?</h3><i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i></div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">No. Warranty-covered repairs and inspections are completely free of charge. There are no hidden fees or deductibles.</div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">Do I need to pay anything for
+                            warranty service?</h3><i
+                            class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
+                    </div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">No. Warranty-covered repairs
+                        and inspections are completely free of charge. There are no hidden fees or deductibles.</div>
                 </div>
             </div>
         </div>
@@ -713,10 +858,15 @@
         <div class="container mx-auto px-6 text-center">
             <i class="fas fa-shield-alt text-white text-4xl mb-4 animate-pulse"></i>
             <h2 class="text-3xl font-display font-bold text-white mb-3">Protected by ShieldMate Warranty</h2>
-            <p class="text-white/80 mb-6 max-w-xl mx-auto">Get your windshield repaired or replaced with confidence. Every service comes with our comprehensive protection.</p>
+            <p class="text-white/80 mb-6 max-w-xl mx-auto">Get your windshield repaired or replaced with confidence.
+                Every service comes with our comprehensive protection.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="bg-white text-shield-blue px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition"><i class="fas fa-calendar-check mr-2"></i> Schedule Service</a>
-                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-shield-blue transition"><i class="fas fa-file-contract mr-2"></i> View Full Warranty</a>
+                <a href="#"
+                    class="bg-white text-shield-blue px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition"><i
+                        class="fas fa-calendar-check mr-2"></i> Schedule Service</a>
+                <a href="#"
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-shield-blue transition"><i
+                        class="fas fa-file-contract mr-2"></i> View Full Warranty</a>
             </div>
         </div>
     </section>
@@ -725,12 +875,45 @@
     <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
-                <div class="flex flex-col items-center md:items-start"><a class="flex items-center gap-2 md:gap-3 group mb-4" href="index.html"><div class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center"><i class="fas fa-car-side text-white"></i></div><span class="text-xl font-bold text-white">SHIELD<span class="text-shield-gold">MATE</span></span></a><p class="text-sm text-gray-400">Mobile auto glass experts. Chip repair & windshield replacement with lifetime warranty.</p></div>
-                <div><h4 class="text-shield-gold font-bold text-lg mb-4">Quick Links</h4><ul class="space-y-2"><li><a href="about.html" class="hover:text-white text-sm">About Us</a></li><li><a href="repair.html" class="hover:text-white text-sm">Repair vs Replace guide</a></li><li><a href="warranty.html" class="hover:text-white text-sm">Warranty info</a></li><li><a href="client.html" class="hover:text-white text-sm">Customer dashboard</a></li></ul></div>
-                <div><h4 class="text-shield-gold font-bold text-lg mb-4">Contact</h4><ul class="space-y-2 text-sm"><li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-shield-sky"></i> (888) 450-SHLD</li><li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-shield-sky"></i> help@shieldmate.com</li><li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-clock text-shield-sky"></i> Mon-Sun: 7am – 9pm</li></ul></div>
-                <div class="flex flex-col items-center md:items-start"><h4 class="text-shield-gold font-bold text-lg mb-4">Certified</h4><div class="flex gap-3 text-2xl"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fas fa-shield-alt"></i></div><p class="text-xs mt-3">NWRA certified • A+ BBB rating</p></div>
+                <div class="flex flex-col items-center md:items-start"><a
+                        class="flex items-center gap-2 md:gap-3 group mb-4" href="index.html">
+                        <div class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center">
+                            <i class="fas fa-car-side text-white"></i></div><span
+                            class="text-xl font-bold text-white">SHIELD<span class="text-shield-gold">MATE</span></span>
+                    </a>
+                    <p class="text-sm text-gray-400">Mobile auto glass experts. Chip repair & windshield replacement
+                        with lifetime warranty.</p>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-white text-sm">About Us</a></li>
+                        <li><a href="repair.html" class="hover:text-white text-sm">Repair vs Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm">Warranty info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm">Customer dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-shield-gold font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone-alt text-shield-sky"></i> (888) 450-SHLD</li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-shield-sky"></i> help@shieldmate.com</li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-clock text-shield-sky"></i> Mon-Sun: 7am – 9pm</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-shield-gold font-bold text-lg mb-4">Certified</h4>
+                    <div class="flex gap-3 text-2xl"><i class="fab fa-cc-visa"></i><i
+                            class="fab fa-cc-mastercard"></i><i class="fas fa-shield-alt"></i></div>
+                    <p class="text-xs mt-3">NWRA certified • A+ BBB rating</p>
+                </div>
             </div>
-            <div class="mt-10 pt-5 border-t border-gray-700 text-center text-xs text-gray-500">© 2026 ShieldMate — Mobile Windshield Repair & Chip Replacement. Drive safe. <i class="fas fa-heart text-shield-coral mx-1"></i></div>
+            <div class="mt-10 pt-5 border-t border-gray-700 text-center text-xs text-gray-500">© 2026 ShieldMate —
+                Mobile Windshield Repair & Chip Replacement. Drive safe. <i
+                    class="fas fa-heart text-shield-coral mx-1"></i></div>
         </div>
     </footer>
 

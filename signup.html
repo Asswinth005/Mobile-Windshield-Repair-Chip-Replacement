@@ -10,7 +10,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -674,7 +674,7 @@
                         class="signup-input text-sm md:text-sm">
                 </div>
 
-                
+
 
                 <!-- password field with eye icon -->
                 <div class="password-wrapper">
@@ -750,174 +750,174 @@
 
     <!-- ===== DARK / LIGHT + RTL TOGGLE SCRIPT + EYE ICON FUNCTIONALITY ===== -->
     <script>
-        (function () {
-            // ---------- THEME ----------
-            const themeToggle = document.getElementById('theme-toggle');
+            (function () {
+                // ---------- THEME ----------
+                const themeToggle = document.getElementById('theme-toggle');
 
-            function setTheme(isDark) {
-                if (isDark) {
-                    document.documentElement.classList.add('dark');
+                function setTheme(isDark) {
+                    if (isDark) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+
+                    const icon = themeToggle?.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-sun', 'fa-moon');
+                        icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+                    }
+
+                    if (isDark) {
+                        themeToggle?.classList.add('active');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        themeToggle?.classList.remove('active');
+                        localStorage.setItem('theme', 'light');
+                    }
+                }
+
+                // Check for saved theme or system preference
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    setTheme(true);
+                } else if (savedTheme === 'light') {
+                    setTheme(false);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme(true);
                 } else {
-                    document.documentElement.classList.remove('dark');
+                    setTheme(false);
                 }
 
-                const icon = themeToggle?.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-sun', 'fa-moon');
-                    icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setTheme(!document.documentElement.classList.contains('dark'));
+                    });
                 }
 
-                if (isDark) {
-                    themeToggle?.classList.add('active');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    themeToggle?.classList.remove('active');
-                    localStorage.setItem('theme', 'light');
+                // ---------- RTL ----------
+                const rtlBtn = document.getElementById('rtl-toggle');
+                function setRTL(isRTL) {
+                    if (isRTL) {
+                        document.documentElement.dir = 'rtl';
+                        document.documentElement.lang = 'ar';
+                        rtlBtn?.classList.add('active');
+                        localStorage.setItem('dir', 'rtl');
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                        document.documentElement.lang = 'en';
+                        rtlBtn?.classList.remove('active');
+                        localStorage.setItem('dir', 'ltr');
+                    }
                 }
-            }
+                const savedDir = localStorage.getItem('dir');
+                savedDir === 'rtl' ? setRTL(true) : setRTL(false);
 
-            // Check for saved theme or system preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                setTheme(true);
-            } else if (savedTheme === 'light') {
-                setTheme(false);
-            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setTheme(true);
-            } else {
-                setTheme(false);
-            }
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setTheme(!document.documentElement.classList.contains('dark'));
-                });
-            }
-
-            // ---------- RTL ----------
-            const rtlBtn = document.getElementById('rtl-toggle');
-            function setRTL(isRTL) {
-                if (isRTL) {
-                    document.documentElement.dir = 'rtl';
-                    document.documentElement.lang = 'ar';
-                    rtlBtn?.classList.add('active');
-                    localStorage.setItem('dir', 'rtl');
-                } else {
-                    document.documentElement.dir = 'ltr';
-                    document.documentElement.lang = 'en';
-                    rtlBtn?.classList.remove('active');
-                    localStorage.setItem('dir', 'ltr');
+                if (rtlBtn) {
+                    rtlBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setRTL(document.documentElement.dir !== 'rtl');
+                    });
                 }
-            }
-            const savedDir = localStorage.getItem('dir');
-            savedDir === 'rtl' ? setRTL(true) : setRTL(false);
 
-            if (rtlBtn) {
-                rtlBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setRTL(document.documentElement.dir !== 'rtl');
-                });
-            }
-
-            // ---------- EYE ICON TOGGLE PASSWORD VISIBILITY ----------
-            const toggleButtons = document.querySelectorAll('.toggle-password');
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('data-target');
-                    const passwordInput = document.getElementById(targetId);
-                    if (passwordInput) {
-                        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                        passwordInput.setAttribute('type', type);
-                        const icon = this.querySelector('i');
-                        if (icon) {
-                            if (type === 'text') {
-                                icon.classList.remove('fa-eye-slash');
-                                icon.classList.add('fa-eye');
-                            } else {
-                                icon.classList.remove('fa-eye');
-                                icon.classList.add('fa-eye-slash');
+                // ---------- EYE ICON TOGGLE PASSWORD VISIBILITY ----------
+                const toggleButtons = document.querySelectorAll('.toggle-password');
+                toggleButtons.forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('data-target');
+                        const passwordInput = document.getElementById(targetId);
+                        if (passwordInput) {
+                            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                            passwordInput.setAttribute('type', type);
+                            const icon = this.querySelector('i');
+                            if (icon) {
+                                if (type === 'text') {
+                                    icon.classList.remove('fa-eye-slash');
+                                    icon.classList.add('fa-eye');
+                                } else {
+                                    icon.classList.remove('fa-eye');
+                                    icon.classList.add('fa-eye-slash');
+                                }
                             }
                         }
-                    }
+                    });
                 });
-            });
 
-            // ---------- SOCIAL BUTTONS (Google & Apple) interactive demo ----------
-            const googleBtn = document.getElementById('googleSignupBtn');
-            const appleBtn = document.getElementById('appleSignupBtn');
+                // ---------- SOCIAL BUTTONS (Google & Apple) interactive demo ----------
+                const googleBtn = document.getElementById('googleSignupBtn');
+                const appleBtn = document.getElementById('appleSignupBtn');
 
-            if (googleBtn) {
-                googleBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('🔐 Google sign-up would be implemented here.\n\n✨ Welcome to ShieldMate!');
-                });
-            }
-            if (appleBtn) {
-                appleBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('🔐 Apple sign-up would be implemented here.\n\n✨ Welcome to ShieldMate!');
-                });
-            }
+                if (googleBtn) {
+                    googleBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('🔐 Google sign-up would be implemented here.\n\n✨ Welcome to ShieldMate!');
+                    });
+                }
+                if (appleBtn) {
+                    appleBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('🔐 Apple sign-up would be implemented here.\n\n✨ Welcome to ShieldMate!');
+                    });
+                }
 
-            // ---------- TERMS & PRIVACY LINKS ----------
-            const termsLink = document.getElementById('termsLink');
-            const privacyLink = document.getElementById('privacyLink');
+                // ---------- TERMS & PRIVACY LINKS ----------
+                const termsLink = document.getElementById('termsLink');
+                const privacyLink = document.getElementById('privacyLink');
 
-            if (termsLink) {
-                termsLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('📜 Terms of Service would be displayed here.');
-                });
-            }
-            if (privacyLink) {
-                privacyLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('🔒 Privacy Policy would be displayed here.');
-                });
-            }
+                if (termsLink) {
+                    termsLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('📜 Terms of Service would be displayed here.');
+                    });
+                }
+                if (privacyLink) {
+                    privacyLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('🔒 Privacy Policy would be displayed here.');
+                    });
+                }
 
-            // ---------- PASSWORD MATCH + FORM SUBMIT ----------
-            const signupForm = document.getElementById('signupForm');
+                // ---------- PASSWORD MATCH + FORM SUBMIT ----------
+                const signupForm = document.getElementById('signupForm');
 
-            if (signupForm) {
-                signupForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+                if (signupForm) {
+                    signupForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
 
-                    const password = document.getElementById('signup-password')?.value;
-                    const confirm = document.getElementById('signup-confirm-password')?.value;
-                    const termsCheck = document.getElementById('terms');
-                    const fullName = document.getElementById('fullName')?.value;
-                    const email = document.getElementById('email')?.value;
+                        const password = document.getElementById('signup-password')?.value;
+                        const confirm = document.getElementById('signup-confirm-password')?.value;
+                        const termsCheck = document.getElementById('terms');
+                        const fullName = document.getElementById('fullName')?.value;
+                        const email = document.getElementById('email')?.value;
 
-                    if (!fullName || !email) {
-                        alert('✨ Please enter your name and email address to create an account.');
-                        return false;
-                    }
+                        if (!fullName || !email) {
+                            alert('✨ Please enter your name and email address to create an account.');
+                            return false;
+                        }
 
-                    if (password !== confirm) {
-                        alert('⚠️ Passwords do not match. Please re-enter your password.');
-                        return false;
-                    }
+                        if (password !== confirm) {
+                            alert('⚠️ Passwords do not match. Please re-enter your password.');
+                            return false;
+                        }
 
-                    if (password && password.length < 6) {
-                        alert('🔐 Password must be at least 6 characters long.');
-                        return false;
-                    }
+                        if (password && password.length < 6) {
+                            alert('🔐 Password must be at least 6 characters long.');
+                            return false;
+                        }
 
-                    if (!termsCheck.checked) {
-                        alert('📜 Please accept the Terms of Service and Privacy Policy to continue.');
-                        return false;
-                    }
+                        if (!termsCheck.checked) {
+                            alert('📜 Please accept the Terms of Service and Privacy Policy to continue.');
+                            return false;
+                        }
 
-                    // Redirect to login page after successful signup
-                    window.location.href = 'login.html';
+                        // Redirect to login page after successful signup
+                        window.location.href = 'login.html';
 
-                    return true;
-                });
-            }
-        })();
+                        return true;
+                    });
+                }
+            })();
     </script>
 </body>
 

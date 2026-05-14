@@ -10,7 +10,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='35' width='60' height='35' rx='6' fill='%231E4A76'/%3E%3Cpath d='M30 45 L70 45' stroke='%23F4C542' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='55' r='5' fill='%23E6F7FF'/%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -277,24 +277,29 @@
             align-items: center;
             gap: 0.75rem;
         }
+
         .dark .wizard-option {
             border-color: #334155;
             background-color: #1A2634;
         }
+
         .wizard-option:hover {
             border-color: #2C7DA0;
             background-color: rgba(44, 125, 160, 0.03);
         }
+
         .dark .wizard-option:hover {
             border-color: #3B82F6;
             background-color: rgba(59, 130, 246, 0.05);
         }
-        input[type="radio"]:checked + .wizard-option {
+
+        input[type="radio"]:checked+.wizard-option {
             border-color: #1E4A76;
             background-color: #E6F7FF;
             font-weight: 600;
         }
-        .dark input[type="radio"]:checked + .wizard-option {
+
+        .dark input[type="radio"]:checked+.wizard-option {
             border-color: #60A5FA;
             background-color: rgba(96, 165, 250, 0.15);
         }
@@ -322,8 +327,7 @@
                 </a>
 
                 <!-- Centered Desktop Nav -->
-                <div
-                    class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
+                <div class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
                     <div class="dropdown-shield">
                         <button
                             class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
@@ -360,8 +364,7 @@
                             <a class="dropdown-item-shield gap-3" href="admin.html">
                                 <span
                                     class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
-                                    <i
-                                        class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                    <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
                                 </span>
                                 <div>
                                     <p class="font-semibold text-sm">Admin</p>
@@ -492,19 +495,24 @@
     </nav>
 
     <!-- Hero Section - Full Viewport Height Landing -->
-    <section class="min-h-screen flex flex-col justify-center pt-20 pb-12 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
+    <section
+        class="min-h-screen flex flex-col justify-center pt-20 pb-12 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center animate-slide-up">
-                <span class="px-5 py-2 rounded-full bg-shield-gold/10 dark:bg-amber-500/20 text-shield-gold dark:text-amber-400 font-bold text-xs uppercase tracking-widest inline-block mb-6 shadow-sm">
+                <span
+                    class="px-5 py-2 rounded-full bg-shield-gold/10 dark:bg-amber-500/20 text-shield-gold dark:text-amber-400 font-bold text-xs uppercase tracking-widest inline-block mb-6 shadow-sm">
                     <i class="fas fa-magic mr-2"></i> Interactive Assessment Guide
                 </span>
-                <h1 class="text-5xl md:text-7xl font-display font-extrabold text-shield-graphite dark:text-white leading-tight mb-8">
+                <h1
+                    class="text-5xl md:text-7xl font-display font-extrabold text-shield-graphite dark:text-white leading-tight mb-8">
                     Repair vs <span class="text-shield-blue dark:text-blue-400">Replace</span>
                 </h1>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
-                    Not sure if your windshield crack requires a quick 20-minute resin cure or a complete structural replacement? Scroll down to take our instant 3-step safety assessment.
+                    Not sure if your windshield crack requires a quick 20-minute resin cure or a complete structural
+                    replacement? Scroll down to take our instant 3-step safety assessment.
                 </p>
-                <a href="#wizard-section" class="inline-flex items-center gap-3 bg-shield-blue text-white font-bold px-8 py-4 rounded-full shadow-xl hover:bg-shield-sky transition">
+                <a href="#wizard-section"
+                    class="inline-flex items-center gap-3 bg-shield-blue text-white font-bold px-8 py-4 rounded-full shadow-xl hover:bg-shield-sky transition">
                     Start Assessment <i class="fas fa-arrow-down"></i>
                 </a>
             </div>
@@ -518,35 +526,43 @@
     <section id="wizard-section" class="py-16">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-xs font-bold text-shield-blue dark:text-blue-400 uppercase tracking-widest bg-shield-blue/10 px-3 py-1 rounded-full">Interactive Evaluation</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Damage <span class="text-shield-sky dark:text-sky-400">Diagnostic Tool</span></h2>
-                <p class="text-gray-600 dark:text-gray-300 mt-2">Adjust the parameters below to simulate your glass safety assessment instantly</p>
+                <span
+                    class="text-xs font-bold text-shield-blue dark:text-blue-400 uppercase tracking-widest bg-shield-blue/10 px-3 py-1 rounded-full">Interactive
+                    Evaluation</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Damage
+                    <span class="text-shield-sky dark:text-sky-400">Diagnostic Tool</span></h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Adjust the parameters below to simulate your glass
+                    safety assessment instantly</p>
             </div>
             <div class="max-w-4xl mx-auto trust-card p-8 md:p-12">
                 <form id="wizard-form" onsubmit="return false;" class="space-y-8">
                     <!-- Step 1 -->
                     <div>
                         <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">1</span>
+                            <span
+                                class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">1</span>
                             What is the size of the glass damage?
                         </h3>
                         <div class="grid md:grid-cols-3 gap-4 pl-9">
                             <label class="block">
-                                <input type="radio" name="size" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <input type="radio" name="size" value="repair" class="hidden" checked
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-coins text-shield-gold text-lg"></i>
                                     <span class="text-sm">Smaller than a quarter</span>
                                 </div>
                             </label>
                             <label class="block">
-                                <input type="radio" name="size" value="repair" class="hidden" onchange="runAssessment()">
+                                <input type="radio" name="size" value="repair" class="hidden"
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-money-bill text-shield-sky text-lg"></i>
                                     <span class="text-sm">Under 6 inches (dollar bill)</span>
                                 </div>
                             </label>
                             <label class="block">
-                                <input type="radio" name="size" value="replace" class="hidden" onchange="runAssessment()">
+                                <input type="radio" name="size" value="replace" class="hidden"
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-ruler-combined text-shield-coral text-lg"></i>
                                     <span class="text-sm">Longer than 6 inches</span>
@@ -558,26 +574,30 @@
                     <!-- Step 2 -->
                     <div class="pt-6 border-t border-shield-stone/30">
                         <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">2</span>
+                            <span
+                                class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">2</span>
                             Where is the damage located?
                         </h3>
                         <div class="grid md:grid-cols-3 gap-4 pl-9">
                             <label class="block">
-                                <input type="radio" name="location" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <input type="radio" name="location" value="repair" class="hidden" checked
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-car-side text-shield-sky text-lg"></i>
                                     <span class="text-sm">Passenger side / Out of main view</span>
                                 </div>
                             </label>
                             <label class="block">
-                                <input type="radio" name="location" value="replace" class="hidden" onchange="runAssessment()">
+                                <input type="radio" name="location" value="replace" class="hidden"
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-eye text-shield-coral text-lg"></i>
                                     <span class="text-sm">Directly in driver's line of sight</span>
                                 </div>
                             </label>
                             <label class="block">
-                                <input type="radio" name="location" value="replace" class="hidden" onchange="runAssessment()">
+                                <input type="radio" name="location" value="replace" class="hidden"
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-border-all text-shield-coral text-lg"></i>
                                     <span class="text-sm">At the outer edge / perimeter frame</span>
@@ -589,19 +609,22 @@
                     <!-- Step 3 -->
                     <div class="pt-6 border-t border-shield-stone/30">
                         <h3 class="text-lg font-bold text-shield-graphite dark:text-white mb-4 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">3</span>
+                            <span
+                                class="w-7 h-7 rounded-full bg-shield-blue text-white inline-flex items-center justify-center text-xs">3</span>
                             How deep does the damage penetrate?
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4 pl-9">
                             <label class="block">
-                                <input type="radio" name="depth" value="repair" class="hidden" checked onchange="runAssessment()">
+                                <input type="radio" name="depth" value="repair" class="hidden" checked
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-layer-group text-shield-sky text-lg"></i>
                                     <span class="text-sm">Outer glass layer only (standard chip)</span>
                                 </div>
                             </label>
                             <label class="block">
-                                <input type="radio" name="depth" value="replace" class="hidden" onchange="runAssessment()">
+                                <input type="radio" name="depth" value="replace" class="hidden"
+                                    onchange="runAssessment()">
                                 <div class="wizard-option text-shield-graphite dark:text-gray-200">
                                     <i class="fas fa-exclamation-triangle text-shield-coral text-lg"></i>
                                     <span class="text-sm">Deep holes / both layers pierced</span>
@@ -612,9 +635,11 @@
                 </form>
 
                 <!-- Dynamic Live Output Panel -->
-                <div class="mt-10 pt-8 border-t-2 border-dashed border-shield-stone/50 bg-shield-ice/20 dark:bg-slate-800/40 p-6 rounded-2xl animate-slide-up">
+                <div
+                    class="mt-10 pt-8 border-t-2 border-dashed border-shield-stone/50 bg-shield-ice/20 dark:bg-slate-800/40 p-6 rounded-2xl animate-slide-up">
                     <div class="text-center mb-4">
-                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Real-Time Assessment Recommendation</span>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Real-Time Assessment
+                            Recommendation</span>
                     </div>
                     <div id="assessment-result" class="transition-all duration-300">
                         <!-- Instantly dynamically filled by JS onload & onchange -->
@@ -628,8 +653,10 @@
     <section class="py-12 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Quick Reference Cheat Sheet</h2>
-                <p class="text-gray-600 dark:text-gray-300 mt-2">Industry standard auto glass safety replacement standards</p>
+                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Quick Reference Cheat
+                    Sheet</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Industry standard auto glass safety replacement
+                    standards</p>
             </div>
             <div class="overflow-x-auto trust-card p-0">
                 <table class="w-full text-left border-collapse">
@@ -643,23 +670,31 @@
                     <tbody class="divide-y divide-shield-stone/20 text-sm dark:text-gray-300">
                         <tr>
                             <td class="p-4 font-semibold">Size Diameter</td>
-                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>Under 6 inches</td>
-                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Over 6 inches</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i
+                                    class="fas fa-check mr-2"></i>Under 6 inches</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Over 6
+                                inches</td>
                         </tr>
                         <tr>
                             <td class="p-4 font-semibold">Driver's Line of Sight</td>
-                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>No / Outside box</td>
-                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Yes / Direct center view</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>No /
+                                Outside box</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Yes /
+                                Direct center view</td>
                         </tr>
                         <tr>
                             <td class="p-4 font-semibold">Proximity to Edge</td>
-                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>At least 2 inches away</td>
-                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Touches exterior frame</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>At
+                                least 2 inches away</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>Touches
+                                exterior frame</td>
                         </tr>
                         <tr>
                             <td class="p-4 font-semibold">Count of Chips</td>
-                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>3 or fewer separate impacts</td>
-                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>4 or more existing impacts</td>
+                            <td class="p-4 text-emerald-600 dark:text-emerald-400"><i class="fas fa-check mr-2"></i>3 or
+                                fewer separate impacts</td>
+                            <td class="p-4 text-shield-coral dark:text-red-400"><i class="fas fa-times mr-2"></i>4 or
+                                more existing impacts</td>
                         </tr>
                     </tbody>
                 </table>
@@ -672,32 +707,44 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <span class="text-xs font-bold text-shield-sky dark:text-sky-400 uppercase tracking-widest bg-shield-sky/10 px-3 py-1 rounded-full">Science of Safety</span>
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">Anatomy of an <span class="text-shield-blue dark:text-blue-400">Auto Glass Repair</span></h2>
-                    <p class="text-gray-600 dark:text-gray-300 mt-2">How high-pressure vacuum injection saves your factory windshield seal</p>
+                    <span
+                        class="text-xs font-bold text-shield-sky dark:text-sky-400 uppercase tracking-widest bg-shield-sky/10 px-3 py-1 rounded-full">Science
+                        of Safety</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white mt-3">
+                        Anatomy of an <span class="text-shield-blue dark:text-blue-400">Auto Glass Repair</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">How high-pressure vacuum injection saves your
+                        factory windshield seal</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 items-stretch">
-                    <div class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-sky flex flex-col h-full">
+                    <div
+                        class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-sky flex flex-col h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <i class="fas fa-microscope text-shield-sky text-2xl"></i>
-                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Vacuum Injection Process</h3>
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Vacuum Injection Process
+                            </h3>
                         </div>
                         <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                            First, we extract microscopic air bubbles and moisture trapped within the fractured layer using automated pneumatic vacuum seals. This ensures clear optic bonding paths.
+                            First, we extract microscopic air bubbles and moisture trapped within the fractured layer
+                            using automated pneumatic vacuum seals. This ensures clear optic bonding paths.
                         </p>
-                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-auto pt-4 border-t border-shield-stone/30">
+                        <div
+                            class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-auto pt-4 border-t border-shield-stone/30">
                             <i class="fas fa-shield-alt"></i> Retains your factory structural seal intact
                         </div>
                     </div>
-                    <div class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-gold flex flex-col h-full">
+                    <div
+                        class="trust-card p-6 bg-white dark:bg-slate-800 border-l-4 border-l-shield-gold flex flex-col h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <i class="fas fa-sun text-shield-gold text-2xl"></i>
-                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">UV Light Polymer Cure</h3>
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">UV Light Polymer Cure
+                            </h3>
                         </div>
                         <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                            We inject customized acrylic structural resins matching your exact glass refraction index. High-frequency UV radiation cures the fill instantly, restoring original pane strength.
+                            We inject customized acrylic structural resins matching your exact glass refraction index.
+                            High-frequency UV radiation cures the fill instantly, restoring original pane strength.
                         </p>
-                        <div class="flex items-center gap-2 text-xs font-semibold text-shield-blue dark:text-blue-400 mt-auto pt-4 border-t border-shield-stone/30">
+                        <div
+                            class="flex items-center gap-2 text-xs font-semibold text-shield-blue dark:text-blue-400 mt-auto pt-4 border-t border-shield-stone/30">
                             <i class="fas fa-eye"></i> Prevents optical distortion and light scattering
                         </div>
                     </div>
@@ -709,24 +756,34 @@
     <!-- Section 5: Advanced ADAS Calibration Info -->
     <section class="py-20 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6">
-            <div class="max-w-5xl mx-auto trust-card p-8 md:p-12 relative overflow-hidden border-2 border-shield-blue/20">
+            <div
+                class="max-w-5xl mx-auto trust-card p-8 md:p-12 relative overflow-hidden border-2 border-shield-blue/20">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-shield-coral/5 rounded-bl-full -z-10"></div>
                 <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-20 h-20 rounded-3xl bg-shield-coral/10 dark:bg-rose-500/20 flex items-center justify-center shrink-0">
+                    <div
+                        class="w-20 h-20 rounded-3xl bg-shield-coral/10 dark:bg-rose-500/20 flex items-center justify-center shrink-0">
                         <i class="fas fa-satellite-dish text-shield-coral dark:text-rose-400 text-3xl"></i>
                     </div>
                     <div>
-                        <span class="text-xs font-bold text-shield-coral dark:text-rose-400 uppercase tracking-widest">Crucial Technology Notice</span>
-                        <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mt-1 mb-3">Does your car have Forward-Facing Cameras?</h3>
+                        <span
+                            class="text-xs font-bold text-shield-coral dark:text-rose-400 uppercase tracking-widest">Crucial
+                            Technology Notice</span>
+                        <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mt-1 mb-3">Does your car have
+                            Forward-Facing Cameras?</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                            Modern driver assistance systems (ADAS)—such as automatic emergency braking, lane departure sensors, and adaptive cruise control—rely heavily on precise optic positioning calibrated directly through the upper front windshield pane.
+                            Modern driver assistance systems (ADAS)—such as automatic emergency braking, lane departure
+                            sensors, and adaptive cruise control—rely heavily on precise optic positioning calibrated
+                            directly through the upper front windshield pane.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-3 py-1 bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-blue-400 text-xs font-semibold rounded-md">
+                            <span
+                                class="px-3 py-1 bg-shield-ice dark:bg-slate-800 text-shield-blue dark:text-blue-400 text-xs font-semibold rounded-md">
                                 <i class="fas fa-check mr-1"></i> Chip Repair: No Re-calibration Needed
                             </span>
-                            <span class="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-shield-coral dark:text-red-400 text-xs font-semibold rounded-md">
-                                <i class="fas fa-exclamation-circle mr-1"></i> Replacement: Mandatory Dynamic Recalibration
+                            <span
+                                class="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-shield-coral dark:text-red-400 text-xs font-semibold rounded-md">
+                                <i class="fas fa-exclamation-circle mr-1"></i> Replacement: Mandatory Dynamic
+                                Recalibration
                             </span>
                         </div>
                     </div>
@@ -739,31 +796,45 @@
     <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
-                <div class="flex flex-col items-center md:items-start"><a class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start" href="index.html">
+                <div class="flex flex-col items-center md:items-start"><a
+                        class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start"
+                        href="index.html">
                         <div
                             class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition shrink-0">
-                            <i class="fas fa-car-side text-white text-base md:text-lg"></i></div><span
+                            <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                        </div><span
                             class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-white">SHIELD<span
                                 class="text-shield-gold dark:text-amber-400">MATE</span></span>
                     </a>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair &amp; windshield replacement
+                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair
+                        &amp; windshield replacement
                         with lifetime warranty.</p>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs Replace guide</a></li>
-                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty info</a></li>
-                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer dashboard</a></li>
-                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance support</a></li>
+                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs
+                                Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty
+                                info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer
+                                dashboard</a></li>
+                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance
+                                support</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm inline-block text-start">
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr" class="text-start">(888) 450-SHLD</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i> <span>help@shieldmate.com</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am – 9pm</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr"
+                                class="text-start">(888) 450-SHLD</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i>
+                            <span>help@shieldmate.com</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am –
+                                9pm</span></li>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center md:items-start">
@@ -790,7 +861,7 @@
             document.getElementById('mobile-rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); const mobileMenu = document.getElementById('mobile-menu'); if (mobileMenu?.classList.contains('open')) mobileMenu.classList.remove('open'); });
             const mobileToggle = document.getElementById('mobile-toggle'); const mobileMenu = document.getElementById('mobile-menu');
             if (mobileToggle && mobileMenu) { mobileToggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = mobileToggle.querySelector('i'); if (mobileMenu.classList.contains('open')) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); } }); }
-            
+
             // initialize wizard output
             runAssessment();
         });

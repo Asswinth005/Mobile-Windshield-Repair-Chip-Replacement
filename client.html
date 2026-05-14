@@ -11,7 +11,7 @@
         content="Driver portal for ShieldMate Assist - submit damage photos, get instant quotes, schedule mobile service, track technician, manage insurance claims.">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -42,7 +42,9 @@
     </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -96,6 +98,7 @@
             .sidebar {
                 transform: translateX(-100%);
             }
+
             .sidebar.open {
                 transform: translateX(0);
             }
@@ -253,12 +256,35 @@
             font-weight: 600;
         }
 
-        .status-approved { background: #E8F5E9; color: #2E7D32; }
-        .status-pending { background: #FFF3E0; color: #EF6C00; }
-        .status-review { background: #E3F2FD; color: #1E4A76; }
-        .dark .status-approved { background: #1B5E20; color: #A5D6A7; }
-        .dark .status-pending { background: #E65100; color: #FFCC80; }
-        .dark .status-review { background: #01579B; color: #81D4FA; }
+        .status-approved {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .status-pending {
+            background: #FFF3E0;
+            color: #EF6C00;
+        }
+
+        .status-review {
+            background: #E3F2FD;
+            color: #1E4A76;
+        }
+
+        .dark .status-approved {
+            background: #1B5E20;
+            color: #A5D6A7;
+        }
+
+        .dark .status-pending {
+            background: #E65100;
+            color: #FFCC80;
+        }
+
+        .dark .status-review {
+            background: #01579B;
+            color: #81D4FA;
+        }
 
         /* Progress Bar */
         .progress-bar {
@@ -267,7 +293,11 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        .dark .progress-bar { background: #334155; }
+
+        .dark .progress-bar {
+            background: #334155;
+        }
+
         .progress-fill {
             height: 100%;
             background: #1E4A76;
@@ -289,10 +319,12 @@
             transition: all 0.2s;
             border: none;
         }
+
         .dark .toggle-btn {
             background: #334155;
             color: #CBD5E1;
         }
+
         .toggle-btn:hover {
             background: #1E4A76;
             color: white;
@@ -313,6 +345,7 @@
             cursor: pointer;
             font-weight: 600;
         }
+
         .btn-primary:hover {
             background: #0F3A5C;
             transform: translateY(-2px);
@@ -328,18 +361,30 @@
             font-weight: 500;
             transition: all 0.2s;
         }
+
         .btn-outline:hover {
             background: #1E4A76;
             color: white;
         }
 
         /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #E2E8F0; }
-        ::-webkit-scrollbar-thumb { background: #1E4A76; border-radius: 4px; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #E2E8F0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1E4A76;
+            border-radius: 4px;
+        }
 
         /* Page transitions */
-        .page-content.hidden { display: none; }
+        .page-content.hidden {
+            display: none;
+        }
 
         /* Photo preview */
         .photo-preview {
@@ -350,8 +395,14 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        .photo-preview:hover { background: #E2E8F0; }
-        .dark .photo-preview { background: #334155; }
+
+        .photo-preview:hover {
+            background: #E2E8F0;
+        }
+
+        .dark .photo-preview {
+            background: #334155;
+        }
 
         /* Technician tracking map placeholder */
         .map-placeholder {
@@ -362,15 +413,36 @@
             align-items: center;
             justify-content: center;
         }
-        .dark .map-placeholder { background: linear-gradient(135deg, #334155 0%, #1E293B 100%); }
+
+        .dark .map-placeholder {
+            background: linear-gradient(135deg, #334155 0%, #1E293B 100%);
+        }
 
         /* RTL Support */
-        [dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid #E2E8F0; }
-        [dir="rtl"] .main-content { margin-left: 0; margin-right: 280px; }
+        [dir="rtl"] .sidebar {
+            left: auto;
+            right: 0;
+            border-right: none;
+            border-left: 1px solid #E2E8F0;
+        }
+
+        [dir="rtl"] .main-content {
+            margin-left: 0;
+            margin-right: 280px;
+        }
+
         @media (max-width: 768px) {
-            [dir="rtl"] .main-content { margin-right: 0; }
-            [dir="rtl"] .sidebar { transform: translateX(100%); }
-            [dir="rtl"] .sidebar.open { transform: translateX(0); }
+            [dir="rtl"] .main-content {
+                margin-right: 0;
+            }
+
+            [dir="rtl"] .sidebar {
+                transform: translateX(100%);
+            }
+
+            [dir="rtl"] .sidebar.open {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -381,12 +453,16 @@
         <div class="flex items-center space-x-3">
             <button id="menuToggle" class="toggle-btn"><i class="fas fa-bars"></i></button>
             <a href="index.html" class="flex items-center space-x-2 group">
-                <div class="w-8 h-8 bg-shield-blue rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition"><i class="fas fa-car-side text-white text-sm"></i></div>
-                <span class="font-display font-extrabold text-shield-blue dark:text-white tracking-tight">SHIELD<span class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                <div
+                    class="w-8 h-8 bg-shield-blue rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                    <i class="fas fa-car-side text-white text-sm"></i></div>
+                <span class="font-display font-extrabold text-shield-blue dark:text-white tracking-tight">SHIELD<span
+                        class="text-shield-gold dark:text-amber-400">MATE</span></span>
             </a>
         </div>
         <div class="flex gap-2">
-            <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+            <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i
+                    class="fas fa-sun hidden"></i></button>
             <button id="rtl-toggle" class="toggle-btn">⇄</button>
         </div>
     </div>
@@ -397,22 +473,35 @@
     <div class="sidebar" id="sidebar">
         <div class="p-5 border-b border-auto-silver dark:border-slate-700">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition"><i class="fas fa-car-side text-white text-xl"></i></div>
-                <div><span class="text-2xl font-display font-extrabold text-shield-blue dark:text-white tracking-tight">SHIELD<span class="text-shield-gold dark:text-amber-400">MATE</span></span><p class="text-xs text-slate-500 dark:text-slate-400">Driver Portal</p></div>
+                <div
+                    class="w-10 h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                    <i class="fas fa-car-side text-white text-xl"></i></div>
+                <div><span
+                        class="text-2xl font-display font-extrabold text-shield-blue dark:text-white tracking-tight">SHIELD<span
+                            class="text-shield-gold dark:text-amber-400">MATE</span></span>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Driver Portal</p>
+                </div>
             </a>
         </div>
         <nav class="py-4">
-            <div class="sidebar-item active" data-page="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></div>
-            <div class="sidebar-item" data-page="damage-report"><i class="fas fa-camera"></i><span>Report Damage</span></div>
-            <div class="sidebar-item" data-page="quotes"><i class="fas fa-dollar-sign"></i><span>Instant Quotes</span></div>
-            <div class="sidebar-item" data-page="service"><i class="fas fa-wrench"></i><span>Schedule Service</span></div>
-            <div class="sidebar-item" data-page="tracking"><i class="fas fa-map-marker-alt"></i><span>Track Technician</span></div>
-            <div class="sidebar-item" data-page="claims"><i class="fas fa-file-invoice"></i><span>Insurance Claims</span></div>
+            <div class="sidebar-item active" data-page="dashboard"><i
+                    class="fas fa-tachometer-alt"></i><span>Dashboard</span></div>
+            <div class="sidebar-item" data-page="damage-report"><i class="fas fa-camera"></i><span>Report Damage</span>
+            </div>
+            <div class="sidebar-item" data-page="quotes"><i class="fas fa-dollar-sign"></i><span>Instant Quotes</span>
+            </div>
+            <div class="sidebar-item" data-page="service"><i class="fas fa-wrench"></i><span>Schedule Service</span>
+            </div>
+            <div class="sidebar-item" data-page="tracking"><i class="fas fa-map-marker-alt"></i><span>Track
+                    Technician</span></div>
+            <div class="sidebar-item" data-page="claims"><i class="fas fa-file-invoice"></i><span>Insurance
+                    Claims</span></div>
             <div class="sidebar-item" data-page="settings"><i class="fas fa-cog"></i><span>Settings</span></div>
         </nav>
         <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-auto-silver dark:border-slate-700">
             <div class="flex gap-2">
-                <button id="theme-toggle" class="toggle-btn flex-1"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <button id="theme-toggle" class="toggle-btn flex-1"><i class="fas fa-moon"></i><i
+                        class="fas fa-sun hidden"></i></button>
                 <button id="rtl-toggle-desktop" class="toggle-btn flex-1">⇄</button>
                 <a href="login.html" title="Logout" class="toggle-btn flex-1"><i class="fas fa-sign-out-alt"></i></a>
             </div>
@@ -422,31 +511,127 @@
     <!-- Main Content -->
     <div class="main-content">
         <div class="top-header flex justify-between items-center flex-wrap gap-3">
-            <div><h1 class="text-2xl font-heading font-bold" id="page-title">Dashboard</h1><p class="text-sm text-slate-500 dark:text-slate-400" id="page-subtitle">Welcome back, Michael</p></div>
+            <div>
+                <h1 class="text-2xl font-heading font-bold" id="page-title">Dashboard</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400" id="page-subtitle">Welcome back, Michael</p>
+            </div>
             <div class="flex items-center gap-4">
-                <div class="text-right hidden md:block"><p class="text-sm font-semibold">Michael Rodriguez</p><p class="text-xs text-slate-500">Driver ID: DRV-4421</p></div>
-                <div class="w-10 h-10 bg-auto-blue/20 rounded-full flex items-center justify-center"><i class="fas fa-user text-auto-blue"></i></div>
-                <a href="login.html" class="bg-shield-coral hover:bg-red-700 text-white font-semibold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <div class="text-right hidden md:block">
+                    <p class="text-sm font-semibold">Michael Rodriguez</p>
+                    <p class="text-xs text-slate-500">Driver ID: DRV-4421</p>
+                </div>
+                <div class="w-10 h-10 bg-auto-blue/20 rounded-full flex items-center justify-center"><i
+                        class="fas fa-user text-auto-blue"></i></div>
+                <a href="login.html"
+                    class="bg-shield-coral hover:bg-red-700 text-white font-semibold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm"><i
+                        class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
 
         <!-- DASHBOARD -->
         <div id="page-dashboard" class="page-content">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="stat-card"><div class="flex justify-between"><div><p class="text-xs text-slate-500 mb-1">Active Claims</p><p class="text-2xl font-bold text-auto-blue">2</p></div><div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i class="fas fa-clipboard-list text-auto-blue"></i></div></div></div>
-                <div class="stat-card"><div class="flex justify-between"><div><p class="text-xs text-slate-500 mb-1">Pending Quotes</p><p class="text-2xl font-bold text-auto-blue">1</p></div><div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i class="fas fa-calculator text-auto-blue"></i></div></div></div>
-                <div class="stat-card"><div class="flex justify-between"><div><p class="text-xs text-slate-500 mb-1">Scheduled Service</p><p class="text-2xl font-bold text-auto-blue">Tomorrow</p></div><div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i class="fas fa-calendar-alt text-auto-blue"></i></div></div></div>
-                <div class="stat-card"><div class="flex justify-between"><div><p class="text-xs text-slate-500 mb-1">Total Saved</p><p class="text-2xl font-bold text-auto-green">$1,240</p></div><div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"><i class="fas fa-piggy-bank text-auto-green"></i></div></div></div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">Active Claims</p>
+                            <p class="text-2xl font-bold text-auto-blue">2</p>
+                        </div>
+                        <div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i
+                                class="fas fa-clipboard-list text-auto-blue"></i></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">Pending Quotes</p>
+                            <p class="text-2xl font-bold text-auto-blue">1</p>
+                        </div>
+                        <div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i
+                                class="fas fa-calculator text-auto-blue"></i></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">Scheduled Service</p>
+                            <p class="text-2xl font-bold text-auto-blue">Tomorrow</p>
+                        </div>
+                        <div class="w-10 h-10 bg-auto-blue/10 rounded-full flex items-center justify-center"><i
+                                class="fas fa-calendar-alt text-auto-blue"></i></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">Total Saved</p>
+                            <p class="text-2xl font-bold text-auto-green">$1,240</p>
+                        </div>
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"><i
+                                class="fas fa-piggy-bank text-auto-green"></i></div>
+                    </div>
+                </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="stat-card"><h3 class="font-heading font-bold text-lg mb-3">Recent Activity</h3><div class="space-y-3"><div class="flex gap-3 pb-2 border-b"><i class="fas fa-camera text-auto-blue"></i><div><p class="text-sm font-medium">Damage photos submitted</p><p class="text-xs text-slate-500">Yesterday, 4:30 PM</p></div></div><div class="flex gap-3 pb-2 border-b"><i class="fas fa-coins text-auto-blue"></i><div><p class="text-sm font-medium">Quote received: $892</p><p class="text-xs text-slate-500">Yesterday, 5:15 PM</p></div></div><div class="flex gap-3"><i class="fas fa-wrench text-auto-blue"></i><div><p class="text-sm font-medium">Technician assigned for tomorrow</p><p class="text-xs text-slate-500">Today, 9:00 AM</p></div></div></div></div>
-                <div class="stat-card"><h3 class="font-heading font-bold text-lg mb-3">Quick Actions</h3><div class="space-y-3"><button data-nav="damage-report" class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i class="fas fa-camera text-auto-blue"></i><span>Submit New Damage Photos</span></button><button data-nav="service" class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i class="fas fa-calendar-plus text-auto-blue"></i><span>Schedule Mobile Service</span></button><button data-nav="claims" class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i class="fas fa-hand-holding-usd text-auto-blue"></i><span>File Insurance Claim</span></button></div></div>
+                <div class="stat-card">
+                    <h3 class="font-heading font-bold text-lg mb-3">Recent Activity</h3>
+                    <div class="space-y-3">
+                        <div class="flex gap-3 pb-2 border-b"><i class="fas fa-camera text-auto-blue"></i>
+                            <div>
+                                <p class="text-sm font-medium">Damage photos submitted</p>
+                                <p class="text-xs text-slate-500">Yesterday, 4:30 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 pb-2 border-b"><i class="fas fa-coins text-auto-blue"></i>
+                            <div>
+                                <p class="text-sm font-medium">Quote received: $892</p>
+                                <p class="text-xs text-slate-500">Yesterday, 5:15 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3"><i class="fas fa-wrench text-auto-blue"></i>
+                            <div>
+                                <p class="text-sm font-medium">Technician assigned for tomorrow</p>
+                                <p class="text-xs text-slate-500">Today, 9:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3 class="font-heading font-bold text-lg mb-3">Quick Actions</h3>
+                    <div class="space-y-3"><button data-nav="damage-report"
+                            class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i
+                                class="fas fa-camera text-auto-blue"></i><span>Submit New Damage
+                                Photos</span></button><button data-nav="service"
+                            class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i
+                                class="fas fa-calendar-plus text-auto-blue"></i><span>Schedule Mobile
+                                Service</span></button><button data-nav="claims"
+                            class="w-full text-left px-4 py-2 bg-auto-blue/10 rounded-xl hover:bg-auto-blue/20 transition flex items-center gap-3"><i
+                                class="fas fa-hand-holding-usd text-auto-blue"></i><span>File Insurance
+                                Claim</span></button></div>
+                </div>
             </div>
         </div>
 
         <!-- REPORT DAMAGE -->
         <div id="page-damage-report" class="page-content hidden">
-            <div class="stat-card"><h3 class="font-heading font-bold text-xl mb-4">Submit Damage Photos</h3><p class="text-sm text-slate-500 mb-4">Upload clear photos of the damage. Our AI will provide an instant estimate.</p><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6"><div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span class="text-xs">Front View</span><input type="file" class="hidden" accept="image/*"></div><div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span class="text-xs">Side View</span></div><div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span class="text-xs">Close-up Damage</span></div><div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span class="text-xs">License Plate</span></div></div><textarea placeholder="Describe the damage (optional)" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent mb-4" rows="3"></textarea><button class="btn-primary w-full md:w-auto"><i class="fas fa-magic"></i> Get Instant Quote</button></div>
+            <div class="stat-card">
+                <h3 class="font-heading font-bold text-xl mb-4">Submit Damage Photos</h3>
+                <p class="text-sm text-slate-500 mb-4">Upload clear photos of the damage. Our AI will provide an instant
+                    estimate.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                    <div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span
+                            class="text-xs">Front View</span><input type="file" class="hidden" accept="image/*"></div>
+                    <div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span
+                            class="text-xs">Side View</span></div>
+                    <div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span
+                            class="text-xs">Close-up Damage</span></div>
+                    <div class="photo-preview"><i class="fas fa-plus text-2xl text-auto-blue mb-2 block"></i><span
+                            class="text-xs">License Plate</span></div>
+                </div><textarea placeholder="Describe the damage (optional)"
+                    class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent mb-4"
+                    rows="3"></textarea><button class="btn-primary w-full md:w-auto"><i class="fas fa-magic"></i> Get
+                    Instant Quote</button>
+            </div>
         </div>
 
         <!-- INSTANT QUOTES -->
@@ -490,22 +675,149 @@
 
         <!-- SCHEDULE SERVICE -->
         <div id="page-service" class="page-content hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"><div class="stat-card lg:col-span-2 flex flex-col h-full"><h3 class="font-heading font-bold text-xl mb-4">Schedule Mobile Service</h3><div class="space-y-4 flex flex-col h-full"><div><label class="block text-sm font-medium mb-1">Preferred Date</label><input type="date" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><div><label class="block text-sm font-medium mb-1">Time Slot</label><select class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"><option>Morning (8AM - 12PM)</option><option>Afternoon (12PM - 4PM)</option><option>Evening (4PM - 8PM)</option></select></div><div><label class="block text-sm font-medium mb-1">Service Location</label><input type="text" value="123 Main Street, Los Angeles, CA 90001" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><button class="btn-primary w-full mt-auto"><i class="fas fa-check-circle"></i> Confirm Appointment</button></div></div><div class="stat-card flex flex-col h-full"><h3 class="font-heading font-bold text-lg mb-3">Upcoming Service</h3><div class="text-center py-4 flex flex-col h-full"><i class="fas fa-calendar-day text-4xl text-auto-blue mb-2"></i><p class="font-bold">Tomorrow, May 14</p><p class="text-sm">10:30 AM - 12:30 PM</p><p class="text-xs text-slate-500 mt-1">Technician: David Chen</p><div class="mt-auto pt-3"><span class="status-badge status-review">Confirmed</span></div></div></div></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+                <div class="stat-card lg:col-span-2 flex flex-col h-full">
+                    <h3 class="font-heading font-bold text-xl mb-4">Schedule Mobile Service</h3>
+                    <div class="space-y-4 flex flex-col h-full">
+                        <div><label class="block text-sm font-medium mb-1">Preferred Date</label><input type="date"
+                                class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                        </div>
+                        <div><label class="block text-sm font-medium mb-1">Time Slot</label><select
+                                class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                                <option>Morning (8AM - 12PM)</option>
+                                <option>Afternoon (12PM - 4PM)</option>
+                                <option>Evening (4PM - 8PM)</option>
+                            </select></div>
+                        <div><label class="block text-sm font-medium mb-1">Service Location</label><input type="text"
+                                value="123 Main Street, Los Angeles, CA 90001"
+                                class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                        </div><button class="btn-primary w-full mt-auto"><i class="fas fa-check-circle"></i> Confirm
+                            Appointment</button>
+                    </div>
+                </div>
+                <div class="stat-card flex flex-col h-full">
+                    <h3 class="font-heading font-bold text-lg mb-3">Upcoming Service</h3>
+                    <div class="text-center py-4 flex flex-col h-full"><i
+                            class="fas fa-calendar-day text-4xl text-auto-blue mb-2"></i>
+                        <p class="font-bold">Tomorrow, May 14</p>
+                        <p class="text-sm">10:30 AM - 12:30 PM</p>
+                        <p class="text-xs text-slate-500 mt-1">Technician: David Chen</p>
+                        <div class="mt-auto pt-3"><span class="status-badge status-review">Confirmed</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- TRACK TECHNICIAN -->
         <div id="page-tracking" class="page-content hidden">
-            <div class="stat-card"><h3 class="font-heading font-bold text-xl mb-4">Live Technician Tracking</h3><div class="map-placeholder mb-4"><div class="text-center"><i class="fas fa-map-marked-alt text-4xl text-auto-blue mb-2"></i><p class="text-sm font-medium">Live Map View</p><p class="text-xs text-slate-500">Technician en route - ETA 15 min</p></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-3 bg-auto-blue/5 rounded-xl flex items-center gap-3"><i class="fas fa-user-circle text-2xl text-auto-blue"></i><div><p class="font-semibold">Assigned Technician</p><p class="text-sm">Michael Torres | ID: TCH-782</p></div></div><div class="p-3 bg-auto-blue/5 rounded-xl flex items-center gap-3"><i class="fas fa-phone-alt text-2xl text-auto-blue"></i><div><p class="font-semibold">Contact</p><p class="text-sm">+1 (888) 777-4422</p></div></div></div><div class="mt-4 p-3 rounded-xl bg-auto-green/10 text-auto-green"><i class="fas fa-check-circle mr-2"></i> Technician will arrive between 10:15 AM - 10:45 AM</div></div>
+            <div class="stat-card">
+                <h3 class="font-heading font-bold text-xl mb-4">Live Technician Tracking</h3>
+                <div class="map-placeholder mb-4">
+                    <div class="text-center"><i class="fas fa-map-marked-alt text-4xl text-auto-blue mb-2"></i>
+                        <p class="text-sm font-medium">Live Map View</p>
+                        <p class="text-xs text-slate-500">Technician en route - ETA 15 min</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3 bg-auto-blue/5 rounded-xl flex items-center gap-3"><i
+                            class="fas fa-user-circle text-2xl text-auto-blue"></i>
+                        <div>
+                            <p class="font-semibold">Assigned Technician</p>
+                            <p class="text-sm">Michael Torres | ID: TCH-782</p>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-auto-blue/5 rounded-xl flex items-center gap-3"><i
+                            class="fas fa-phone-alt text-2xl text-auto-blue"></i>
+                        <div>
+                            <p class="font-semibold">Contact</p>
+                            <p class="text-sm">+1 (888) 777-4422</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl bg-auto-green/10 text-auto-green"><i
+                        class="fas fa-check-circle mr-2"></i> Technician will arrive between 10:15 AM - 10:45 AM</div>
+            </div>
         </div>
 
         <!-- INSURANCE CLAIMS -->
         <div id="page-claims" class="page-content hidden">
-            <div class="stat-card"><div class="flex justify-between items-center mb-4 flex-wrap"><h3 class="font-heading font-bold text-xl">Insurance Claims</h3><button class="btn-outline text-sm"><i class="fas fa-plus"></i> New Claim</button></div><div class="space-y-3"><div class="claim-card"><div class="flex justify-between items-start flex-wrap gap-2"><div><p class="font-bold">Claim #CLM-2025-0421</p><p class="text-sm text-slate-500">Submitted: May 5, 2025</p></div><span class="status-badge status-approved">Approved</span></div><div class="mt-2"><div class="flex justify-between text-sm mb-1"><span>Claim Progress</span><span>75%</span></div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></div><div class="flex justify-between mt-3 text-sm"><span><i class="fas fa-dollar-sign text-auto-blue"></i> Payout: $2,450</span><span class="text-auto-blue cursor-pointer">View Details →</span></div></div><div class="claim-card"><div class="flex justify-between items-start flex-wrap gap-2"><div><p class="font-bold">Claim #CLM-2025-0389</p><p class="text-sm text-slate-500">Submitted: April 22, 2025</p></div><span class="status-badge status-pending">Under Review</span></div><div class="mt-2"><div class="flex justify-between text-sm mb-1"><span>Claim Progress</span><span>40%</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div></div><div class="flex justify-between mt-3 text-sm"><span><i class="fas fa-clock text-auto-warning"></i> Estimated: 5-7 days</span><span class="text-auto-blue cursor-pointer">Upload Documents →</span></div></div></div></div>
+            <div class="stat-card">
+                <div class="flex justify-between items-center mb-4 flex-wrap">
+                    <h3 class="font-heading font-bold text-xl">Insurance Claims</h3><button
+                        class="btn-outline text-sm"><i class="fas fa-plus"></i> New Claim</button>
+                </div>
+                <div class="space-y-3">
+                    <div class="claim-card">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <div>
+                                <p class="font-bold">Claim #CLM-2025-0421</p>
+                                <p class="text-sm text-slate-500">Submitted: May 5, 2025</p>
+                            </div><span class="status-badge status-approved">Approved</span>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex justify-between text-sm mb-1"><span>Claim Progress</span><span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between mt-3 text-sm"><span><i
+                                    class="fas fa-dollar-sign text-auto-blue"></i> Payout: $2,450</span><span
+                                class="text-auto-blue cursor-pointer">View Details →</span></div>
+                    </div>
+                    <div class="claim-card">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <div>
+                                <p class="font-bold">Claim #CLM-2025-0389</p>
+                                <p class="text-sm text-slate-500">Submitted: April 22, 2025</p>
+                            </div><span class="status-badge status-pending">Under Review</span>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex justify-between text-sm mb-1"><span>Claim Progress</span><span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:40%"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between mt-3 text-sm"><span><i
+                                    class="fas fa-clock text-auto-warning"></i> Estimated: 5-7 days</span><span
+                                class="text-auto-blue cursor-pointer">Upload Documents →</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- SETTINGS -->
         <div id="page-settings" class="page-content hidden">
-            <div class="stat-card"><h3 class="font-heading font-bold text-xl mb-4">Account Settings</h3><div class="space-y-4"><div><label class="block text-sm font-medium mb-1">Full Name</label><input type="text" value="Michael Rodriguez" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><div><label class="block text-sm font-medium mb-1">Phone Number</label><input type="tel" value="+1 (555) 342-7890" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><div><label class="block text-sm font-medium mb-1">Email Address</label><input type="email" value="michael.r@autoshield.com" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><div><label class="block text-sm font-medium mb-1">Vehicle Info</label><input type="text" value="2022 Tesla Model 3 - VIN: 5YJ3E1EA3NF123456" class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent"></div><div><label class="block text-sm font-medium mb-1">Notification Preferences</label><div class="space-y-2"><label class="flex items-center gap-2"><input type="checkbox" checked class="rounded text-auto-blue"> SMS updates for technician arrival</label><label class="flex items-center gap-2"><input type="checkbox" checked class="rounded text-auto-blue"> Email claim status updates</label><label class="flex items-center gap-2"><input type="checkbox" class="rounded text-auto-blue"> Promotional offers</label></div></div><button class="btn-primary w-full md:w-auto">Save Changes</button></div></div>
+            <div class="stat-card">
+                <h3 class="font-heading font-bold text-xl mb-4">Account Settings</h3>
+                <div class="space-y-4">
+                    <div><label class="block text-sm font-medium mb-1">Full Name</label><input type="text"
+                            value="Michael Rodriguez"
+                            class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                    </div>
+                    <div><label class="block text-sm font-medium mb-1">Phone Number</label><input type="tel"
+                            value="+1 (555) 342-7890"
+                            class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                    </div>
+                    <div><label class="block text-sm font-medium mb-1">Email Address</label><input type="email"
+                            value="michael.r@autoshield.com"
+                            class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                    </div>
+                    <div><label class="block text-sm font-medium mb-1">Vehicle Info</label><input type="text"
+                            value="2022 Tesla Model 3 - VIN: 5YJ3E1EA3NF123456"
+                            class="w-full p-3 rounded-xl border border-auto-silver dark:border-slate-700 bg-white dark:bg-transparent">
+                    </div>
+                    <div><label class="block text-sm font-medium mb-1">Notification Preferences</label>
+                        <div class="space-y-2"><label class="flex items-center gap-2"><input type="checkbox" checked
+                                    class="rounded text-auto-blue"> SMS updates for technician arrival</label><label
+                                class="flex items-center gap-2"><input type="checkbox" checked
+                                    class="rounded text-auto-blue"> Email claim status updates</label><label
+                                class="flex items-center gap-2"><input type="checkbox" class="rounded text-auto-blue">
+                                Promotional offers</label></div>
+                    </div><button class="btn-primary w-full md:w-auto">Save Changes</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -518,31 +830,33 @@
                 if (isDark) document.documentElement.classList.add('dark');
                 else document.documentElement.classList.remove('dark');
                 [themeToggle, themeToggleMobile].forEach(btn => {
-                    if(btn) { let moon = btn.querySelector('.fa-moon'), sun = btn.querySelector('.fa-sun');
-                        if(isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
-                        else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); } }
+                    if (btn) {
+                        let moon = btn.querySelector('.fa-moon'), sun = btn.querySelector('.fa-sun');
+                        if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+                        else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+                    }
                 });
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
             }
             // Load stored theme preference
             const savedTheme = localStorage.getItem('theme');
             setTheme(savedTheme === 'dark');
-            if(themeToggle) themeToggle.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
-            if(themeToggleMobile) themeToggleMobile.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+            if (themeToggle) themeToggle.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+            if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
 
             // RTL
             const rtlBtns = document.querySelectorAll('#rtl-toggle, #rtl-toggle-desktop');
             function setRTL(isRTL) { document.documentElement.dir = isRTL ? 'rtl' : 'ltr'; localStorage.setItem('dir', isRTL ? 'rtl' : 'ltr'); }
-            if(localStorage.getItem('dir') === 'rtl') setRTL(true);
+            if (localStorage.getItem('dir') === 'rtl') setRTL(true);
             rtlBtns.forEach(btn => btn?.addEventListener('click', () => setRTL(document.documentElement.dir !== 'rtl')));
 
             // Mobile Sidebar
             const menuToggle = document.getElementById('menuToggle'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
             function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
             function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('open'); }
-            if(menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.contains('open') ? closeSidebar() : openSidebar(); });
-            if(overlay) overlay.addEventListener('click', closeSidebar);
-            window.addEventListener('resize', () => { if(window.innerWidth > 768 && sidebar.classList.contains('open')) closeSidebar(); });
+            if (menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.contains('open') ? closeSidebar() : openSidebar(); });
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+            window.addEventListener('resize', () => { if (window.innerWidth > 768 && sidebar.classList.contains('open')) closeSidebar(); });
 
             // Navigation
             const sidebarItems = document.querySelectorAll('.sidebar-item');
@@ -562,7 +876,7 @@
                 document.querySelector(`.sidebar-item[data-page="${page}"]`)?.classList.add('active');
                 pages.forEach(p => p.classList.add('hidden'));
                 document.getElementById(`page-${page}`)?.classList.remove('hidden');
-                if(titles[page]) { pageTitle.textContent = titles[page].title; pageSubtitle.textContent = titles[page].subtitle; }
+                if (titles[page]) { pageTitle.textContent = titles[page].title; pageSubtitle.textContent = titles[page].subtitle; }
                 closeSidebar();
             }
             sidebarItems.forEach(item => { item.addEventListener('click', () => { navigateTo(item.getAttribute('data-page')); }); });
@@ -570,4 +884,5 @@
         });
     </script>
 </body>
+
 </html>
