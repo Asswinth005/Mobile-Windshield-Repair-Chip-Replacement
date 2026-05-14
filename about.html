@@ -85,17 +85,21 @@
         body::-webkit-scrollbar {
             width: 6px;
         }
+
         body::-webkit-scrollbar-track {
             background: #E2E8F0;
             border-radius: 10px;
         }
+
         body::-webkit-scrollbar-thumb {
             background: #1E4A76;
             border-radius: 10px;
         }
+
         .dark body::-webkit-scrollbar-track {
             background: #1E293B;
         }
+
         .dark body::-webkit-scrollbar-thumb {
             background: #3B82F6;
         }
@@ -107,14 +111,17 @@
             border: 1px solid rgba(44, 125, 160, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
         }
+
         .dark .trust-card {
             background: #1A2634 !important;
             border-color: #334155 !important;
         }
+
         .trust-card:hover {
             transform: translateY(-4px);
             border-color: #2C7DA0;
         }
+
         .dark .trust-card:hover {
             border-color: #3B82F6;
         }
@@ -127,13 +134,16 @@
             transition: all 0.25s ease;
             box-shadow: 0 6px 14px rgba(30, 74, 118, 0.25);
         }
+
         .btn-primary-glass:hover {
             background-color: #0F3A5C;
             transform: translateY(-2px);
         }
+
         .dark .btn-primary-glass {
             background-color: #2563EB;
         }
+
         .dark .btn-primary-glass:hover {
             background-color: #1D4ED8;
         }
@@ -146,14 +156,17 @@
             font-weight: 500;
             transition: all 0.25s;
         }
+
         .btn-outline-shield:hover {
             background-color: #1E4A76;
             color: white;
         }
+
         .dark .btn-outline-shield {
             border-color: #60A5FA;
             color: #60A5FA;
         }
+
         .dark .btn-outline-shield:hover {
             background-color: #2563EB;
             color: white;
@@ -163,6 +176,7 @@
             position: relative;
             font-weight: 500;
         }
+
         .nav-link-shield::after {
             content: '';
             position: absolute;
@@ -174,20 +188,27 @@
             transition: width 0.2s ease;
             border-radius: 3px;
         }
+
         .nav-link-shield:hover::after {
             width: 100%;
         }
+
         .nav-link-shield.active {
             color: #1E4A76;
         }
+
         .dark .nav-link-shield.active {
             color: #60A5FA;
         }
+
         .nav-link-shield.active::after {
             width: 100%;
         }
 
-        .dropdown-shield { position: relative; }
+        .dropdown-shield {
+            position: relative;
+        }
+
         .dropdown-shield-menu {
             position: absolute;
             top: 100%;
@@ -196,23 +217,26 @@
             background: white;
             border-radius: 20px;
             padding: 0.6rem 0;
-            box-shadow: 0 20px 32px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(12px);
             transition: all 0.25s ease;
             z-index: 1000;
-            border: 1px solid rgba(30,74,118,0.1);
+            border: 1px solid rgba(30, 74, 118, 0.1);
         }
+
         .dark .dropdown-shield-menu {
             background: #1E2A3A;
             border-color: #334155;
         }
+
         .dropdown-shield:hover .dropdown-shield-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-item-shield {
             display: flex;
             align-items: center;
@@ -220,11 +244,16 @@
             transition: all 0.2s;
             color: #1E2F3A;
         }
-        .dark .dropdown-item-shield { color: #E2E8F0; }
+
+        .dark .dropdown-item-shield {
+            color: #E2E8F0;
+        }
+
         .dropdown-item-shield:hover {
             background-color: #E6F7FF;
             color: #1E4A76;
         }
+
         .dark .dropdown-item-shield:hover {
             background-color: #2563EB20;
             color: #90CDF4;
@@ -237,12 +266,20 @@
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 0 0 28px 28px;
         }
-        .dark .mobile-menu-shield { background: #0F1720; }
-        .mobile-menu-shield.open { max-height: 80vh; overflow-y: auto; }
+
+        .dark .mobile-menu-shield {
+            background: #0F1720;
+        }
+
+        .mobile-menu-shield.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
 
         .team-card {
             transition: all 0.3s ease;
         }
+
         .team-card:hover {
             transform: translateY(-8px);
         }
@@ -251,6 +288,7 @@
         .value-icon {
             background: linear-gradient(135deg, #1E4A76, #2C7DA0);
         }
+
         .dark .value-icon {
             background: linear-gradient(135deg, #3B82F6, #38BDF8);
         }
@@ -278,8 +316,7 @@
                 </a>
 
                 <!-- Centered Desktop Nav -->
-                <div
-                    class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
+                <div class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
                     <div class="dropdown-shield">
                         <button
                             class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
@@ -316,8 +353,7 @@
                             <a class="dropdown-item-shield gap-3" href="admin.html">
                                 <span
                                     class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
-                                    <i
-                                        class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                    <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
                                 </span>
                                 <div>
                                     <p class="font-semibold text-sm">Admin</p>
@@ -356,7 +392,7 @@
                                     </span>
                                     <div>
                                         <p class="font-semibold text-sm">Sign Up</p>
-                                    </div> 
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -448,19 +484,23 @@
     </nav>
 
     <!-- Hero Section - About Story Focus -->
-    <section class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
+    <section
+        class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
         <div class="absolute inset-0 bg-hero-pattern bg-no-repeat bg-cover opacity-30"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center animate-slide-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-6">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-6">
                     <i class="fas fa-shield-heart text-shield-blue dark:text-blue-400"></i>
                     <span class="text-sm font-semibold text-shield-blue dark:text-sky-300">Our Story</span>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight text-shield-graphite dark:text-white">
-                    Driven by <span class="text-shield-blue dark:text-blue-400">Safety</span>,<br>Powered by <span class="text-shield-gold dark:text-amber-400">Trust</span>
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight text-shield-graphite dark:text-white">
+                    Driven by <span class="text-shield-blue dark:text-blue-400">Safety</span>,<br>Powered by <span
+                        class="text-shield-gold dark:text-amber-400">Trust</span>
                 </h1>
                 <p class="text-lg md:text-xl text-shield-graphite/70 dark:text-gray-300 max-w-2xl mx-auto">
-                    For over a decade, ShieldMate has been the most trusted name in mobile windshield repair. 
+                    For over a decade, ShieldMate has been the most trusted name in mobile windshield repair.
                     We're not just fixing glass — we're protecting what matters most.
                 </p>
             </div>
@@ -472,14 +512,22 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="trust-card p-8 text-center md:text-left">
-                    <div class="value-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-5"><i class="fas fa-bullseye text-white text-2xl"></i></div>
+                    <div class="value-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-5">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mb-3">Our Mission</h3>
-                    <p class="text-gray-600 dark:text-gray-300">To deliver fast, reliable, and affordable mobile windshield repair services that keep drivers safe on the road. We're committed to transparency, quality craftsmanship, and making the insurance process effortless.</p>
+                    <p class="text-gray-600 dark:text-gray-300">To deliver fast, reliable, and affordable mobile
+                        windshield repair services that keep drivers safe on the road. We're committed to transparency,
+                        quality craftsmanship, and making the insurance process effortless.</p>
                 </div>
                 <div class="trust-card p-8 text-center md:text-left">
-                    <div class="value-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-5"><i class="fas fa-eye text-white text-2xl"></i></div>
+                    <div class="value-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-5">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-2xl font-bold text-shield-graphite dark:text-white mb-3">Our Vision</h3>
-                    <p class="text-gray-600 dark:text-gray-300">To become the nation's #1 mobile auto glass provider by combining cutting-edge technology with human touch — every driver deserves a clear view and peace of mind.</p>
+                    <p class="text-gray-600 dark:text-gray-300">To become the nation's #1 mobile auto glass provider by
+                        combining cutting-edge technology with human touch — every driver deserves a clear view and
+                        peace of mind.</p>
                 </div>
             </div>
         </div>
@@ -489,14 +537,45 @@
     <section class="py-16 bg-shield-ice/30 dark:bg-slate-900/30">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-shield-sky dark:text-sky-300 font-semibold text-sm uppercase tracking-wide bg-white/50 dark:bg-slate-800/50 px-4 py-1.5 rounded-full">What We Believe</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-shield-graphite dark:text-white">Our Core <span class="text-shield-blue dark:text-blue-400">Values</span></h2>
+                <span
+                    class="text-shield-sky dark:text-sky-300 font-semibold text-sm uppercase tracking-wide bg-white/50 dark:bg-slate-800/50 px-4 py-1.5 rounded-full">What
+                    We Believe</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-shield-graphite dark:text-white">Our
+                    Core <span class="text-shield-blue dark:text-blue-400">Values</span></h2>
             </div>
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="trust-card p-6 text-center"><div class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-handshake text-shield-blue dark:text-blue-400 text-xl"></i></div><h3 class="font-bold text-shield-graphite dark:text-white">Integrity</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Honest quotes, no hidden fees</p></div>
-                <div class="trust-card p-6 text-center"><div class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-bolt text-shield-blue dark:text-blue-400 text-xl"></i></div><h3 class="font-bold text-shield-graphite dark:text-white">Speed</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Same-day service guaranteed</p></div>
-                <div class="trust-card p-6 text-center"><div class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-award text-shield-blue dark:text-blue-400 text-xl"></i></div><h3 class="font-bold text-shield-graphite dark:text-white">Quality</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">OEM-grade materials & training</p></div>
-                <div class="trust-card p-6 text-center"><div class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-heart text-shield-blue dark:text-blue-400 text-xl"></i></div><h3 class="font-bold text-shield-graphite dark:text-white">Care</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">We treat every car like our own</p></div>
+                <div class="trust-card p-6 text-center">
+                    <div
+                        class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-shield-blue dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-shield-graphite dark:text-white">Integrity</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Honest quotes, no hidden fees</p>
+                </div>
+                <div class="trust-card p-6 text-center">
+                    <div
+                        class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-shield-blue dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-shield-graphite dark:text-white">Speed</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Same-day service guaranteed</p>
+                </div>
+                <div class="trust-card p-6 text-center">
+                    <div
+                        class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-shield-blue dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-shield-graphite dark:text-white">Quality</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">OEM-grade materials & training</p>
+                </div>
+                <div class="trust-card p-6 text-center">
+                    <div
+                        class="w-14 h-14 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-shield-blue dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-shield-graphite dark:text-white">Care</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">We treat every car like our own</p>
+                </div>
             </div>
         </div>
     </section>
@@ -505,15 +584,57 @@
     <section class="py-20 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Our <span class="text-shield-gold dark:text-amber-400">Journey</span></h2>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Our <span
+                        class="text-shield-gold dark:text-amber-400">Journey</span></h2>
                 <p class="text-gray-600 dark:text-gray-300 mt-2">From a single van to a nationwide fleet</p>
             </div>
             <div class="max-w-3xl mx-auto relative">
                 <div class="space-y-8">
-                    <div><div class="flex flex-col md:flex-row gap-4 trust-card p-6"><div class="md:w-32 shrink-0"><span class="text-shield-gold dark:text-amber-400 font-black text-2xl">2013</span></div><div><h3 class="font-bold text-xl text-shield-graphite dark:text-white">The Beginning</h3><p class="text-gray-600 dark:text-gray-300">ShieldMate founded with one mobile van serving the greater Phoenix area. Mission: bring quality windshield repair directly to customers.</p></div></div></div>
-                    <div><div class="flex flex-col md:flex-row gap-4 trust-card p-6"><div class="md:w-32 shrink-0"><span class="text-shield-gold dark:text-amber-400 font-black text-2xl">2017</span></div><div><h3 class="font-bold text-xl text-shield-graphite dark:text-white">Expansion</h3><p class="text-gray-600 dark:text-gray-300">Opened second location in Tucson, grew team to 15 certified technicians. Added ADAS recalibration services.</p></div></div></div>
-                    <div><div class="flex flex-col md:flex-row gap-4 trust-card p-6"><div class="md:w-32 shrink-0"><span class="text-shield-gold dark:text-amber-400 font-black text-2xl">2020</span></div><div><h3 class="font-bold text-xl text-shield-graphite dark:text-white">Technology First</h3><p class="text-gray-600 dark:text-gray-300">Launched customer dashboard with real-time tracking, digital claims, and instant quoting system.</p></div></div></div>
-                    <div><div class="flex flex-col md:flex-row gap-4 trust-card p-6"><div class="md:w-32 shrink-0"><span class="text-shield-gold dark:text-amber-400 font-black text-2xl">2024</span></div><div><h3 class="font-bold text-xl text-shield-graphite dark:text-white">Nationwide Reach</h3><p class="text-gray-600 dark:text-gray-300">50+ mobile units across 8 states, serving 25,000+ happy customers with 4.98-star rating.</p></div></div></div>
+                    <div>
+                        <div class="flex flex-col md:flex-row gap-4 trust-card p-6">
+                            <div class="md:w-32 shrink-0"><span
+                                    class="text-shield-gold dark:text-amber-400 font-black text-2xl">2013</span></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-shield-graphite dark:text-white">The Beginning</h3>
+                                <p class="text-gray-600 dark:text-gray-300">ShieldMate founded with one mobile van
+                                    serving the greater Phoenix area. Mission: bring quality windshield repair directly
+                                    to customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col md:flex-row gap-4 trust-card p-6">
+                            <div class="md:w-32 shrink-0"><span
+                                    class="text-shield-gold dark:text-amber-400 font-black text-2xl">2017</span></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-shield-graphite dark:text-white">Expansion</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Opened second location in Tucson, grew team
+                                    to 15 certified technicians. Added ADAS recalibration services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col md:flex-row gap-4 trust-card p-6">
+                            <div class="md:w-32 shrink-0"><span
+                                    class="text-shield-gold dark:text-amber-400 font-black text-2xl">2020</span></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-shield-graphite dark:text-white">Technology First</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Launched customer dashboard with real-time
+                                    tracking, digital claims, and instant quoting system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col md:flex-row gap-4 trust-card p-6">
+                            <div class="md:w-32 shrink-0"><span
+                                    class="text-shield-gold dark:text-amber-400 font-black text-2xl">2024</span></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-shield-graphite dark:text-white">Nationwide Reach</h3>
+                                <p class="text-gray-600 dark:text-gray-300">50+ mobile units across 8 states, serving
+                                    25,000+ happy customers with 4.98-star rating.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -524,13 +645,43 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <i class="fas fa-users text-shield-blue dark:text-blue-400 text-3xl mb-2"></i>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Meet the <span class="text-shield-blue dark:text-blue-400">Experts</span></h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mt-2">Dedicated professionals committed to your safety</p>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Meet the
+                    <span class="text-shield-blue dark:text-blue-400">Experts</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mt-2">Dedicated professionals committed to
+                    your safety</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto items-stretch">
-                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/pers1.jpg" alt="Michael James" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md"><h3 class="text-xl font-bold text-shield-graphite dark:text-white">Michael James</h3><p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Founder & Master Tech</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">15+ years • Certified glass expert</p><div class="flex justify-center gap-2 mt-auto pt-4"><i class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div></div>
-                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/per3.jpg" alt="Sarah Rodriguez" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md"><h3 class="text-xl font-bold text-shield-graphite dark:text-white">Sarah Rodriguez</h3><p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Operations Director</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">12 years • Customer experience</p><div class="flex justify-center gap-2 mt-auto pt-4"><i class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div></div>
-                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/men.jpg" alt="David Tran" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md"><h3 class="text-xl font-bold text-shield-graphite dark:text-white">David Tran</h3><p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Lead Technician</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-2">10 years • ADAS certified</p><div class="flex justify-center gap-2 mt-auto pt-4"><i class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div></div>
+                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/pers1.jpg"
+                        alt="Michael James"
+                        class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md">
+                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white">Michael James</h3>
+                    <p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Founder & Master Tech</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">15+ years • Certified glass expert</p>
+                    <div class="flex justify-center gap-2 mt-auto pt-4"><i
+                            class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i
+                            class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div>
+                </div>
+                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/per3.jpg"
+                        alt="Sarah Rodriguez"
+                        class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md">
+                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white">Sarah Rodriguez</h3>
+                    <p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Operations Director</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">12 years • Customer experience</p>
+                    <div class="flex justify-center gap-2 mt-auto pt-4"><i
+                            class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i
+                            class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div>
+                </div>
+                <div class="team-card trust-card p-6 text-center flex flex-col h-full"><img src="assest/men.jpg"
+                        alt="David Tran"
+                        class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-shield-ice dark:border-slate-700 shadow-md">
+                    <h3 class="text-xl font-bold text-shield-graphite dark:text-white">David Tran</h3>
+                    <p class="text-shield-sky dark:text-sky-300 text-sm font-medium">Lead Technician</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">10 years • ADAS certified</p>
+                    <div class="flex justify-center gap-2 mt-auto pt-4"><i
+                            class="fab fa-linkedin text-gray-400 hover:text-shield-blue cursor-pointer"></i><i
+                            class="fab fa-twitter text-gray-400 hover:text-shield-blue cursor-pointer"></i></div>
+                </div>
             </div>
         </div>
     </section>
@@ -539,11 +690,17 @@
     <section class="py-16 bg-gradient-to-r from-shield-blue to-shield-sky dark:from-[#1E3A5F] dark:to-[#2563EB]">
         <div class="container mx-auto px-6 text-center">
             <i class="fas fa-shield-heart text-white text-4xl mb-4 animate-pulse"></i>
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-3">Ready to Experience the ShieldMate Difference?</h2>
-            <p class="text-white/80 mb-6 max-w-xl mx-auto">Join thousands of satisfied customers who trust us with their windshield repair needs.</p>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-3">Ready to Experience the ShieldMate
+                Difference?</h2>
+            <p class="text-white/80 mb-6 max-w-xl mx-auto">Join thousands of satisfied customers who trust us with their
+                windshield repair needs.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="contact.html" class="bg-white text-shield-blue px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition"><i class="fas fa-calendar-check mr-2"></i> Schedule Free Inspection</a>
-                <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-shield-blue transition"><i class="fas fa-phone-alt mr-2"></i> Call (888) 450-SHIELD</a>
+                <a href="contact.html"
+                    class="bg-white text-shield-blue px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition"><i
+                        class="fas fa-calendar-check mr-2"></i> Schedule Free Inspection</a>
+                <a href="contact.html"
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-shield-blue transition"><i
+                        class="fas fa-phone-alt mr-2"></i> Call (888) 450-55490</a>
             </div>
         </div>
     </section>
@@ -552,31 +709,46 @@
     <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
-                <div class="flex flex-col items-center md:items-start"><a class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start" href="index.html">
+                <div class="flex flex-col items-center md:items-start"><a
+                        class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start"
+                        href="index.html">
                         <div
                             class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition shrink-0">
-                            <i class="fas fa-car-side text-white text-base md:text-lg"></i></div><span
+                            <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                        </div><span
                             class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-white">SHIELD<span
                                 class="text-shield-gold dark:text-amber-400">MATE</span></span>
                     </a>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair &amp; windshield replacement
+                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair
+                        &amp; windshield replacement
                         with lifetime warranty.</p>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs Replace guide</a></li>
-                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty info</a></li>
-                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer dashboard</a></li>
-                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance support</a></li>
+                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs
+                                Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty
+                                info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer
+                                dashboard</a></li>
+                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance
+                                support</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm inline-block text-start">
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr" class="text-start">(888) 450-SHLD</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i> <span>help@shieldmate.com</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am – 9pm</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr"
+                                class="text-start">(888) 450-SHLD</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i>
+                            <span>help@shieldmate.com</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am –
+                                9pm</span></li>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center md:items-start">

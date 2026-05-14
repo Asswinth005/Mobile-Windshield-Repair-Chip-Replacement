@@ -85,17 +85,21 @@
         body::-webkit-scrollbar {
             width: 6px;
         }
+
         body::-webkit-scrollbar-track {
             background: #E2E8F0;
             border-radius: 10px;
         }
+
         body::-webkit-scrollbar-thumb {
             background: #1E4A76;
             border-radius: 10px;
         }
+
         .dark body::-webkit-scrollbar-track {
             background: #1E293B;
         }
+
         .dark body::-webkit-scrollbar-thumb {
             background: #3B82F6;
         }
@@ -107,14 +111,17 @@
             border: 1px solid rgba(44, 125, 160, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
         }
+
         .dark .trust-card {
             background: #1A2634 !important;
             border-color: #334155 !important;
         }
+
         .trust-card:hover {
             transform: translateY(-4px);
             border-color: #2C7DA0;
         }
+
         .dark .trust-card:hover {
             border-color: #3B82F6;
         }
@@ -127,13 +134,16 @@
             transition: all 0.25s ease;
             box-shadow: 0 6px 14px rgba(30, 74, 118, 0.25);
         }
+
         .btn-primary-glass:hover {
             background-color: #0F3A5C;
             transform: translateY(-2px);
         }
+
         .dark .btn-primary-glass {
             background-color: #2563EB;
         }
+
         .dark .btn-primary-glass:hover {
             background-color: #1D4ED8;
         }
@@ -146,14 +156,17 @@
             font-weight: 500;
             transition: all 0.25s;
         }
+
         .btn-outline-shield:hover {
             background-color: #1E4A76;
             color: white;
         }
+
         .dark .btn-outline-shield {
             border-color: #60A5FA;
             color: #60A5FA;
         }
+
         .dark .btn-outline-shield:hover {
             background-color: #2563EB;
             color: white;
@@ -163,6 +176,7 @@
             position: relative;
             font-weight: 500;
         }
+
         .nav-link-shield::after {
             content: '';
             position: absolute;
@@ -174,20 +188,27 @@
             transition: width 0.2s ease;
             border-radius: 3px;
         }
+
         .nav-link-shield:hover::after {
             width: 100%;
         }
+
         .nav-link-shield.active {
             color: #1E4A76;
         }
+
         .dark .nav-link-shield.active {
             color: #60A5FA;
         }
+
         .nav-link-shield.active::after {
             width: 100%;
         }
 
-        .dropdown-shield { position: relative; }
+        .dropdown-shield {
+            position: relative;
+        }
+
         .dropdown-shield-menu {
             position: absolute;
             top: 100%;
@@ -196,23 +217,26 @@
             background: white;
             border-radius: 20px;
             padding: 0.6rem 0;
-            box-shadow: 0 20px 32px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(12px);
             transition: all 0.25s ease;
             z-index: 1000;
-            border: 1px solid rgba(30,74,118,0.1);
+            border: 1px solid rgba(30, 74, 118, 0.1);
         }
+
         .dark .dropdown-shield-menu {
             background: #1E2A3A;
             border-color: #334155;
         }
+
         .dropdown-shield:hover .dropdown-shield-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-item-shield {
             display: flex;
             align-items: center;
@@ -220,11 +244,16 @@
             transition: all 0.2s;
             color: #1E2F3A;
         }
-        .dark .dropdown-item-shield { color: #E2E8F0; }
+
+        .dark .dropdown-item-shield {
+            color: #E2E8F0;
+        }
+
         .dropdown-item-shield:hover {
             background-color: #E6F7FF;
             color: #1E4A76;
         }
+
         .dark .dropdown-item-shield:hover {
             background-color: #2563EB20;
             color: #90CDF4;
@@ -237,8 +266,15 @@
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 0 0 28px 28px;
         }
-        .dark .mobile-menu-shield { background: #0F1720; }
-        .mobile-menu-shield.open { max-height: 80vh; overflow-y: auto; }
+
+        .dark .mobile-menu-shield {
+            background: #0F1720;
+        }
+
+        .mobile-menu-shield.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
 
         .contact-icon {
             width: 48px;
@@ -249,6 +285,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .dark .contact-icon {
             background: linear-gradient(135deg, #3B82F6, #38BDF8);
         }
@@ -257,15 +294,18 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+
         .faq-item.active .faq-answer {
             max-height: 200px;
             transition: max-height 0.3s ease-in;
         }
+
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
@@ -273,10 +313,12 @@
         .form-input {
             transition: all 0.2s ease;
         }
+
         .form-input:focus {
             border-color: #1E4A76;
             box-shadow: 0 0 0 3px rgba(30, 74, 118, 0.1);
         }
+
         .dark .form-input:focus {
             border-color: #60A5FA;
             box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
@@ -305,8 +347,7 @@
                 </a>
 
                 <!-- Centered Desktop Nav -->
-                <div
-                    class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
+                <div class="hidden lg:flex items-center gap-3 xl:gap-6 ml-auto mr-4 xl:mr-8">
                     <div class="dropdown-shield">
                         <button
                             class="nav-link-shield text-shield-graphite dark:text-gray-200 hover:text-shield-blue font-medium transition flex items-center gap-1 py-2 text-sm xl:text-base">
@@ -343,8 +384,7 @@
                             <a class="dropdown-item-shield gap-3" href="admin.html">
                                 <span
                                     class="w-7 h-7 rounded-lg bg-shield-gold/10 dark:bg-amber-500/20 flex items-center justify-center shrink-0">
-                                    <i
-                                        class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
+                                    <i class="fas fa-shield-halved text-shield-gold dark:text-amber-400 text-xs"></i>
                                 </span>
                                 <div>
                                     <p class="font-semibold text-sm">Admin</p>
@@ -475,19 +515,22 @@
     </nav>
 
     <!-- Hero Section - Contact Header -->
-    <section class="pt-28 pb-12 md:pt-36 md:pb-20 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
+    <section
+        class="pt-28 pb-12 md:pt-36 md:pb-20 relative overflow-hidden bg-gradient-to-br from-shield-blue/5 via-transparent to-shield-sky/5">
         <div class="absolute inset-0 bg-contact-pattern bg-no-repeat bg-cover opacity-30"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl mx-auto text-center animate-slide-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-6">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-6">
                     <i class="fas fa-headset text-shield-blue dark:text-blue-400"></i>
                     <span class="text-sm font-semibold text-shield-blue dark:text-sky-300">24/7 Support</span>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-5 leading-tight text-shield-graphite dark:text-white">
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-5 leading-tight text-shield-graphite dark:text-white">
                     Let's <span class="text-shield-blue dark:text-blue-400">Connect</span>
                 </h1>
                 <p class="text-lg text-shield-graphite/70 dark:text-gray-300 max-w-xl mx-auto">
-                    Have a cracked windshield? Need a quote? Our team is ready to help you 24/7. 
+                    Have a cracked windshield? Need a quote? Our team is ready to help you 24/7.
                     Reach out through any channel below.
                 </p>
             </div>
@@ -502,7 +545,7 @@
                     <i class="fas fa-phone-alt text-shield-gold text-3xl animate-pulse"></i>
                     <div>
                         <p class="text-white/80 text-sm">Emergency? Call us now</p>
-                        <p class="text-white font-bold text-2xl md:text-3xl tracking-tight">(888) 450-SHIELD</p>
+                        <p class="text-white font-bold text-2xl md:text-3xl tracking-tight">(888) 450-55490</p>
                     </div>
                 </div>
                 <div class="flex gap-3">
@@ -521,31 +564,47 @@
                 <!-- Contact Form -->
                 <div class="trust-card p-6 md:p-8 animate-fade-in">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center">
+                        <div
+                            class="w-10 h-10 bg-shield-blue/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center">
                             <i class="fas fa-envelope text-shield-blue dark:text-blue-400"></i>
                         </div>
                         <h2 class="text-2xl font-bold text-shield-graphite dark:text-white">Send us a Message</h2>
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400 mb-6">Fill out the form below and we'll get back to you within 30 minutes.</p>
-                    
+                    <p class="text-gray-500 dark:text-gray-400 mb-6">Fill out the form below and we'll get back to you
+                        within 30 minutes.</p>
+
                     <form id="contactForm" class="space-y-5">
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Full Name *</label>
-                                <input type="text" class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none" placeholder="John Doe">
+                                <label
+                                    class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Full
+                                    Name *</label>
+                                <input type="text"
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none"
+                                    placeholder="John Doe">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Phone Number *</label>
-                                <input type="tel" class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none" placeholder="(555) 123-4567">
+                                <label
+                                    class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Phone
+                                    Number *</label>
+                                <input type="tel"
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none"
+                                    placeholder="(555) 123-4567">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Email Address *</label>
-                            <input type="email" class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none" placeholder="hello@example.com">
+                            <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Email
+                                Address *</label>
+                            <input type="email"
+                                class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none"
+                                placeholder="hello@example.com">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Service Needed</label>
-                            <select class="w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none">
+                            <label
+                                class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Service
+                                Needed</label>
+                            <select
+                                class="w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none">
                                 <option>Chip Repair</option>
                                 <option>Windshield Replacement</option>
                                 <option>ADAS Calibration</option>
@@ -554,13 +613,19 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Message *</label>
-                            <textarea rows="4" class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none" placeholder="Describe your issue or question..."></textarea>
+                            <label
+                                class="block text-sm font-medium text-shield-graphite dark:text-gray-300 mb-2">Message
+                                *</label>
+                            <textarea rows="4"
+                                class="form-input w-full px-4 py-3 rounded-xl border border-shield-stone dark:border-gray-600 bg-gray-50 dark:bg-slate-800 dark:text-white focus:outline-none"
+                                placeholder="Describe your issue or question..."></textarea>
                         </div>
-                        <button type="submit" class="w-full btn-primary-glass py-3.5 rounded-xl text-base font-semibold">
+                        <button type="submit"
+                            class="w-full btn-primary-glass py-3.5 rounded-xl text-base font-semibold">
                             <i class="fas fa-paper-plane mr-2"></i> Send Message
                         </button>
-                        <p class="text-xs text-center text-gray-400 mt-3">We respect your privacy. Your information is secure.</p>
+                        <p class="text-xs text-center text-gray-400 mt-3">We respect your privacy. Your information is
+                            secure.</p>
                     </form>
                 </div>
 
@@ -571,22 +636,26 @@
                         <div>
                             <h3 class="font-bold text-shield-graphite dark:text-white text-lg">Phone Support</h3>
                             <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Available 24/7 for emergencies</p>
-                            <a href="tel:8884507435" class="text-shield-blue dark:text-blue-400 font-semibold text-xl mt-2 inline-block">(888) 450-SHIELD</a>
+                            <a href="tel:8884507435"
+                                class="text-shield-blue dark:text-blue-400 font-semibold text-xl mt-2 inline-block">(888)
+                                450-55490</a>
                         </div>
                     </div>
-                    
+
                     <div class="trust-card p-6 flex items-start gap-4">
                         <div class="contact-icon shrink-0"><i class="fas fa-envelope text-white text-xl"></i></div>
                         <div>
                             <h3 class="font-bold text-shield-graphite dark:text-white text-lg">Email Us</h3>
                             <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Responses within 30 minutes</p>
-                            <a href="mailto:help@shieldmate.com" class="text-shield-blue dark:text-blue-400 font-semibold text-lg mt-2 inline-block">help@shieldmate.com</a>
+                            <a href="mailto:help@shieldmate.com"
+                                class="text-shield-blue dark:text-blue-400 font-semibold text-lg mt-2 inline-block">help@shieldmate.com</a>
                             <p class="text-xs text-gray-400 mt-1">For claims: claims@shieldmate.com</p>
                         </div>
                     </div>
-                    
+
                     <div class="trust-card p-6 flex items-start gap-4">
-                        <div class="contact-icon shrink-0"><i class="fas fa-map-marker-alt text-white text-xl"></i></div>
+                        <div class="contact-icon shrink-0"><i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        </div>
                         <div>
                             <h3 class="font-bold text-shield-graphite dark:text-white text-lg">Headquarters</h3>
                             <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">123 Auto Glass Way, Suite 200</p>
@@ -594,12 +663,13 @@
                             <p class="text-xs text-gray-400 mt-2">Mon-Fri: 8am - 7pm | Sat: 9am - 5pm</p>
                         </div>
                     </div>
-                    
+
                     <div class="trust-card p-6 flex items-start gap-4">
                         <div class="contact-icon shrink-0"><i class="fas fa-clock text-white text-xl"></i></div>
                         <div>
                             <h3 class="font-bold text-shield-graphite dark:text-white text-lg">Service Hours</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm">Mobile service available 7 days a week</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">Mobile service available 7 days a week
+                            </p>
                             <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
                                 <span class="text-shield-graphite dark:text-gray-300">Monday - Sunday:</span>
                                 <span class="font-semibold text-shield-blue dark:text-blue-400">7:00 AM - 9:00 PM</span>
@@ -618,13 +688,15 @@
         <div class="container mx-auto px-6">
             <div class="trust-card overflow-hidden p-0">
                 <div class="h-80 md:h-96 bg-gray-200 dark:bg-gray-700 relative">
-                    <iframe class="w-full h-full" frameborder="0" style="border:0" 
+                    <iframe class="w-full h-full" frameborder="0" style="border:0"
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Phoenix,AZ&zoom=12"
                         allowfullscreen>
                     </iframe>
                 </div>
                 <div class="p-4 text-center bg-white dark:bg-dark-card">
-                    <p class="text-sm text-gray-500 dark:text-gray-400"><i class="fas fa-location-dot text-shield-coral mr-1"></i> We serve the greater Phoenix metropolitan area and surrounding cities. Mobile service comes to you!</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400"><i
+                            class="fas fa-location-dot text-shield-coral mr-1"></i> We serve the greater Phoenix
+                        metropolitan area and surrounding cities. Mobile service comes to you!</p>
                 </div>
             </div>
         </div>
@@ -634,18 +706,27 @@
     <section class="py-16 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Our <span class="text-shield-blue dark:text-blue-400">Service Area</span></h2>
+                <h2 class="text-3xl font-display font-bold text-shield-graphite dark:text-white">Our <span
+                        class="text-shield-blue dark:text-blue-400">Service Area</span></h2>
                 <p class="text-gray-600 dark:text-gray-300 mt-2">We come to you across multiple states</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Phoenix Metro</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Tucson</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Scottsdale</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Mesa</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Chandler</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Gilbert</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Glendale</span></div>
-                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span class="ml-2 text-sm font-medium dark:text-white">Peoria</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Phoenix Metro</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Tucson</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Scottsdale</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Mesa</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Chandler</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Gilbert</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Glendale</span></div>
+                <div class="trust-card p-3 text-center"><i class="fas fa-check-circle text-shield-sky text-sm"></i><span
+                        class="ml-2 text-sm font-medium dark:text-white">Peoria</span></div>
             </div>
         </div>
     </section>
@@ -655,7 +736,9 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <i class="fas fa-question-circle text-shield-blue dark:text-blue-400 text-3xl mb-2"></i>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Frequently <span class="text-shield-gold dark:text-amber-400">Asked Questions</span></h2>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">Frequently
+                    <span class="text-shield-gold dark:text-amber-400">Asked Questions</span>
+                </h2>
                 <p class="text-gray-600 dark:text-gray-300 mt-2">Quick answers to common questions</p>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
@@ -664,35 +747,48 @@
                         <h3 class="font-semibold text-shield-graphite dark:text-white">Do you come to my location?</h3>
                         <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
                     </div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes! We are a fully mobile service. Our technicians come to your home, office, or anywhere you are. We serve the entire Phoenix metro area.</div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Yes! We are a fully mobile
+                        service. Our technicians come to your home, office, or anywhere you are. We serve the entire
+                        Phoenix metro area.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-semibold text-shield-graphite dark:text-white">How long does a chip repair take?</h3>
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">How long does a chip repair take?
+                        </h3>
                         <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
                     </div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Most chip repairs take 20-30 minutes. Full windshield replacements take approximately 60-90 minutes, plus 1 hour for adhesive to cure before driving.</div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Most chip repairs take 20-30
+                        minutes. Full windshield replacements take approximately 60-90 minutes, plus 1 hour for adhesive
+                        to cure before driving.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-semibold text-shield-graphite dark:text-white">Do you work with insurance companies?</h3>
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">Do you work with insurance
+                            companies?</h3>
                         <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
                     </div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Absolutely! We work with all major insurance providers and handle the claims process for you. Many policies cover chip repairs with $0 deductible.</div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Absolutely! We work with all
+                        major insurance providers and handle the claims process for you. Many policies cover chip
+                        repairs with $0 deductible.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
                     <div class="flex justify-between items-center">
                         <h3 class="font-semibold text-shield-graphite dark:text-white">What is your warranty?</h3>
                         <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
                     </div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">We offer a lifetime warranty on all chip repairs and a 5-year warranty on windshield replacements. Our warranty is transferable if you sell your vehicle.</div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">We offer a lifetime warranty
+                        on all chip repairs and a 5-year warranty on windshield replacements. Our warranty is
+                        transferable if you sell your vehicle.</div>
                 </div>
                 <div class="faq-item trust-card p-5 cursor-pointer" onclick="this.classList.toggle('active')">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-semibold text-shield-graphite dark:text-white">How do I track my technician?</h3>
+                        <h3 class="font-semibold text-shield-graphite dark:text-white">How do I track my technician?
+                        </h3>
                         <i class="fas fa-chevron-down faq-icon transition-transform text-shield-blue"></i>
                     </div>
-                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Once your appointment is confirmed, you'll receive a link to our live tracking dashboard where you can see your technician's ETA in real-time.</div>
+                    <div class="faq-answer pt-3 text-gray-500 dark:text-gray-400 text-sm">Once your appointment is
+                        confirmed, you'll receive a link to our live tracking dashboard where you can see your
+                        technician's ETA in real-time.</div>
                 </div>
             </div>
         </div>
@@ -703,11 +799,21 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl font-display font-bold text-shield-graphite dark:text-white mb-6">Connect With Us</h2>
             <div class="flex justify-center gap-4">
-                <a href="#" class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i class="fab fa-youtube"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full bg-shield-ice dark:bg-slate-800 text-shield-blue hover:bg-shield-blue hover:text-white transition flex items-center justify-center text-xl"><i
+                        class="fab fa-youtube"></i></a>
             </div>
             <p class="text-sm text-gray-400 mt-6">Follow us for tips, promotions, and windshield care advice</p>
         </div>
@@ -717,31 +823,46 @@
     <footer class="bg-shield-graphite text-gray-300 pt-14 pb-6 dark:bg-[#0A0F16]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
-                <div class="flex flex-col items-center md:items-start"><a class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start" href="index.html">
+                <div class="flex flex-col items-center md:items-start"><a
+                        class="flex items-center gap-2 md:gap-3 group mb-4 inline-flex justify-center md:justify-start"
+                        href="index.html">
                         <div
                             class="w-9 h-9 md:w-10 md:h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition shrink-0">
-                            <i class="fas fa-car-side text-white text-base md:text-lg"></i></div><span
+                            <i class="fas fa-car-side text-white text-base md:text-lg"></i>
+                        </div><span
                             class="text-lg md:text-2xl font-display font-extrabold tracking-tight text-white">SHIELD<span
                                 class="text-shield-gold dark:text-amber-400">MATE</span></span>
                     </a>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair &amp; windshield replacement
+                    <p class="text-sm text-gray-400 max-w-sm mx-auto md:mx-0">Mobile auto glass experts. Chip repair
+                        &amp; windshield replacement
                         with lifetime warranty.</p>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs Replace guide</a></li>
-                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty info</a></li>
-                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer dashboard</a></li>
-                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance support</a></li>
+                        <li><a href="repair.html" class="hover:text-white text-sm inline-block transition">Repair vs
+                                Replace guide</a></li>
+                        <li><a href="warranty.html" class="hover:text-white text-sm inline-block transition">Warranty
+                                info</a></li>
+                        <li><a href="client.html" class="hover:text-white text-sm inline-block transition">Customer
+                                dashboard</a></li>
+                        <li><a href="contact.html" class="hover:text-white text-sm inline-block transition">Insurance
+                                support</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-shield-gold dark:text-amber-400 font-bold text-lg mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm inline-block text-start">
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr" class="text-start">(888) 450-SHLD</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i> <span>help@shieldmate.com</span></li>
-                        <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am – 9pm</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone-alt text-shield-sky w-4 text-center shrink-0"></i> <span dir="ltr"
+                                class="text-start">(888) 450-SHLD</span></li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-shield-sky w-4 text-center shrink-0"></i>
+                            <span>help@shieldmate.com</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-clock text-shield-sky w-4 text-center shrink-0"></i> <span>Mon-Sun: 7am –
+                                9pm</span></li>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center md:items-start">
