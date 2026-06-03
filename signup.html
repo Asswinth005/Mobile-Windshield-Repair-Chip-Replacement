@@ -193,7 +193,7 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #1E4A76;
+            color: #94A3B8;
             font-size: 0.95rem;
             transition: color 0.2s;
             background: transparent;
@@ -205,11 +205,15 @@
         }
 
         .dark .toggle-password {
-            color: #60A5FA;
+            color: #64748B;
         }
 
         .toggle-password:hover {
-            color: #F4C542;
+            color: #1E4A76;
+        }
+
+        .dark .toggle-password:hover {
+            color: #60A5FA;
         }
 
         [dir="rtl"] .toggle-password {
@@ -218,13 +222,15 @@
         }
 
         [dir="rtl"] .password-wrapper .signup-input {
-            padding-right: 1.2rem;
+            padding-right: 3rem;
             padding-left: 3rem;
         }
 
         [dir="rtl"] .input-icon {
             left: auto;
-            right: 1.1rem;
+            right: 0;
+            padding-left: 0;
+            padding-right: 1rem;
         }
 
         /* primary button */
@@ -304,11 +310,11 @@
 
         .social-btn i {
             font-size: 1.1rem;
-            color: #1E4A76;
+            color: #64748B;
         }
 
         .dark .social-btn i {
-            color: #60A5FA;
+            color: #94A3B8;
         }
 
         /* RTL adjustments */
@@ -318,7 +324,9 @@
 
         [dir="rtl"] .input-icon {
             left: auto;
-            right: 1.1rem;
+            right: 0;
+            padding-left: 0;
+            padding-right: 1rem;
         }
 
         [dir="rtl"] .fa-arrow-right {
@@ -381,7 +389,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #1E4A76;
+            color: #2F3E46;
             margin-top: 0.5rem;
             margin-bottom: 0.1rem;
             text-align: center;
@@ -658,7 +666,7 @@
 
                 <!-- full name field -->
                 <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-shield-blue input-icon">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400 dark:text-gray-500 input-icon">
                         <i class="fas fa-user w-4 text-sm"></i>
                     </span>
                     <input type="text" id="fullName" name="name" placeholder="Full name" required
@@ -667,7 +675,7 @@
 
                 <!-- email field -->
                 <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-shield-blue input-icon">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400 dark:text-gray-500 input-icon">
                         <i class="fas fa-envelope w-4 text-sm"></i>
                     </span>
                     <input type="email" id="email" name="email" placeholder="Email address" required
@@ -678,7 +686,7 @@
 
                 <!-- password field with eye icon -->
                 <div class="password-wrapper">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-shield-blue input-icon">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400 dark:text-gray-500 input-icon">
                         <i class="fas fa-lock w-4 text-sm"></i>
                     </span>
                     <input type="password" id="signup-password" name="password" placeholder="Password" required
@@ -691,7 +699,7 @@
 
                 <!-- confirm password field with eye icon -->
                 <div class="password-wrapper">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-shield-blue input-icon">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400 dark:text-gray-500 input-icon">
                         <i class="fas fa-lock w-4 text-sm"></i>
                     </span>
                     <input type="password" id="signup-confirm-password" name="confirm_password"
