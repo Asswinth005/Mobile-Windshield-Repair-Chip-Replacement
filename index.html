@@ -567,9 +567,9 @@
     <section class="pt-28 pb-16 md:pt-36 md:pb-20 relative overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="assest/windshield_repair_hero.png" alt="Windshield Repair Background" class="w-full h-full object-cover opacity-90 dark:opacity-60">
+            <img src="assest/windshield_repair_hero.png" alt="Windshield Repair Background" class="w-full h-full object-cover opacity-90 dark:opacity-75">
             <!-- Semi-transparent overlay to ensure text readability -->
-            <div class="absolute inset-0 bg-[#F9FBFD]/35 dark:bg-[#0F1720]/45"></div>
+            <div class="absolute inset-0 bg-[#F9FBFD]/10 dark:bg-[#0F1720]/30"></div>
             <!-- Bottom fade to blend with the next section -->
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#F9FBFD] dark:to-[#0F1720]"></div>
         </div>
@@ -603,6 +603,133 @@
                     <i class="fas fa-shield-alt text-shield-gold dark:text-amber-400"></i> 100% insurance claim
                     assistance • No out-of-pocket with most policies
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Windshield Services Showcase Section -->
+    <section class="py-20 bg-shield-ice/10 dark:bg-[#0F1720] border-t border-shield-stone/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-shield-sky dark:text-sky-300 font-bold text-sm uppercase tracking-wider bg-shield-ice dark:bg-sky-950/40 px-4 py-1.5 rounded-full inline-block">
+                    <i class="fas fa-tools mr-1"></i> OUR SPECIALIZED SERVICES
+                </span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4 text-shield-graphite dark:text-white">
+                    Professional <span class="text-shield-blue dark:text-blue-400">Windshield Services</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-3 text-sm">
+                    From minor chips to complete glass replacement and complex camera calibration, we deliver certified mobile expertise to your doorstep.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Glass Replacement -->
+                <div class="trust-card overflow-hidden flex flex-col h-full bg-white dark:bg-[#131B26]">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assest/glass_replacement.png" alt="Windshield Replacement" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute top-3 right-3 bg-shield-blue text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            OEM Quality
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Glass Replacement</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                                Complete mobile installation of front, rear, or side window glass using premium materials and OEM-grade sealants.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-shield-stone/20 dark:border-slate-800 space-y-3">
+                            <ul class="text-xs space-y-1.5 text-gray-500 dark:text-gray-400">
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> OEM-equivalent glass</li>
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> 5-year leak warranty</li>
+                            </ul>
+                            <a href="service.html" class="w-full text-center block btn-primary-glass py-2 rounded-xl text-xs font-bold transition">
+                                Book Replacement
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Glass Repair -->
+                <div class="trust-card overflow-hidden flex flex-col h-full bg-white dark:bg-[#131B26]">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assest/glass_repair.png" alt="Windshield Chip Repair" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            30-Min Service
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Glass Chip Repair</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                                Advanced resin injection that fills bullseyes, star breaks, and cracks up to 6 inches, fully restoring glass structural strength.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-shield-stone/20 dark:border-slate-800 space-y-3">
+                            <ul class="text-xs space-y-1.5 text-gray-500 dark:text-gray-400">
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> Lifetime warranty</li>
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> $0 Cost (with insurance)</li>
+                            </ul>
+                            <a href="service.html" class="w-full text-center block btn-primary-glass py-2 rounded-xl text-xs font-bold transition">
+                                Book Chip Repair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Luxury Vehicle Specialist -->
+                <div class="trust-card overflow-hidden flex flex-col h-full bg-white dark:bg-[#131B26]">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assest/luxury_service.png" alt="Luxury Vehicle Windshield Care" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute top-3 right-3 bg-shield-gold text-shield-graphite text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            ADAS Experts
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Luxury Vehicle Care</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                                Specialized glass solutions for Tesla, Porsche, Mercedes, and high-end imports requiring exact HUD and dynamic camera calibration.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-shield-stone/20 dark:border-slate-800 space-y-3">
+                            <ul class="text-xs space-y-1.5 text-gray-500 dark:text-gray-400">
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> Custom HUD calibration</li>
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> Certified import tech team</li>
+                            </ul>
+                            <a href="service.html" class="w-full text-center block btn-primary-glass py-2 rounded-xl text-xs font-bold transition">
+                                Book Luxury Care
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Commercial Fleet Repairs -->
+                <div class="trust-card overflow-hidden flex flex-col h-full bg-white dark:bg-[#131B26]">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assest/commercial_repair.png" alt="Commercial Fleet Repair" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute top-3 right-3 bg-shield-coral text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+                            Priority Dispatch
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-bold text-shield-graphite dark:text-white">Commercial Fleet Services</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                                Heavy-duty truck and commercial van glass services. Fast on-site turnaround to minimize downtime for logistics and fleets.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-shield-stone/20 dark:border-slate-800 space-y-3">
+                            <ul class="text-xs space-y-1.5 text-gray-500 dark:text-gray-400">
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> 2-hour dispatch SLA</li>
+                                <li class="flex items-center gap-1.5"><i class="fas fa-check text-emerald-500"></i> Corporate Net-30 invoicing</li>
+                            </ul>
+                            <a href="contact.html" class="w-full text-center block btn-outline-shield py-2 rounded-xl text-xs font-bold transition">
+                                Get Fleet Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
