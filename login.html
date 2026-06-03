@@ -485,7 +485,21 @@
         a {
             transition: all 0.2s ease;
         }
-    </style>
+    
+        /* Typography overrides for readable hierarchy (headings < 600, paragraphs/subheadings 400-550) */
+        .font-semibold, .font-bold, .font-extrabold {
+            font-weight: 500 !important;
+        }
+        h1, h2, h3, h4, h5, h6,
+        h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+        .font-heading, .font-display,
+        [class*="text-2xl"], [class*="text-3xl"], [class*="text-4xl"], [class*="text-5xl"], [class*="text-6xl"], [class*="text-7xl"] {
+            font-weight: 550 !important;
+        }
+        body, p, span, a, li, input, select, textarea {
+            font-weight: 400;
+        }
+</style>
 </head>
 
 <body class="glass-pattern">
