@@ -385,9 +385,6 @@
             }
         }
 
-        [dir="rtl"] .flex.items-center.gap-3 {
-            flex-direction: row-reverse;
-        }
     </style>
 </head>
 
@@ -395,9 +392,9 @@
 
     <!-- Mobile Header -->
     <div class="mobile-header">
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center gap-3">
             <button id="menuToggle" class="toggle-btn"><i class="fas fa-bars"></i></button>
-            <a href="index.html" class="flex items-center space-x-2 group">
+            <a href="index.html" class="flex items-center gap-2 group">
                 <div
                     class="w-8 h-8 bg-shield-blue rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition">
                     <i class="fas fa-car-side text-white text-sm"></i></div>
@@ -417,7 +414,7 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="p-5 border-b border-auto-silver dark:border-slate-700 shrink-0">
-            <a href="index.html" class="flex items-center space-x-3 group">
+            <a href="index.html" class="flex items-center gap-3 group">
                 <div
                     class="w-10 h-10 bg-shield-blue rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition">
                     <i class="fas fa-car-side text-white text-xl"></i></div>
@@ -442,12 +439,10 @@
             <div class="sidebar-item" data-page="settings"><i class="fas fa-cog"></i><span>Settings</span></div>
         </nav>
         <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-auto-silver dark:border-slate-700">
-            <div class="flex gap-2">
-                <button id="theme-toggle" class="toggle-btn flex-1"><i class="fas fa-moon"></i><i
-                        class="fas fa-sun hidden"></i></button>
-                <button id="rtl-toggle" class="toggle-btn flex-1">⇄</button>
-                <a href="login.html" title="Logout" class="toggle-btn flex-1"><i class="fas fa-sign-out-alt"></i></a>
-            </div>
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full p-2.5 rounded-xl bg-auto-red/10 text-auto-red hover:bg-auto-red hover:text-white transition font-semibold text-sm">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
         </div>
     </div>
 
@@ -459,15 +454,14 @@
                 <p class="text-sm text-slate-500 dark:text-slate-400" id="page-subtitle">Welcome back, Admin</p>
             </div>
             <div class="flex items-center gap-4">
-                <div class="text-right hidden md:block">
-                    <p class="text-sm font-semibold">John Carter</p>
-                    <p class="text-xs text-slate-500">Operations Manager</p>
+                <!-- Desktop Theme/RTL Toggles -->
+                <div class="hidden md:flex items-center gap-2">
+                    <button id="theme-toggle" class="toggle-btn" title="Dark / Light">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun hidden"></i>
+                    </button>
+                    <button id="rtl-toggle" class="toggle-btn font-bold text-base" title="RTL / LTR">⇄</button>
                 </div>
-                <div class="w-10 h-10 bg-auto-blue/20 rounded-full flex items-center justify-center"><i
-                        class="fas fa-user-shield text-auto-blue"></i></div>
-                <a href="login.html"
-                    class="bg-auto-red hover:bg-auto-red-dark text-white font-semibold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm"><i
-                        class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
 
