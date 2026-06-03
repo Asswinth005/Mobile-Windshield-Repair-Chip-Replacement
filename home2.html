@@ -688,6 +688,79 @@
         </div>
     </section>
 
+    <!-- Doorstep Repair & Service Coverage Section -->
+    <section class="py-20 bg-white dark:bg-[#0F1720] border-t border-shield-stone/30">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Cities Hubs and ZIP Checker -->
+                <div class="space-y-6">
+                    <span class="text-shield-sky dark:text-sky-300 font-semibold text-sm uppercase tracking-wider bg-shield-ice/60 dark:bg-slate-800/60 px-4 py-1.5 rounded-full inline-block">
+                        <i class="fas fa-map-marked-alt mr-1"></i> Area Coverage
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">
+                        Doorstep Service <span class="text-shield-blue dark:text-blue-400">Availability</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                        Our specialized mobile units dispatch daily from local service centers. Enter your 5-digit ZIP code below to verify real-time availability and dispatch window at your location.
+                    </p>
+
+                    <!-- ZIP Code Checker Widget -->
+                    <div class="bg-shield-ice/30 dark:bg-slate-900/30 p-6 rounded-3xl border border-shield-stone/20">
+                        <h4 class="font-semibold text-shield-graphite dark:text-white text-base mb-2 flex items-center gap-2">
+                            <i class="fas fa-search-location text-shield-blue dark:text-sky-400"></i> Check Your ZIP Code
+                        </h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Confirm same-day doorstep windshield repair availability instantly.</p>
+                        <div class="flex gap-2">
+                            <input type="text" id="zip-input" maxlength="5" placeholder="Enter ZIP Code" class="p-3 w-40 rounded-xl border border-shield-stone/30 dark:border-slate-700 bg-white dark:bg-[#131B26] text-shield-graphite dark:text-white text-sm font-semibold focus:outline-none focus:border-shield-sky transition" />
+                            <button id="zip-check-btn" class="btn-primary-glass px-5 rounded-xl font-bold text-sm">Check Availability</button>
+                        </div>
+                        <!-- Alert Results container -->
+                        <div id="zip-result" class="hidden mt-4 p-3.5 rounded-xl text-sm font-semibold flex items-center gap-2.5 transition-all duration-300"></div>
+                    </div>
+                </div>
+                <!-- Right: Active mobile fleet dispatch hubs -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="trust-card p-5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Central Hub</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">4 dispatch vans • 20min avg ETA</p>
+                        </div>
+                    </div>
+                    <div class="trust-card p-5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Westside Station</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">3 dispatch vans • 35min avg ETA</p>
+                        </div>
+                    </div>
+                    <div class="trust-card p-5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Metro South</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">5 dispatch vans • 15min avg ETA</p>
+                        </div>
+                    </div>
+                    <div class="trust-card p-5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Eastside Point</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">2 dispatch vans • 45min avg ETA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Customer Dashboard - Horizontal Style (Different) -->
     <section class="py-20 bg-shield-ice/30 dark:bg-slate-900/30">
         <div class="container mx-auto px-6">
@@ -858,6 +931,32 @@
             document.getElementById('mobile-rtl-toggle')?.addEventListener('click', () => { const currentDir = document.documentElement.getAttribute('dir'); setRTL(currentDir !== 'rtl'); const mobileMenu = document.getElementById('mobile-menu'); if (mobileMenu?.classList.contains('open')) mobileMenu.classList.remove('open'); });
             const mobileToggle = document.getElementById('mobile-toggle'); const mobileMenu = document.getElementById('mobile-menu');
             if (mobileToggle && mobileMenu) { mobileToggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = mobileToggle.querySelector('i'); if (mobileMenu.classList.contains('open')) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); } }); }
+
+            // ZIP Code Checker Interactivity
+            const zipInput = document.getElementById('zip-input');
+            const zipCheckBtn = document.getElementById('zip-check-btn');
+            const zipResult = document.getElementById('zip-result');
+
+            if (zipInput && zipCheckBtn && zipResult) {
+                zipCheckBtn.addEventListener('click', () => {
+                    const zip = zipInput.value.trim();
+                    if (/^\d{5}$/.test(zip)) {
+                        zipResult.className = "mt-4 p-3.5 rounded-xl text-sm font-semibold flex items-center gap-2.5 transition-all duration-300 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/40";
+                        zipResult.innerHTML = `<i class="fas fa-check-circle text-emerald-500 dark:text-emerald-400 text-lg shrink-0"></i> <span>Service available in <strong>${zip}</strong>! Mobile dispatch ETA is 20-40 minutes.</span>`;
+                        zipResult.classList.remove('hidden');
+                    } else {
+                        zipResult.className = "mt-4 p-3.5 rounded-xl text-sm font-semibold flex items-center gap-2.5 transition-all duration-300 bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200/50 dark:border-rose-800/40";
+                        zipResult.innerHTML = `<i class="fas fa-exclamation-circle text-rose-500 dark:text-rose-400 text-lg shrink-0"></i> <span>Please enter a valid 5-digit ZIP code.</span>`;
+                        zipResult.classList.remove('hidden');
+                    }
+                });
+
+                zipInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        zipCheckBtn.click();
+                    }
+                });
+            }
         });
     </script>
 </body>
