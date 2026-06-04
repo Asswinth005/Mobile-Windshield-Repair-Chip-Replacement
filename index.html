@@ -953,13 +953,17 @@
     </section>
 
     <!-- Windshield Experts Near Me Section -->
-    <section class="py-20 bg-white dark:bg-[#0F1720] border-t border-shield-stone/30">
-        <div class="container mx-auto px-6">
+    <section class="py-20 bg-white dark:bg-[#0F1720] border-t border-shield-stone/30 relative overflow-hidden">
+        <!-- Glow Backdrops -->
+        <div class="absolute right-0 top-0 w-96 h-96 bg-shield-sky/5 dark:bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute left-0 bottom-0 w-96 h-96 bg-shield-gold/5 dark:bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Cities Grid and ZIP Checker -->
-                <div class="space-y-6">
+                <div class="space-y-6 animate-slide-up">
                     <span class="text-shield-sky dark:text-sky-300 font-bold text-sm uppercase tracking-wider bg-shield-ice dark:bg-sky-950/40 px-4 py-1.5 rounded-full inline-block">
-                        <i class="fas fa-map-marked-alt mr-1"></i> ACTIVE COVERAGE AREAS
+                        <i class="fas fa-map-marked-alt mr-1 animate-pulse"></i> ACTIVE COVERAGE AREAS
                     </span>
                     <h2 class="text-3xl md:text-4xl font-display font-bold text-shield-graphite dark:text-white">
                         Windshield Experts <span class="text-shield-blue dark:text-blue-400">Near Me</span>
@@ -969,13 +973,14 @@
                     </p>
 
                     <!-- ZIP Code Checker Widget -->
-                    <div class="bg-shield-ice/30 dark:bg-slate-900/30 p-5 rounded-2xl border border-shield-stone/20">
+                    <div class="bg-gradient-to-br from-white/95 to-slate-50/50 dark:from-[#182230] dark:to-[#0F1720]/80 backdrop-blur-md p-6 rounded-3xl border border-shield-stone/20 dark:border-slate-800/60 shadow-lg relative overflow-hidden group">
+                        <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-shield-blue/5 blur-xl group-hover:bg-shield-blue/10 transition"></div>
                         <h4 class="font-bold text-shield-graphite dark:text-white text-base mb-2 flex items-center gap-2">
                             <i class="fas fa-search-location text-shield-blue dark:text-sky-400"></i> Check Service Availability
                         </h4>
                         <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Enter your 5-digit ZIP code to check live mobile van dispatch availability in your area.</p>
                         <div class="flex gap-2">
-                            <input type="text" id="zip-input" maxlength="5" placeholder="Enter ZIP Code" class="p-3 w-40 rounded-xl border border-shield-stone/30 dark:border-slate-700 bg-white dark:bg-[#131B26] text-shield-graphite dark:text-white text-sm font-semibold focus:outline-none focus:border-shield-sky transition" />
+                            <input type="text" id="zip-input" maxlength="5" placeholder="Enter ZIP Code" class="p-3 w-40 rounded-xl border border-shield-stone/30 dark:border-slate-700 bg-white dark:bg-[#131B26] text-shield-graphite dark:text-white text-sm font-semibold focus:outline-none focus:border-shield-sky focus:ring-2 focus:ring-shield-sky/20 transition-all" />
                             <button id="zip-check-btn" class="btn-primary-glass px-5 rounded-xl font-bold text-sm">Check ZIP</button>
                         </div>
                         <!-- Alert Results container -->
@@ -983,42 +988,62 @@
                     </div>
                 </div>
                 <!-- Right: Active coverage city hubs list -->
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="trust-card p-5 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fas fa-map-pin"></i>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="relative bg-gradient-to-br from-white to-[#F8FAFC] dark:from-[#141E2A] dark:to-[#0F1720] border border-slate-100 dark:border-slate-800/80 rounded-2xl p-5 hover:border-shield-sky dark:hover:border-sky-500 hover:-translate-y-1 transition-all duration-300 shadow-sm overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+                                <span class="flex h-1.5 w-1.5 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
+                                LIVE
+                            </span>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Downtown Hub</h4>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">3 vans active • 25min ETA</p>
-                        </div>
+                        <h4 class="font-bold text-shield-graphite dark:text-white text-base">Downtown Hub</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">3 vans active • <strong>25min ETA</strong></p>
                     </div>
-                    <div class="trust-card p-5 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fas fa-map-pin"></i>
+                    <div class="relative bg-gradient-to-br from-white to-[#F8FAFC] dark:from-[#141E2A] dark:to-[#0F1720] border border-slate-100 dark:border-slate-800/80 rounded-2xl p-5 hover:border-shield-sky dark:hover:border-sky-500 hover:-translate-y-1 transition-all duration-300 shadow-sm overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+                                <span class="flex h-1.5 w-1.5 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
+                                LIVE
+                            </span>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">Northside Suburbs</h4>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">2 vans active • 40min ETA</p>
-                        </div>
+                        <h4 class="font-bold text-shield-graphite dark:text-white text-base">Northside Suburbs</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">2 vans active • <strong>40min ETA</strong></p>
                     </div>
-                    <div class="trust-card p-5 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fas fa-map-pin"></i>
+                    <div class="relative bg-gradient-to-br from-white to-[#F8FAFC] dark:from-[#141E2A] dark:to-[#0F1720] border border-slate-100 dark:border-slate-800/80 rounded-2xl p-5 hover:border-shield-sky dark:hover:border-sky-500 hover:-translate-y-1 transition-all duration-300 shadow-sm overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+                                <span class="flex h-1.5 w-1.5 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
+                                LIVE
+                            </span>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">South Metro</h4>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">4 vans active • 15min ETA</p>
-                        </div>
+                        <h4 class="font-bold text-shield-graphite dark:text-white text-base">South Metro</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">4 vans active • <strong>15min ETA</strong></p>
                     </div>
-                    <div class="trust-card p-5 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fas fa-map-pin"></i>
+                    <div class="relative bg-gradient-to-br from-white to-[#F8FAFC] dark:from-[#141E2A] dark:to-[#0F1720] border border-slate-100 dark:border-slate-800/80 rounded-2xl p-5 hover:border-shield-sky dark:hover:border-sky-500 hover:-translate-y-1 transition-all duration-300 shadow-sm overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+                                <span class="flex h-1.5 w-1.5 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
+                                LIVE
+                            </span>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-shield-graphite dark:text-white text-sm">East Valley</h4>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">2 vans active • 30min ETA</p>
-                        </div>
+                        <h4 class="font-bold text-shield-graphite dark:text-white text-base">East Valley</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">2 vans active • <strong>30min ETA</strong></p>
                     </div>
                 </div>
             </div>
