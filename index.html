@@ -390,6 +390,11 @@
             background-color: #FBBF24;
             color: #0F1720;
         }
+
+        .hero-dark-overlay {
+            background: linear-gradient(to bottom, rgba(15, 23, 32, 0.5) 0%, rgba(15, 23, 32, 0.3) 50%, rgba(15, 23, 32, 0.6) 100%);
+            pointer-events: none;
+        }
     
         /* Typography overrides for readable hierarchy (headings < 600, paragraphs/subheadings 400-550) */
         .font-semibold, .font-bold, .font-extrabold {
@@ -565,28 +570,26 @@
 
     <!-- Hero Section -->
     <section class="pt-28 pb-16 md:pt-36 md:pb-20 relative overflow-hidden">
-        <!-- Background Image with Overlay -->
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="assest/windshield_repair_hero.png" alt="Windshield Repair Background" class="w-full h-full object-cover">
-            <!-- Semi-transparent overlay to ensure text readability -->
-            <div class="absolute inset-0 bg-[#F9FBFD]/10 dark:bg-[#0F1720]/30"></div>
-            <!-- Bottom fade to blend with the next section -->
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#F9FBFD] dark:to-[#0F1720]"></div>
+            <!-- Dark overlay for text readability without any white color washing out the image -->
+            <div class="absolute inset-0 hero-dark-overlay"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center animate-slide-up">
                 <div
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-shield-blue/10 dark:bg-blue-500/20 rounded-full mb-5 border border-shield-sky/30">
-                    <i class="fas fa-truck-fast text-shield-blue dark:text-sky-300"></i>
-                    <span class="text-sm font-semibold text-shield-blue dark:text-sky-200">WE COME TO YOU • FREE MOBILE
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 dark:bg-blue-500/20 rounded-full mb-5 border border-white/20 dark:border-shield-sky/30">
+                    <i class="fas fa-truck-fast text-white dark:text-sky-300"></i>
+                    <span class="text-sm font-semibold text-white dark:text-sky-200">WE COME TO YOU • FREE MOBILE
                         SERVICE</span>
                 </div>
                 <h1
-                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight text-shield-graphite dark:text-white">
-                    Mobile Windshield <span class="text-shield-blue dark:text-blue-400">Repair</span> & <span
+                    class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight text-white">
+                    Mobile Windshield <span class="text-sky-300 dark:text-blue-400">Repair</span> & <span
                         class="text-shield-gold dark:text-amber-400">Chip Replacement</span>
                 </h1>
-                <p class="text-lg md:text-xl text-shield-graphite/70 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                <p class="text-lg md:text-xl text-white/90 dark:text-gray-200 mb-8 max-w-2xl mx-auto">
                     Same-day service, certified technicians, lifetime warranty. We fix rock chips, cracks, and full
                     windshield replacements – right at your home or office.
                 </p>
@@ -595,11 +598,11 @@
                         class="btn-primary-glass px-8 py-3 rounded-full inline-flex items-center gap-2 text-base shadow-lg"><i
                             class="fas fa-calendar-check"></i> Schedule Free Inspection</a>
                     <a href="#"
-                        class="btn-outline-shield px-8 py-3 rounded-full inline-flex items-center gap-2 text-base"><i
+                        class="border-2 border-white/60 text-white hover:bg-white hover:text-slate-900 px-8 py-2.5 rounded-full inline-flex items-center gap-2 text-base transition-all"><i
                             class="fas fa-phone"></i> (888) 450-55490</a>
                 </div>
                 <p
-                    class="text-sm text-shield-graphite/50 dark:text-gray-400 mt-5 flex items-center justify-center gap-2">
+                    class="text-sm text-white/70 dark:text-gray-400 mt-5 flex items-center justify-center gap-2">
                     <i class="fas fa-shield-alt text-shield-gold dark:text-amber-400"></i> 100% insurance claim
                     assistance • No out-of-pocket with most policies
                 </p>
